@@ -10,7 +10,10 @@ public class BasePage {
     WebDriver driver;
     WebDriverWait wait;
 
-    protected By headerMenu = By.xpath("//*[@id=\"navbar-collapse-menu\"]/ul[2]/kapsch-menu/li/a/span");
+
+    //protected By headerMenu = By.xpath("//*[@id=\"navbar-collapse-menu\"]/ul[2]/kapsch-menu/li/a/span");
+    protected By headerMenu = By.cssSelector("li[ng-if='vm.NgOidcClient.getUserInfo().isAuthenticated']");
+    //*[@id="navbar-collapse-menu"]/ul/kapsch-menu
     protected By menuGoTo = By.id("id-goto");
     protected By menuConfiguration = By.cssSelector("span[translate='CARDS.CFG.TITLE']");
     protected By menuManualValidation = By.cssSelector("span[translate='CARDS.MV.TITLE']");
@@ -19,16 +22,19 @@ public class BasePage {
     protected By menuTransactionManager = By.cssSelector("span[translate='CARDS.VT.TITLE']");
     protected By menuVehicleManager = By.cssSelector("span[translate='CARDS.VM.TITLE']");
     protected By menuAudit = By.cssSelector("span[translate='CARDS.AUD.TITLE']");
+    protected By menuLogout = By.cssSelector("a[translate='HEADER.SIGN_OUT_MENU_TEXT']");
+
+    protected By homeTitle = By.cssSelector("span[translate='HOME.TITLE']");
+
 
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver,1000);
+        wait = new WebDriverWait(driver,20);
     }
 
-    public WebElement headerMenu(){
-        return this.driver.findElement(headerMenu);
-    }
+    public WebElement getHomeTitle() { return driver.findElement(homeTitle);}
+
 
     public void goToConfiguration() {
         driver.findElement(headerMenu).click();
@@ -36,6 +42,16 @@ public class BasePage {
         driver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuConfiguration));
         driver.findElement(menuConfiguration).click();
+        wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
+        wait.until(ExpectedConditions.visibilityOf(getHomeTitle()));
+    }
+
+    public void goToAudit() {
+        driver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
+        driver.findElement(menuGoTo).click();
+        wait.until(ExpectedConditions.elementToBeClickable(menuAudit));
+        driver.findElement(menuAudit).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
 
@@ -84,13 +100,12 @@ public class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
 
-    public void goToAudit() {
+
+
+    public void logout() {
         driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
-        wait.until(ExpectedConditions.elementToBeClickable(menuAudit));
-        driver.findElement(menuAudit).click();
-        wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
-    }
+        wait.until(ExpectedConditions.elementToBeClickable(menuLogout));
+        driver.findElement(menuLogout).click();
+        }
 
 }

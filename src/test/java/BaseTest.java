@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -26,8 +27,8 @@ public class BaseTest {
         options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
         driver = new ChromeDriver(options);
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver,5000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver,10);
     }
 
     @BeforeSuite
@@ -37,12 +38,12 @@ public class BaseTest {
         password = userReader.getPassword();
     }
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeSuite(alwaysRun = true)
     public void openDriver() {
         initializeDriver();
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     public void tearDownDriverClass() {
         if (driver != null) {
             driver.quit();

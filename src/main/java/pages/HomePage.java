@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public WebElement welcomeMessage(){
+    public WebElement getWelcomeMessage(){
         return this.driver.findElement(welcomeMessageTxt);
     }
 }
