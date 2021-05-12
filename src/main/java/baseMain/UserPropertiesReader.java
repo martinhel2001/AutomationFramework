@@ -8,7 +8,7 @@ public class UserPropertiesReader {
     private Properties properties;
 
     public UserPropertiesReader(String username){
-        String propertyFilePath= "src/main/resources/properties/"+username+".properties";
+        String propertyFilePath= "src/main/resources/users/"+username+".properties";
 
         try {
             File fileDir = new File(propertyFilePath);
