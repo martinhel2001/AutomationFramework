@@ -1,10 +1,10 @@
-package pages;
+package pages.kapsch;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MonitoringHomePage  extends  BasePage {
+public class MonitoringHomePage  extends KapschBasePage {
 
     protected By systemEventsPanel = By.id("p-0");
 

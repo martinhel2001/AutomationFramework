@@ -1,14 +1,14 @@
-package pages;
+package pages.kapsch;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class VehicleManagerPage extends BasePage{
+public class VehicleManagerHomePage extends KapschBasePage {
 
     protected By vehiclesPanel = By.id("p-0");
 
-    public VehicleManagerPage(WebDriver driver){
+    public VehicleManagerHomePage(WebDriver driver){
         super(driver);
     }
 

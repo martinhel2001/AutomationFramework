@@ -1,11 +1,11 @@
-package pages;
+package pages.kapsch;
 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends KapschBasePage {
     //WebDriver driver;
     protected By loginHeader = By.className("single-box-header");
     protected By usernameLabel = By.xpath("/html/body/div[4]/div/div/div/form/fieldset/div[1]/div/p");

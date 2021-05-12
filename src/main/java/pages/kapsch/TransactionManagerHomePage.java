@@ -1,10 +1,10 @@
-package pages;
+package pages.kapsch;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class TransactionManagerHomePage extends BasePage{
+public class TransactionManagerHomePage extends KapschBasePage {
 
     protected By viewTransactionPanel = By.id("p-0");
 
