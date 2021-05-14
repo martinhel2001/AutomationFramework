@@ -16,10 +16,11 @@ public class LoginPage extends KapschBasePage {
 
     public HomePage objHomePage = new HomePage(driver);
 
-    public LoginPage (WebDriver driver){
+    public LoginPage (WebDriver driver, String url){
         super(driver);
         driver.manage().deleteAllCookies();
-        driver.get("http://intra.obo.test3.fraprr.phxcicd.ktc-int.net/");
+        //driver.get("http://intra.obo.test3.fraprr.phxcicd.ktc-int.net/");
+        driver.get(url);
     }
 
     public void login(String username, String password){

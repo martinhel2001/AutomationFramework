@@ -4,17 +4,20 @@ import org.testng.annotations.Test;
 import pages.kapsch.*;
 
 public class SmokeTest extends BaseTest{
-    //HomePage objHomePage = new HomePage(driver);
 
     @Test
     public void loginTest(){
-        LoginPage objLoginPage = new LoginPage(driver);
+        log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
+        LoginPage objLoginPage = new LoginPage(driver, testsConfig.getSUTurl());
         objLoginPage.login(username,password);
         Assert.assertTrue( objLoginPage.objHomePage.getWelcomeMessage().isDisplayed());
     }
 
     @Test (dependsOnMethods = {"loginTest"})
     public void navigationTest() throws InterruptedException {
+        log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
         HomePage objHomePage = new HomePage(driver);
         ConfigurationHomePage objConfHome = new ConfigurationHomePage(driver);
         AuditHomePage objAuditHome = new AuditHomePage(driver);

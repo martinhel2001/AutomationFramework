@@ -1,5 +1,10 @@
+import baseMain.TestsConfigReader;
 import baseMain.UserPropertiesReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,12 +14,10 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -26,26 +29,18 @@ public class BaseTest {
     static String username;
     static String password;
     static WebDriverWait wait ;
-
-    public void initializeDriver(){
-        WebDriverManager.chromedriver().clearResolutionCache();
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
-        options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
-        driver = new ChromeDriver(options);
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver,10);
-    }
+    static Logger log = Logger.getLogger(BaseTest.class.getName());
+    static TestsConfigReader testsConfig = new TestsConfigReader();
 
     public void initializeDriver(boolean isResponsive)
     {
-        String[] browsers = {
-                "CHROME",
-                //"FIREFOX",  TODO: Instalar Firefox en la PC para poder usar su webdriver.
-                "EDGE"
-        };
+        String[] browsers =
+                //{
+                //"CHROME",
+                //"FIREFOX",
+                //"EDGE"
+                (String[]) testsConfig.getBrowsers().split(",");
+                //};
 
         int idx = new Random().nextInt(browsers.length);
         String browser = (browsers [idx]);
@@ -132,10 +127,17 @@ public class BaseTest {
         password = userReader.getPassword();
     }
 
+    @BeforeSuite
+    public static void Setup() {
+        // loading log4j.xml file
+        DOMConfigurator.configure("log4j.xml");
+    }
+
     @BeforeSuite(alwaysRun = true)
     public void openDriver() {
         initializeDriver(false);
     }
+    
 
     @AfterSuite(alwaysRun = true)
     public void tearDownDriverClass() {
@@ -143,4 +145,6 @@ public class BaseTest {
             driver.quit();
         }
     }
+
+
 }
