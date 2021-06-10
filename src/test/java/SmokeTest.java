@@ -3,6 +3,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.kapsch.*;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.List;
+import static baseMain.spreadsheetAutomation.GetGoogleSheetData.getAllCurrentPromoInfo;
+
 public class SmokeTest extends BaseTest{
 
     @Test
@@ -65,4 +70,6 @@ public class SmokeTest extends BaseTest{
         objVMhome.scrollIntoMiddle(objVMhome.getHomeTitle());
         objHomePage.logout();
     }
+
+
 }
