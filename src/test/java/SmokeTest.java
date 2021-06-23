@@ -1,14 +1,10 @@
+import BaseTest.BaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.kapsch.*;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.util.List;
-import static baseMain.spreadsheetAutomation.GetGoogleSheetData.getAllCurrentPromoInfo;
-
-public class SmokeTest extends BaseTest{
+public class SmokeTest extends BaseTest {
 
     @Test
     public void loginTest(){

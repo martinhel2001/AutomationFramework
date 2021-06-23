@@ -1,3 +1,5 @@
+package BaseTest;
+
 import baseMain.TestsConfigReader;
 import baseMain.UserPropertiesReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -17,7 +19,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -25,12 +26,12 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    static WebDriver driver;
-    static String username;
-    static String password;
-    static WebDriverWait wait ;
-    static Logger log = Logger.getLogger(BaseTest.class.getName());
-    static TestsConfigReader testsConfig = new TestsConfigReader();
+    public WebDriver driver;
+    public String username;
+    public String password;
+    public WebDriverWait wait ;
+    public Logger log = Logger.getLogger(BaseTest.class.getName());
+    public TestsConfigReader testsConfig = new TestsConfigReader();
 
     public void initializeDriver(boolean isResponsive)
     {

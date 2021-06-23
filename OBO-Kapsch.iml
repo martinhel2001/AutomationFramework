@@ -73,5 +73,6 @@
     <orderEntry type="library" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" level="project" />
     <orderEntry type="library" name="Maven: com.google.apis:google-api-services-sheets:v4-rev493-1.23.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.apis:google-api-services-drive:v3-rev192-1.25.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.codeborne:selenide:5.22.1" level="project" />
   </component>
 </module>
