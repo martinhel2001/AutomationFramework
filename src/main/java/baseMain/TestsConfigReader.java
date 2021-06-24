@@ -45,4 +45,16 @@ public class TestsConfigReader {
     public String getSUTurl () {
         return properties.getProperty("SUT_url");
     }
+
+    public String getDBurl () {
+        return properties.getProperty("DB_url");
+    }
+
+    public String getDBuser () {
+        return properties.getProperty("DB_user");
+    }
+
+    public String getDBpass () {
+        return properties.getProperty("DB_pass");
+    }
 }

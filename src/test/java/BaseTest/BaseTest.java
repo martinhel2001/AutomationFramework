@@ -2,6 +2,8 @@ package BaseTest;
 
 import baseMain.TestsConfigReader;
 import baseMain.UserPropertiesReader;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -32,6 +34,8 @@ public class BaseTest {
     public WebDriverWait wait ;
     public Logger log = Logger.getLogger(BaseTest.class.getName());
     public TestsConfigReader testsConfig = new TestsConfigReader();
+    static ExtentTest test;
+    static ExtentReports report;
 
     public void initializeDriver(boolean isResponsive)
     {
@@ -138,7 +142,7 @@ public class BaseTest {
     public void openDriver() {
         initializeDriver(false);
     }
-    
+
 
     @AfterSuite(alwaysRun = true)
     public void tearDownDriverClass() {

@@ -4,11 +4,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.kapsch.*;
 
+import java.lang.reflect.Method;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class SmokeTest extends BaseTest {
+    SQLConnector sql = new SQLConnector();
 
     @Test
-    public void loginTest(){
-        log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
+    public void loginTest(Method method){
+       log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
         LoginPage objLoginPage = new LoginPage(driver, testsConfig.getSUTurl());
         objLoginPage.login(username,password);
@@ -65,6 +71,28 @@ public class SmokeTest extends BaseTest {
 
         objVMhome.scrollIntoMiddle(objVMhome.getHomeTitle());
         objHomePage.logout();
+    }
+
+    @Test
+    public void dbConnectionTest() throws SQLException, ClassNotFoundException {
+        Statement stmt = sql.openConn(testsConfig.getDBurl(),testsConfig.getDBuser(),testsConfig.getDBpass());
+
+        //Query to Execute
+        String query = "SELECT * FROM [OBO].[mva].[ManValConfiguration];";
+
+        // Execute the SQL Query. Store results in ResultSet
+        ResultSet rs= stmt.executeQuery(query);
+
+        // While Loop to iterate through all data and print results
+        while (rs.next()){
+            String manValConfigurationId = rs.getString(1);
+            String maxConfirmOperations = rs.getString(2);
+            System. out.println("manValConfigurationId: "+manValConfigurationId+"  "+"maxConfirmOperations: "+maxConfirmOperations);
+        }
+        // closing DB Connection
+        sql.closeDBconn();
+
+
     }
 
 
