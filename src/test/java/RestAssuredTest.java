@@ -16,6 +16,9 @@ public class RestAssuredTest {
     private static RequestSpecification requestSpec;
     private static ResponseSpecification responseSpec;
 
+    // Let's use http://zippopotam.us/   as example for this!
+
+
     @BeforeClass
     public static void createRequestSpecification() {
         requestSpec = new RequestSpecBuilder().setBaseUri("http://zippopotam.us").build();
@@ -70,7 +73,7 @@ public class RestAssuredTest {
     }
 
     @Test
-    public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills() { // SERIALIZE
+    public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills() { // DESERIALIZE
 
         Location location =
 
@@ -85,7 +88,7 @@ public class RestAssuredTest {
     }
 
     @Test
-    public void sendLvZipCode1050_checkStatusCode_expect200() {  // DESERIALIZE
+    public void sendLvZipCode1050_checkStatusCode_expect200() {  // SERIALIZE
 
         Location location = new Location();
         location.setCountry("Netherlands");
