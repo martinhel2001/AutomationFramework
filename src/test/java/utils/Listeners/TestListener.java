@@ -1,7 +1,15 @@
 package utils.Listeners;
 
 import com.aventstack.extentreports.Status;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -32,6 +40,7 @@ public class TestListener extends BaseTest implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is succeed.");
+        log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
         //ExtentReports log operation for passed tests.
         //getTest().log(Status.PASS, "Test passed");
     }
@@ -39,14 +48,17 @@ public class TestListener extends BaseTest implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is failed.");
         //Get driver from BaseTest and assign to local webdriver variable.
-        Object testClass = iTestResult.getInstance();
+//        Object testClass = iTestResult.getInstance();
         //WebDriver driver = ((BaseTest) testClass).getDriver();
         //Take base64Screenshot screenshot for extent reports
-        String base64Screenshot =
-                "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
+//        String base64Screenshot =
+//                "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
         //ExtentReports log and screenshot operations for failed tests.
         //getTest().log(Status.FAIL, "Test Failed",
                 //getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
+        //Take the screenshot
+        //takeScreenshot(getTestMethodName(iTestResult));
+        log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
     @Override
     public void onTestSkipped(ITestResult iTestResult) {

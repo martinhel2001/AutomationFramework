@@ -7,9 +7,12 @@ import com.aventstack.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,11 +23,19 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
+import java.io.File;
+import java.io.IOException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+
 
 public class BaseTest {
 
@@ -36,6 +47,8 @@ public class BaseTest {
     public TestsConfigReader testsConfig = new TestsConfigReader();
     static ExtentTest test;
     static ExtentReports report;
+
+
 
     public void initializeDriver(boolean isResponsive)
     {
@@ -77,7 +90,7 @@ public class BaseTest {
 //            options.addArguments("--disable-gpu");
             // SI QUEREMOS CORRERLO EN MODO HEADLESS   - END
 
-            driver = new ChromeDriver(options);
+             driver = new ChromeDriver(options);
         }
 
         // FIREFOX
@@ -125,6 +138,19 @@ public class BaseTest {
 
     }
 
+    protected void takeScreenshot(String methodName){
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+        //Copy the file to a location and use try catch block to handle exception
+        String timestamp = ZonedDateTime
+                .now( ZoneId.systemDefault() )
+                .format( DateTimeFormatter.ofPattern( "uuuu.MM.dd.HH.mm.ss" ) );
+        try {
+            FileUtils.copyFile(screenshot, new File("C:\\Automation\\"+methodName+"_"+timestamp+".png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     @BeforeSuite
     public void setUser(){
         UserPropertiesReader userReader = new UserPropertiesReader("Administrator");

@@ -1,6 +1,7 @@
 import BaseTest.BaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.kapsch.*;
 
@@ -8,18 +9,18 @@ import java.lang.reflect.Method;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+@Listeners(utils.Listeners.TestListener.class)
 
 public class SmokeTest extends BaseTest {
     SQLConnector sql = new SQLConnector();
 
     @Test
     public void loginTest(Method method){
-       log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
-        log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
+       log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
         LoginPage objLoginPage = new LoginPage(driver, testsConfig.getSUTurl());
         objLoginPage.login(username,password);
         Assert.assertTrue( objLoginPage.objHomePage.getWelcomeMessage().isDisplayed());
-    }
+        }
 
     @Test (dependsOnMethods = {"loginTest"})
     public void navigationTest() throws InterruptedException {
@@ -37,7 +38,7 @@ public class SmokeTest extends BaseTest {
         objHomePage.goToConfiguration();
         wait.until(ExpectedConditions.visibilityOf(objConfHome.getValidationPanel()));
         Thread.sleep(2000);
-        Assert.assertTrue(objConfHome.getHomeTitle().getText().equals("CONFIGURATION"));
+        Assert.assertTrue(objConfHome.getHomeTitle().getText().equals("CONFIGURATIONS"));
 
         objConfHome.goToAudit();
         wait.until(ExpectedConditions.visibilityOf(objAuditHome.getViewCentralizedAuditPanel()));
