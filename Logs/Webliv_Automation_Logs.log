@@ -1,14 +1,15 @@
-15-07-2021 18:49:20 INFO [BaseTest]: I am in onStart method OBO-Kapsch
-15-07-2021 18:49:20 INFO [BaseTest]: dbConnectionTest test is starting.
-15-07-2021 18:49:20 INFO [BaseTest]: dbConnectionTest test is succeed.
-15-07-2021 18:49:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-15-07-2021 18:49:20 INFO [BaseTest]: loginTest test is starting.
-15-07-2021 18:49:20 INFO [BaseTest]: loginTest TEST Has Started
-15-07-2021 18:49:28 INFO [BaseTest]: loginTest test is succeed.
-15-07-2021 18:49:28 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-15-07-2021 18:49:28 INFO [BaseTest]: navigationTest test is starting.
-15-07-2021 18:49:28 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-15-07-2021 18:49:28 INFO [BaseTest]: navigationTest TEST Has Started
-15-07-2021 18:49:40 INFO [BaseTest]: navigationTest test is failed.
-15-07-2021 18:49:40 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-15-07-2021 18:49:40 INFO [BaseTest]: I am in onFinish method OBO-Kapsch
+15-07-2021 19:00:09 INFO [BaseTest]: I am in onStart method OBO-Kapsch
+15-07-2021 19:00:09 INFO [BaseTest]: dbConnectionTest test is starting.
+15-07-2021 19:00:10 INFO [BaseTest]: dbConnectionTest test is succeed.
+15-07-2021 19:00:10 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+15-07-2021 19:00:10 INFO [BaseTest]: loginTest test is starting.
+15-07-2021 19:00:10 INFO [BaseTest]: loginTest TEST Has Started
+15-07-2021 19:00:20 INFO [BaseTest]: loginTest test is succeed.
+15-07-2021 19:00:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+15-07-2021 19:00:20 INFO [BaseTest]: navigationTest test is starting.
+15-07-2021 19:00:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+15-07-2021 19:00:20 INFO [BaseTest]: navigationTest TEST Has Started
+15-07-2021 19:00:32 INFO [BaseTest]: navigationTest test is failed.
+15-07-2021 19:00:32 INFO [BaseTest]: Screenshot taken
+15-07-2021 19:00:32 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+15-07-2021 19:00:32 INFO [BaseTest]: I am in onFinish method OBO-Kapsch

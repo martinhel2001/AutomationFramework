@@ -10,10 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -39,7 +36,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    public static WebDriver driver;
     public String username;
     public String password;
     public WebDriverWait wait ;
@@ -139,7 +136,14 @@ public class BaseTest {
     }
 
     protected void takeScreenshot(String methodName){
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = null;
+        try {
+            screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            log.info("Screenshot taken");
+        } catch (WebDriverException e) {
+            log.info("Exception while taking screenshot");
+            e.printStackTrace();
+        }
 
         //Copy the file to a location and use try catch block to handle exception
         String timestamp = ZonedDateTime

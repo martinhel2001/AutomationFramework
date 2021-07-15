@@ -38,7 +38,7 @@ public class SmokeTest extends BaseTest {
         objHomePage.goToConfiguration();
         wait.until(ExpectedConditions.visibilityOf(objConfHome.getValidationPanel()));
         Thread.sleep(2000);
-        Assert.assertTrue(objConfHome.getHomeTitle().getText().equals("CONFIGURATIONS"));
+        Assert.assertTrue(objConfHome.getHomeTitle().getText().equals("CONFIGURATION"));
 
         objConfHome.goToAudit();
         wait.until(ExpectedConditions.visibilityOf(objAuditHome.getViewCentralizedAuditPanel()));

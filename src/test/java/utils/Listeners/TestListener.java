@@ -57,7 +57,11 @@ public class TestListener extends BaseTest implements ITestListener {
         //getTest().log(Status.FAIL, "Test Failed",
                 //getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
         //Take the screenshot
-        //takeScreenshot(getTestMethodName(iTestResult));
+        try {
+            takeScreenshot(getTestMethodName(iTestResult));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
     @Override
