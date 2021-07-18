@@ -3,6 +3,7 @@ package pages.kapsch;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends KapschBasePage {
@@ -24,10 +25,13 @@ public class LoginPage extends KapschBasePage {
     }
 
     public void login(String username, String password){
-
         this.driver.findElement(userNameInput).sendKeys(username);
         this.driver.findElement(passwordInput).sendKeys(password);
         this.driver.findElement(submitBtn).click();
         wait.until(ExpectedConditions.visibilityOf( objHomePage.getWelcomeMessage()));
+    }
+
+    public WebElement getLoginBox(){
+        return this.driver.findElement(loginHeader);
     }
 }

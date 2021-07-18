@@ -11,18 +11,41 @@ import java.sql.SQLException;
 import java.sql.Statement;
 @Listeners(utils.Listeners.TestListener.class)
 
-public class SmokeTest extends BaseTest {
+public class KapschSmokeTest extends BaseTest {
     SQLConnector sql = new SQLConnector();
 
-    @Test
-    public void loginTest(Method method){
+    @Test (groups = "OPERIANPD-3293")
+    public void loginTest(){
        log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
         LoginPage objLoginPage = new LoginPage(driver, testsConfig.getSUTurl());
         objLoginPage.login(username,password);
         Assert.assertTrue( objLoginPage.objHomePage.getWelcomeMessage().isDisplayed());
         }
 
-    @Test (dependsOnMethods = {"loginTest"})
+    @Test (groups = "OPERIANPD-3286",dependsOnMethods = {"loginTest"})
+    public void logoutTest(){
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
+        LoginPage objLoginPage = new LoginPage(driver, testsConfig.getSUTurl());
+        HomePage objHomePage = new HomePage(driver);
+        objHomePage.logout();
+        wait.until(ExpectedConditions.visibilityOf( objLoginPage.getLoginBox()));
+        Assert.assertTrue( objLoginPage.getLoginBox().isDisplayed());
+    }
+
+    @Test (groups = "OPERIANPD-3298", dependsOnMethods = {"loginTest"})
+    public void manualValidationConfirm() {
+        HomePage obj_HomePage = new HomePage(driver);
+        ManualValidationHomePage obj_MVhome = new ManualValidationHomePage(driver);
+
+        // Step 1
+        obj_HomePage.goToManualValidation();
+        obj_MVhome.goToManualValidationContent();
+
+        // Step 2
+
+    }
+
+    @Test (dependsOnMethods = {"loginTest"}, groups = "OPERIANPD-3300")
     public void navigationTest() throws InterruptedException {
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
