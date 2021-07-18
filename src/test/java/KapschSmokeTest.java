@@ -36,13 +36,19 @@ public class KapschSmokeTest extends BaseTest {
     public void manualValidationConfirm() {
         HomePage obj_HomePage = new HomePage(driver);
         ManualValidationHomePage obj_MVhome = new ManualValidationHomePage(driver);
+        ManualValidationPage obj_MVpage = new ManualValidationPage(driver);
 
         // Step 1
         obj_HomePage.goToManualValidation();
         obj_MVhome.goToManualValidationContent();
 
         // Step 2
-
+        obj_MVpage.setVRM("LPN");
+        obj_MVpage.setCountry("ES");
+        obj_MVpage.setRegion("region");
+        obj_MVpage.setVehicleClass("vehicle class");
+        obj_MVpage.confirm();
+        Assert.assertTrue(true);// TODO: Poner validacion de que aparezca otra Trx o Popup de continuar con Ignoradas;
     }
 
     @Test (dependsOnMethods = {"loginTest"}, groups = "OPERIANPD-3300")
