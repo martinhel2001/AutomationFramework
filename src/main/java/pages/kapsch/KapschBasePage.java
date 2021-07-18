@@ -3,6 +3,7 @@ package pages.kapsch;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
@@ -22,8 +23,13 @@ public class KapschBasePage extends BasePage {
     protected By menuVehicleManager = By.cssSelector("span[translate='CARDS.VM.TITLE']");
     protected By menuAudit = By.cssSelector("span[translate='CARDS.AUD.TITLE']");
     protected By menuLogout = By.cssSelector("a[translate='HEADER.SIGN_OUT_MENU_TEXT']");
-
     protected By homeTitle = By.cssSelector("span[translate='HOME.TITLE']");
+
+    Actions actions = new Actions(driver);
+
+    public void mouseOver(WebElement webElement ) {
+        actions.moveToElement(webElement);
+    }
 
     public WebElement getHomeTitle() { return driver.findElement(homeTitle);}
 

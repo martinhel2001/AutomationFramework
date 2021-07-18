@@ -37,18 +37,33 @@ public class KapschSmokeTest extends BaseTest {
         HomePage obj_HomePage = new HomePage(driver);
         ManualValidationHomePage obj_MVhome = new ManualValidationHomePage(driver);
         ManualValidationPage obj_MVpage = new ManualValidationPage(driver);
+        TransactionManagerHomePage obj_TMhome = new TransactionManagerHomePage(driver);
+        ViewTrx obj_ViewTrx = new ViewTrx(driver);
+        String vrm;
 
-        // Step 1
+        // Step 1: Enter Manual Validation
         obj_HomePage.goToManualValidation();
         obj_MVhome.goToManualValidationContent();
 
-        // Step 2
-        obj_MVpage.setVRM("LPN");
-        obj_MVpage.setCountry("ES");
-        obj_MVpage.setRegion("region");
-        obj_MVpage.setVehicleClass("vehicle class");
-        obj_MVpage.confirm();
-        Assert.assertTrue(true);// TODO: Poner validacion de que aparezca otra Trx o Popup de continuar con Ignoradas;
+        // Step 2: Set a valid VRM, Vehicle class and License Plate Type.
+        //Click on Confirm button.
+        vrm = obj_MVpage.getVRM().getText();
+        //obj_MVpage.setVRM("LPN");
+//        obj_MVpage.setCountry("ES");
+//        obj_MVpage.setRegion("region");
+//        obj_MVpage.setVehicleClass("truck");
+//        obj_MVpage.confirm();
+        Assert.assertTrue(obj_MVpage.isClickable(obj_MVpage.getBtnConfirm(),10)||obj_MVpage.isNoMoreTrxPopupDisplayed());
+        if (true) // TODO
+        // Step 3: Go to View Transaction.
+        //Filter by the VRM.
+        //Enter the link to see Transaction Details.
+        obj_MVpage.goToTransactionManager();
+        obj_MVpage.goToManualValidation();
+        obj_ViewTrx.setInputLPN(vrm);
+        obj_ViewTrx.clickSearch();
+        obj_ViewTrx.moreActionsView();
+
     }
 
     @Test (dependsOnMethods = {"loginTest"}, groups = "OPERIANPD-3300")

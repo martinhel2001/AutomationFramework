@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +15,7 @@ public class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver,20);
     }
+
 
 
     public void scrollIntoMiddle (WebElement element) {
