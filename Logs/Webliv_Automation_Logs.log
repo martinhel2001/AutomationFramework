@@ -1,10 +1,9 @@
-18-07-2021 01:51:46 INFO [BaseTest]: I am in onStart method OBO-Kapsch
-18-07-2021 01:51:46 INFO [BaseTest]: loginTest test is starting.
-18-07-2021 01:51:46 INFO [BaseTest]: loginTest TEST Has Started
-18-07-2021 01:51:51 INFO [BaseTest]: loginTest test is succeed.
-18-07-2021 01:51:51 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-18-07-2021 01:51:51 INFO [BaseTest]: manualValidationConfirm test is starting.
-18-07-2021 01:52:17 INFO [BaseTest]: manualValidationConfirm test is failed.
-18-07-2021 01:52:17 INFO [BaseTest]: Screenshot taken
-18-07-2021 01:52:17 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-18-07-2021 01:52:17 INFO [BaseTest]: I am in onFinish method OBO-Kapsch
+19-07-2021 02:18:59 INFO [BaseTest]: I am in onStart method OBO-Kapsch
+19-07-2021 02:18:59 INFO [BaseTest]: loginTest test is starting.
+19-07-2021 02:18:59 INFO [BaseTest]: loginTest TEST Has Started
+19-07-2021 02:19:04 INFO [BaseTest]: loginTest test is succeed.
+19-07-2021 02:19:04 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+19-07-2021 02:19:04 INFO [BaseTest]: verifyViewTrxResults test is starting.
+19-07-2021 02:19:54 INFO [BaseTest]: verifyViewTrxResults test is succeed.
+19-07-2021 02:19:54 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+19-07-2021 02:19:54 INFO [BaseTest]: I am in onFinish method OBO-Kapsch

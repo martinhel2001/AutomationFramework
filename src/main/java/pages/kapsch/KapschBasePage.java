@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
+import java.util.List;
+
 public class KapschBasePage extends BasePage {
 
     public KapschBasePage(WebDriver driver){
@@ -98,6 +100,56 @@ public class KapschBasePage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
 
+    // HTML TABLE methods - BEGIN
+
+    public void htmlTableNumberOfColumns(WebElement table) {
+        //No.of Columns
+        List col = table.findElements(By.xpath(".//thead/tr/th"));
+        System.out.println("No of cols are : " + col.size());
+        //No.of rows
+        List rows = table.findElements(By.xpath(".//tbody/tr/td[1]"));
+        System.out.println("No of rows are : " + rows.size());
+    }
+
+    public List<WebElement> getRows(String colName, String cellValue, WebElement table){
+        //To locate titles of table.
+        List <WebElement> col = table.findElements(By.xpath(".//thead/tr/th"));
+        //To locate rows of table.
+        List <WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
+        System.out.println("Cantidad de Rows: "+rows.size());
+        int colPosition=0;
+
+        for (int i=0;i<col.size();i++){
+            System.out.println("Contenido de Col["+i+"]= "+col.get(i).getText());
+            if (col.get(i).getText().equals(colName)) {
+                colPosition=i+1;break;
+            }
+        }
+
+        List <WebElement> colValues = table.findElements(By.xpath(".//tbody/tr/td["+colPosition+"]"));
+
+        for (int row=0;row<colValues.size();row++){
+            System.out.println("Contenido de Colvalues["+row+"]= "+colValues.get(row).getText());
+            if (!colValues.get(row).getText().contains(cellValue)) {
+                rows.remove(0);
+                }
+            }
+
+        return rows;
+
+//        for (int row=0;row<rows.size();row++){
+//            List < WebElement > columns_row = rows.get(row).findElements(By.tagName("td"));
+//
+//            for (int column = 0; column < columns_row.size(); column++) {
+//                // To retrieve text from that specific cell.
+//                String celtext = columns_row.get(column).getText();
+//                System.out.println("Cell Value of row number " + row + " and column number " + column + " Is " + celtext);
+//            }
+//        }
+
+
+    }
+    // HTML TABLE methods - END
 
 
     public void logout() {

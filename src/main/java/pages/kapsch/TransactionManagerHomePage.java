@@ -19,4 +19,5 @@ public class TransactionManagerHomePage extends KapschBasePage {
     }
 
     public WebElement getViewTransactionPanel() {return driver.findElement(viewTransactionPanel);}
+
 }

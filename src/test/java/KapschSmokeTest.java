@@ -1,14 +1,16 @@
 import BaseTest.BaseTest;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.kapsch.*;
 
-import java.lang.reflect.Method;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
 @Listeners(utils.Listeners.TestListener.class)
 
 public class KapschSmokeTest extends BaseTest {
@@ -38,7 +40,8 @@ public class KapschSmokeTest extends BaseTest {
         ManualValidationHomePage obj_MVhome = new ManualValidationHomePage(driver);
         ManualValidationPage obj_MVpage = new ManualValidationPage(driver);
         TransactionManagerHomePage obj_TMhome = new TransactionManagerHomePage(driver);
-        ViewTrx obj_ViewTrx = new ViewTrx(driver);
+        ViewTrxPage obj_ViewTrx = new ViewTrxPage(driver);
+        List<WebElement> searchResults;
         String vrm;
 
         // Step 1: Enter Manual Validation
@@ -48,22 +51,23 @@ public class KapschSmokeTest extends BaseTest {
         // Step 2: Set a valid VRM, Vehicle class and License Plate Type.
         //Click on Confirm button.
         vrm = obj_MVpage.getVRM().getText();
-        //obj_MVpage.setVRM("LPN");
-//        obj_MVpage.setCountry("ES");
-//        obj_MVpage.setRegion("region");
-//        obj_MVpage.setVehicleClass("truck");
-//        obj_MVpage.confirm();
+        obj_MVpage.setVRM("LPN");
+        obj_MVpage.setCountry("ES");
+        obj_MVpage.setRegion("region");
+        obj_MVpage.setVehicleClass("truck");
+        obj_MVpage.confirm();
         Assert.assertTrue(obj_MVpage.isClickable(obj_MVpage.getBtnConfirm(),10)||obj_MVpage.isNoMoreTrxPopupDisplayed());
-        if (true) // TODO
+        if (obj_MVpage.isNoMoreTrxPopupDisplayed()) obj_MVpage.clickNoMoreTrx_No();
         // Step 3: Go to View Transaction.
         //Filter by the VRM.
         //Enter the link to see Transaction Details.
+        obj_MVpage.goBackHome();
         obj_MVpage.goToTransactionManager();
-        obj_MVpage.goToManualValidation();
+        obj_TMhome.goToViewTrx();
         obj_ViewTrx.setInputLPN(vrm);
         obj_ViewTrx.clickSearch();
-        obj_ViewTrx.moreActionsView();
-
+        Assert.assertTrue(obj_ViewTrx.vrmFound(vrm));
+        //obj_ViewTrx.moreActionsView();
     }
 
     @Test (dependsOnMethods = {"loginTest"}, groups = "OPERIANPD-3300")
@@ -117,6 +121,33 @@ public class KapschSmokeTest extends BaseTest {
         objVMhome.scrollIntoMiddle(objVMhome.getHomeTitle());
         objHomePage.logout();
     }
+
+    @Test (dependsOnMethods = {"loginTest"})
+    public void countTableRowsCols(){
+        HomePage obj_HomePage = new HomePage(driver);
+        TransactionManagerHomePage obj_TMhome = new TransactionManagerHomePage(driver);
+        ViewTrxPage obj_VTpage = new ViewTrxPage(driver);
+
+        obj_HomePage.goToTransactionManager();
+        obj_TMhome.goToViewTrx();
+        obj_VTpage.inspectTrxTable();
+    }
+
+    @Test (dependsOnMethods = {"loginTest"})
+    public void verifyViewTrxResults(){
+        HomePage obj_HomePage = new HomePage(driver);
+        TransactionManagerHomePage obj_TMhome = new TransactionManagerHomePage(driver);
+        ViewTrxPage obj_VTpage = new ViewTrxPage(driver);
+        String vrm="AU833GA";
+
+        obj_HomePage.goToTransactionManager();
+        obj_TMhome.goToViewTrx();
+        obj_VTpage.setInputLPN(vrm);
+        obj_VTpage.clickSearch();
+        obj_VTpage.inspectTrxTable();
+        Assert.assertTrue(obj_VTpage.vrmFound(vrm));
+    }
+
 
     @Test
     public void dbConnectionTest() throws SQLException, ClassNotFoundException {
