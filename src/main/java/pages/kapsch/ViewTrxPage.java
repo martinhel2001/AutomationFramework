@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import javax.swing.text.View;
+
 public class ViewTrxPage extends KapschBasePage {
 
     public ViewTrxPage(WebDriver driver) {
@@ -19,16 +21,18 @@ public class ViewTrxPage extends KapschBasePage {
     protected By tableTransactions = By.className("table-box");
 
 
-    public void clickSearch() {
+    public ViewTrxPage clickSearch() {
         this.driver.findElement(btnSearch).click();
+        return this;
     }
 
-    public void setInputLPN(String LPN) {
+    public ViewTrxPage setInputLPN(String LPN) {
         wait.until(ExpectedConditions.elementToBeClickable(inputLPN));
         //wait.until(ExpectedConditions.elementToBeSelected(inputLPN));
         //this.driver.findElement(inputLPN).clear();
         this.driver.findElement(inputLPN).click();
         this.driver.findElement(inputLPN).sendKeys(LPN);
+        return this;
     }
 
     public void moreActionsView(){

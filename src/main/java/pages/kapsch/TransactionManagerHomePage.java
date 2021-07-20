@@ -14,8 +14,9 @@ public class TransactionManagerHomePage extends KapschBasePage {
         super(driver);
     }
 
-    public void goToViewTrx() {
+    public ViewTrxPage goToViewTrx() {
         driver.findElement(navigationViewTrx).click();
+        return new ViewTrxPage(driver);
     }
 
     public WebElement getViewTransactionPanel() {return driver.findElement(viewTransactionPanel);}

@@ -54,22 +54,26 @@ public class ManualValidationPage extends KapschBasePage{
     }
 
 
-    public void setVRM(String vrm) {
+    public ManualValidationPage setVRM(String vrm) {
         wait.until(ExpectedConditions.elementToBeClickable(this.driver.findElement(inputVRM)));
         this.driver.findElement(inputVRM).clear();
         this.driver.findElement(inputVRM).sendKeys(vrm);
+        return this;
     }
-    public void setCountry(String country) {
+    public ManualValidationPage setCountry(String country) {
         this.driver.findElement(inputCountry).clear();
         this.driver.findElement(inputCountry).sendKeys(country);
+        return this;
     }
-    public void setRegion(String region) {
+    public ManualValidationPage setRegion(String region) {
         this.driver.findElement(inputRegion).clear();
         this.driver.findElement(inputRegion).sendKeys(region);
+        return this;
     }
-    public void setVehicleClass(String vehicleClass) {
+    public ManualValidationPage setVehicleClass(String vehicleClass) {
         this.driver.findElement(inputVehicleClass).clear();
         this.driver.findElement(inputVehicleClass).sendKeys(vehicleClass);
+        return this;
     }
 
 
@@ -81,7 +85,8 @@ public class ManualValidationPage extends KapschBasePage{
         driver.findElement(popupNoMoreTransactions_No).click();
     }
 
-    public void goBackHome(){
+    public ManualValidationHomePage goBackHome(){
         driver.findElement(headerHomeOption).click();
+        return new ManualValidationHomePage(driver);
     }
 }

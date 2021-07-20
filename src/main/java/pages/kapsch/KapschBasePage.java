@@ -55,13 +55,14 @@ public class KapschBasePage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
 
-    public void goToManualValidation() {
+    public ManualValidationHomePage goToManualValidation() {
         driver.findElement(headerMenu).click();
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
         driver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuManualValidation));
         driver.findElement(menuManualValidation).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
+        return new ManualValidationHomePage(driver);
     }
 
     public void goToMonitoring() {
@@ -81,13 +82,14 @@ public class KapschBasePage extends BasePage {
         driver.findElement(menuSecurity).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
-    public void goToTransactionManager() {
+    public TransactionManagerHomePage goToTransactionManager() {
         driver.findElement(headerMenu).click();
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
         driver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuTransactionManager));
         driver.findElement(menuTransactionManager).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
+        return new TransactionManagerHomePage(driver);
     }
 
 
