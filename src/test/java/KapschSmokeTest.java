@@ -55,6 +55,7 @@ public class KapschSmokeTest extends BaseTest {
                   .confirm();
 
         Assert.assertTrue(obj_MVpage.isClickable(obj_MVpage.getBtnConfirm(),10)||obj_MVpage.isNoMoreTrxPopupDisplayed());
+
         if (obj_MVpage.isNoMoreTrxPopupDisplayed()) obj_MVpage.clickNoMoreTrx_No();
 
         // Step 3: Go to View Transaction.
@@ -63,6 +64,7 @@ public class KapschSmokeTest extends BaseTest {
         obj_MVpage.goBackHome().goToTransactionManager().goToViewTrx()
                 .setInputLPN(vrm)
                 .clickSearch();
+
         Assert.assertTrue(obj_ViewTrx.vrmFound(vrm));
         //obj_ViewTrx.moreActionsView();
     }
@@ -80,6 +82,7 @@ public class KapschSmokeTest extends BaseTest {
         Assert.assertTrue(obj_VTpage.vrmFound(vrm));
 
         obj_VTpage.moreActionsView();
+        obj_VTpage.inspectTrxTable();
 
     }
 

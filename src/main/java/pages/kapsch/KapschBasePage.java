@@ -29,8 +29,9 @@ public class KapschBasePage extends BasePage {
 
     Actions actions = new Actions(driver);
 
+
     public void mouseOver(WebElement webElement ) {
-        actions.moveToElement(webElement);
+        actions.moveToElement(webElement).build().perform();
     }
 
     public WebElement getHomeTitle() { return driver.findElement(homeTitle);}
