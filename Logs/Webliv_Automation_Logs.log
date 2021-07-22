@@ -1,10 +1,5 @@
-20-07-2021 23:16:19 INFO [BaseTest]: I am in onStart method OBO-Kapsch
-20-07-2021 23:16:19 INFO [BaseTest]: loginTest test is starting.
-20-07-2021 23:16:19 INFO [BaseTest]: loginTest TEST Has Started
-20-07-2021 23:16:28 INFO [BaseTest]: loginTest test is succeed.
-20-07-2021 23:16:28 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-07-2021 23:16:28 INFO [BaseTest]: verifyViewTrxResults test is starting.
-20-07-2021 23:18:15 INFO [BaseTest]: verifyViewTrxResults test is failed.
-20-07-2021 23:18:15 INFO [BaseTest]: Screenshot taken
-20-07-2021 23:18:15 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-07-2021 23:18:15 INFO [BaseTest]: I am in onFinish method OBO-Kapsch
+22-07-2021 00:49:24 INFO [BaseTest]: I am in onStart method Automation-Projects
+22-07-2021 00:49:24 INFO [BaseTest]: navigateCarrousel test is starting.
+22-07-2021 00:49:29 INFO [BaseTest]: navigateCarrousel test is succeed.
+22-07-2021 00:49:29 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+22-07-2021 00:49:29 INFO [BaseTest]: I am in onFinish method Automation-Projects

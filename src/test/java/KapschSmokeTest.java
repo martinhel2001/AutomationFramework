@@ -1,5 +1,4 @@
 import BaseTest.BaseTest;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -9,7 +8,6 @@ import pages.kapsch.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 @Listeners(utils.Listeners.TestListener.class)
 
@@ -19,7 +17,7 @@ public class KapschSmokeTest extends BaseTest {
     @Test (groups = "OPERIANPD-3293")
     public void loginTest(){
        log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
-        LoginPage objLoginPage = new LoginPage(driver, testsConfig.getSUTurl());
+        LoginPage objLoginPage = new LoginPage(driver, testsConfig.getOBOurl());
         objLoginPage.login(username,password);
         Assert.assertTrue( objLoginPage.objHomePage.getWelcomeMessage().isDisplayed());
         }
@@ -27,7 +25,7 @@ public class KapschSmokeTest extends BaseTest {
     @Test (groups = "OPERIANPD-3286",dependsOnMethods = {"loginTest"})
     public void logoutTest(){
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
-        LoginPage objLoginPage = new LoginPage(driver, testsConfig.getSUTurl());
+        LoginPage objLoginPage = new LoginPage(driver, testsConfig.getOBOurl());
         HomePage objHomePage = new HomePage(driver);
         objHomePage.logout();
         wait.until(ExpectedConditions.visibilityOf( objLoginPage.getLoginBox()));

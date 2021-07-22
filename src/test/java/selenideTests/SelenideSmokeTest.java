@@ -13,7 +13,7 @@ public class SelenideSmokeTest extends BaseTest {
 
     @Test
     public void userCanLoginByUsername() {
-        open(testsConfig.getSUTurl());
+        open(testsConfig.getOBOurl());
         $("#username").setValue(username);
         $("#password").setValue(password);
         $(By.name("submit")).click();

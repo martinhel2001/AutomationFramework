@@ -42,8 +42,12 @@ public class TestsConfigReader {
         return properties.getProperty("browsers");
     }
 
-    public String getSUTurl () {
-        return properties.getProperty("SUT_url");
+    public String getOBOurl() {
+        return properties.getProperty("OBO_url");
+    }
+
+    public String getCommerceUrl() {
+        return properties.getProperty("ecommerce_url");
     }
 
     public String getDBurl () {
