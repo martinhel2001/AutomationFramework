@@ -3,16 +3,16 @@ package pages.ecommerceSite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomePage extends BasePage {
-    public HomePage(WebDriver driver, String url) {
-        super(driver);
-        driver.get(url);
-    }
+
 
     By banner = new By.ByCssSelector("#header > div.banner > div.container");
     By logo = new By.ByClassName("logo");
@@ -27,6 +27,16 @@ public class HomePage extends BasePage {
     By btnCarrouselLeft = new By.ByCssSelector("#homepage-slider > div > div.bx-controls.bx-has-controls-direction > div > a.bx-prev");
     By btnCarrouselRight = new By.ByCssSelector("#homepage-slider > div > div.bx-controls.bx-has-controls-direction > div > a.bx-next");
     By featuredProducts = new By.ByCssSelector("#homefeatured> li");
+    By btnAddToCart = new By.ByXPath("//*[@class=\"right-block\"]");//new By.ByClassName("a.button.ajax_add_to_cart_button.btn.btn-default");
+    By modalProductAddedToCart = new By.ById("layer_cart");
+    List<WebElement> featuredProductsList;
+
+    public HomePage(WebDriver driver, String url) {
+        super(driver);
+        driver.get(url);
+        featuredProductsList = driver.findElements(featuredProducts);
+    }
+
     public void search(String product){
         driver.findElement(searchBox).sendKeys(product);
         driver.findElement(searchSubmit);
@@ -42,11 +52,22 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage countFeaturedProducts(){
-        ArrayList<WebElement> featuredProductsList = new ArrayList<>(driver.findElements(featuredProducts));
+    public HomePage listFeaturedProducts(){
         for (int i=0;i<featuredProductsList.size();i++){
             System.out.println(featuredProductsList.get(i).findElement(new By.ByClassName("product-name")).getText());
         }
         return this;
+    }
+
+    protected HomePage addToCart(List<WebElement> productList, int productIndex) {
+        System.out.println("Producto a comprar: "+productList.get(productIndex).findElement(new By.ByClassName("product-name")).getText());
+        //System.out.println("Inner HTML del producto a comprar: "+productList.get(productIndex).getAttribute("innerHTML"));
+        productList.get(productIndex).findElement(new By.ByClassName("right-block")).click();
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(modalProductAddedToCart)));
+        return  this;
+    }
+
+    public void addProductFromFeatured(int productIndex){
+        addToCart(featuredProductsList, productIndex-1);
     }
 }

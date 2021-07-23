@@ -10,6 +10,7 @@ public class EcommerceSiteTest extends BaseTest {
     @Test (groups = {"ecommerce"})
     public void navigateCarrousel(){
         HomePage obj_Home = new HomePage(driver, testsConfig.getCommerceUrl());
-        obj_Home.countFeaturedProducts().carrouselLeft().carrouselLeft().carrouselLeft().carrouselRight().carrouselLeft();
+        obj_Home.listFeaturedProducts().addProductFromFeatured(5);
+
     }
 }
