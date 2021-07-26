@@ -1,6 +1,8 @@
-23-07-2021 21:05:19 INFO [BaseTest]: I am in onStart method Automation-Projects
-23-07-2021 21:05:19 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is starting.
-23-07-2021 21:05:26 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is failed.
-23-07-2021 21:05:26 INFO [BaseTest]: Screenshot taken
-23-07-2021 21:05:26 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-23-07-2021 21:05:26 INFO [BaseTest]: I am in onFinish method Automation-Projects
+26-07-2021 17:19:09 INFO [BaseTest]: I am in onStart method Automation-Projects
+26-07-2021 17:19:09 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is starting.
+26-07-2021 17:19:19 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is succeed.
+26-07-2021 17:19:19 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+26-07-2021 17:19:19 INFO [BaseTest]: add2featuredProductsToCart test is starting.
+26-07-2021 17:19:25 INFO [BaseTest]: add2featuredProductsToCart test is succeed.
+26-07-2021 17:19:25 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+26-07-2021 17:19:25 INFO [BaseTest]: I am in onFinish method Automation-Projects

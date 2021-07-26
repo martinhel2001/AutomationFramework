@@ -4,9 +4,9 @@
     <listeners>
         <listener class-name="utils.Listeners.TestListener"/>
     </listeners>
-    <test name="KapschSmokeTest">
+    <test name="UI_tests.KapschSmokeTest">
         <classes>
-            <class name="KapschSmokeTest"/>
+            <class name="UI_tests.KapschSmokeTest"/>
         </classes>
     </test>
 </suite>

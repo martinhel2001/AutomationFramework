@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-
+@Listeners(utils.Listeners.TestListener.class)
 
 public class BaseTest {
 

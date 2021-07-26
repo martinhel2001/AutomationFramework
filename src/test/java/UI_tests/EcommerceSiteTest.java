@@ -1,3 +1,5 @@
+package UI_tests;
+
 import BaseTest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -5,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.ecommerceSite.HomePage;
 import pages.ecommerceSite.ShoppingCart;
 
-@Listeners(utils.Listeners.TestListener.class)
+
 
 public class EcommerceSiteTest extends BaseTest {
 

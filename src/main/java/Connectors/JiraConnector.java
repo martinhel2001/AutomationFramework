@@ -1,3 +1,5 @@
+package Connectors;
+
 public class JiraConnector {
 
     // Kapsch JIRA Statuses

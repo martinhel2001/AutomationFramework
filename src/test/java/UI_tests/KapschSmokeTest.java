@@ -1,4 +1,7 @@
+package UI_tests;
+
 import BaseTest.BaseTest;
+import Connectors.SQLConnector;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;

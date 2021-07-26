@@ -1,3 +1,5 @@
+package RestAssuredTests;
+
 import dataentities.Location;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
