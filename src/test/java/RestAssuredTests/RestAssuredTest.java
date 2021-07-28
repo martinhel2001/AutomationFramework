@@ -43,7 +43,6 @@ public class RestAssuredTest {
                 {"us", "12345", "Schenectady"},
                 {"ca", "B2R", "Waverley"}
         };
-
     }
 
 
@@ -76,9 +75,7 @@ public class RestAssuredTest {
 
     @Test
     public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills() { // DESERIALIZE
-
         Location location =
-
                 given().
                         when().
                         get("http://api.zippopotam.us/us/90210").
