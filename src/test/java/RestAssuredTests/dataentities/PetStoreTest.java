@@ -4,7 +4,9 @@ package RestAssuredTests.dataentities;
 // using API examples from https://petstore.swagger.io/#/pet
 
 import BaseTest.BaseTest;
+import RestAssuredTests.dataentities.petstore.Category;
 import RestAssuredTests.dataentities.petstore.Pet;
+import RestAssuredTests.dataentities.petstore.PetStoreAPI;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -16,6 +18,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.core.IsEqual.equalTo;
 
 import static io.restassured.RestAssured.given;
@@ -23,21 +29,9 @@ import static io.restassured.RestAssured.given;
 @Listeners(utils.Listeners.TestListener.class)
 
 public class PetStoreTest extends BaseTest {
-    private static RequestSpecification requestSpec;
-    private static ResponseSpecification responseSpec;
 
-    @BeforeClass
-    public static void createRequestSpecification() {
-        requestSpec = new RequestSpecBuilder().setBaseUri("https://petstore.swagger.io/v2").build();
-    }
 
-    @BeforeClass
-    public static void createResponseSpecification() {
-        responseSpec = new ResponseSpecBuilder().
-                expectStatusCode(200).
-                expectContentType(ContentType.JSON).
-                build();
-    }
+    PetStoreAPI pstoreAPI = new PetStoreAPI();
 
     @DataProvider(name = "petIDsToRetrieve")
     public static Object[][] zipCodesAndPlaces() {
@@ -48,35 +42,31 @@ public class PetStoreTest extends BaseTest {
         };
     }
 
-    private Pet getPet(int petId){
-        Pet pet = given().
-                    log().all().
-                    pathParam("petId",petId).when().
-                    spec(requestSpec).
-                when().
-                    get("pet/{petId}").
-                    as(Pet.class);
-
-        return pet;
-    }
-
-
     @Test
     public void testPet1(){
-        Pet petToSearch = getPet(1);
+        Pet petToSearch = pstoreAPI.getPet(1);
         Assert.assertEquals(petToSearch.getName(),"doberman");
     }
 
     @Test (dataProvider = "petIDsToRetrieve")
     public void requestPetsFromDataprovider(int petId, String petName){
-        Pet pet = getPet(petId);
+        Pet pet = pstoreAPI.getPet(petId);
         Assert.assertEquals(pet.getName(),petName);
     }
 
     @Test
-    public void addNewPet(){
-        Pet newPet = new Pet();
+    public void addNewPetTest(){
+        int petId = 9;
+        String petName="Diana";
+        List<String> photoURLs= new ArrayList<>();
+        photoURLs.add("https://www.puntoqa.com.ar");
+        photoURLs.add("https://www.gremio.com");
 
-        newPet.setId(5);
+        Pet newlyPet = new PetStoreAPI().createNewPet(petId,petName,"active",photoURLs);
+
+        pstoreAPI.postPet(newlyPet);
+
+        Pet petVerification = pstoreAPI.getPet(petId);
+        Assert.assertEquals(petVerification.getName(),petName);
     }
 }
