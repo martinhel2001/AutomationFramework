@@ -1,6 +1,6 @@
 package RestAssuredTests;
 
-import dataentities.Location;
+import RestAssuredTests.dataentities.zippopotam.Location;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -9,12 +9,15 @@ import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class RestAssuredTest {
+@Listeners(utils.Listeners.TestListener.class)
+
+public class Zippopotam_Test {
     private static RequestSpecification requestSpec;
     private static ResponseSpecification responseSpec;
 
@@ -32,12 +35,10 @@ public class RestAssuredTest {
                             expectStatusCode(200).
                             expectContentType(ContentType.JSON).
                             build();
-
     }
 
     @DataProvider (name = "apiOptions")
     public static Object[][] zipCodesAndPlaces() {
-
         return new Object[][]{
                 {"us", "90210", "Beverly Hills"},
                 {"us", "12345", "Schenectady"},

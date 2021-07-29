@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@Listeners(utils.Listeners.TestListener.class)
+//@Listeners(utils.Listeners.TestListener.class)
 
 public class KapschSmokeTest extends BaseTest {
     SQLConnector sql = new SQLConnector();

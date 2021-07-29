@@ -1,8 +1,18 @@
-26-07-2021 17:19:09 INFO [BaseTest]: I am in onStart method Automation-Projects
-26-07-2021 17:19:09 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is starting.
-26-07-2021 17:19:19 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is succeed.
-26-07-2021 17:19:19 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-26-07-2021 17:19:19 INFO [BaseTest]: add2featuredProductsToCart test is starting.
-26-07-2021 17:19:25 INFO [BaseTest]: add2featuredProductsToCart test is succeed.
-26-07-2021 17:19:25 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-26-07-2021 17:19:25 INFO [BaseTest]: I am in onFinish method Automation-Projects
+29-07-2021 18:43:45 INFO [BaseTest]: I am in onStart method Automation-Projects
+29-07-2021 18:43:45 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+29-07-2021 18:43:46 INFO [BaseTest]: #requestPetsFromDataprovider# test is starting.
+29-07-2021 18:43:46 INFO [BaseTest]: Test Description: 
+29-07-2021 18:43:48 INFO [BaseTest]: requestPetsFromDataprovider test is failed.
+29-07-2021 18:43:48 INFO [BaseTest]: Screenshot taken
+29-07-2021 18:43:48 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+29-07-2021 18:43:48 INFO [BaseTest]: #requestPetsFromDataprovider# test is starting.
+29-07-2021 18:43:48 INFO [BaseTest]: Test Description: 
+29-07-2021 18:43:49 INFO [BaseTest]: requestPetsFromDataprovider test is failed.
+29-07-2021 18:43:49 INFO [BaseTest]: Screenshot taken
+29-07-2021 18:43:49 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+29-07-2021 18:43:49 INFO [BaseTest]: #requestPetsFromDataprovider# test is starting.
+29-07-2021 18:43:49 INFO [BaseTest]: Test Description: 
+29-07-2021 18:43:50 INFO [BaseTest]: requestPetsFromDataprovider test is failed.
+29-07-2021 18:43:51 INFO [BaseTest]: Screenshot taken
+29-07-2021 18:43:51 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+29-07-2021 18:43:51 INFO [BaseTest]: I am in onFinish method Automation-Projects

@@ -25,6 +25,7 @@ public class TestListener extends BaseTest implements ITestListener {
     @Override
     public void onStart(ITestContext iTestContext) {
         log.info("I am in onStart method " + iTestContext.getName());
+        log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
         iTestContext.setAttribute("WebDriver", this.driver);
     }
     @Override
@@ -35,7 +36,8 @@ public class TestListener extends BaseTest implements ITestListener {
     }
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        log.info(getTestMethodName(iTestResult) + " test is starting.");
+        log.info("#"+getTestMethodName(iTestResult) + "# test is starting.");
+        log.info("Test Description: "+iTestResult.getMethod().getDescription());
     }
     @Override
     public void onTestSuccess(ITestResult iTestResult) {

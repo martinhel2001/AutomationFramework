@@ -6,7 +6,8 @@
     </listeners>
     <test name="UI_tests.KapschSmokeTest">
         <classes>
-            <class name="UI_tests.KapschSmokeTest"/>
+<!--            <class name="UI_tests.KapschSmokeTest"/>-->
+            <class name="RestAssuredTests.Zippopotam_Test"></class>
         </classes>
     </test>
 </suite>

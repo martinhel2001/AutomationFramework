@@ -155,6 +155,7 @@ public class BaseTest {
             System.out.println(e.getMessage());
         }
     }
+
     @BeforeSuite
     public void setUser(){
         UserPropertiesReader userReader = new UserPropertiesReader("Administrator");
