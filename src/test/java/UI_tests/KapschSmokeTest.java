@@ -1,6 +1,6 @@
 package UI_tests;
 
-import BaseTest.BaseTest;
+import BaseTest.BaseTest_UI;
 import Connectors.SQLConnector;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 //@Listeners(utils.Listeners.TestListener.class)
 
-public class KapschSmokeTest extends BaseTest {
+public class KapschSmokeTest extends BaseTest_UI {
     SQLConnector sql = new SQLConnector();
 
     @Test (groups = "OPERIANPD-3293")

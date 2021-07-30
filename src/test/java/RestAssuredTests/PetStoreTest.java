@@ -1,9 +1,10 @@
-package RestAssuredTests.dataentities;
+package RestAssuredTests;
 
 
 // using API examples from https://petstore.swagger.io/#/pet
 
-import BaseTest.BaseTest;
+import BaseTest.BaseTest_API;
+import RestAssuredTests.dataentities.petstore.ApiResponse;
 import RestAssuredTests.dataentities.petstore.Category;
 import RestAssuredTests.dataentities.petstore.Pet;
 import RestAssuredTests.dataentities.petstore.PetStoreAPI;
@@ -22,14 +23,14 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import static io.restassured.RestAssured.post;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 import static io.restassured.RestAssured.given;
 
 @Listeners(utils.Listeners.TestListener.class)
 
-public class PetStoreTest extends BaseTest {
-
+public class PetStoreTest extends BaseTest_API {
 
     PetStoreAPI pstoreAPI = new PetStoreAPI();
 
@@ -64,9 +65,26 @@ public class PetStoreTest extends BaseTest {
 
         Pet newlyPet = new PetStoreAPI().createNewPet(petId,petName,"active",photoURLs);
 
-        pstoreAPI.postPet(newlyPet);
+        Pet insertedPet = pstoreAPI.postPet(newlyPet);
 
-        Pet petVerification = pstoreAPI.getPet(petId);
+        Pet petVerification = pstoreAPI.getPet(insertedPet.getId());
         Assert.assertEquals(petVerification.getName(),petName);
+    }
+
+    @Test
+    public void updatePet() {
+        int petId = 9;
+        String newName = "Lucrecia";
+        String newStatus = "invalid";
+
+        Pet petToBeModified = pstoreAPI.getPet(petId);
+
+        petToBeModified.setName(newName);
+        petToBeModified.setStatus(newStatus);
+
+        pstoreAPI.updatePet(petToBeModified);
+
+        Assert.assertEquals(pstoreAPI.getPet(petToBeModified.getId()).getName(),newName, "Pet Name not updated properly");
+        Assert.assertEquals(pstoreAPI.getPet(petToBeModified.getId()).getStatus(),newStatus,"Pet Status not updated properly");
     }
 }

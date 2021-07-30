@@ -1,14 +1,14 @@
 package selenideTests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import BaseTest.BaseTest;
+import BaseTest.BaseTest_UI;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
 
 
-public class SelenideSmokeTest extends BaseTest {
+public class SelenideSmokeTest extends BaseTest_UI {
 
 
     @Test

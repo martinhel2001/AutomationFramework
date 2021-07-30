@@ -35,16 +35,28 @@ public class PetStoreAPI {
         return pet;
     }
 
-    public void postPet(Pet newPet) {
-        given().
+    public Pet postPet(Pet newPet) {
+       Pet pet  = given().
                 contentType(ContentType.JSON).
                 log().all().
                 spec(requestSpec).
                 body(newPet).
         when().
-                post("/pet").
-        then().
-                assertThat().statusCode(200);
+                post("/pet").as(Pet.class);
+
+        return pet;
+    }
+
+    public Pet updatePet(Pet newPet) {
+        Pet pet  = given().
+                contentType(ContentType.JSON).
+                log().all().
+                spec(requestSpec).
+                body(newPet).
+                when().
+                put("/pet").as(Pet.class);
+
+        return pet;
     }
 
     public Pet createNewPet(int petId, String petName, String petStatus, List<String> photoURLs){

@@ -169,18 +169,10 @@ public class BaseTest {
         DOMConfigurator.configure("log4j.xml");
     }
 
-    @BeforeSuite(alwaysRun = true)
-    public void openDriver() {
-        initializeDriver(false);
-    }
 
 
-    @AfterSuite(alwaysRun = true)
-    public void tearDownDriverClass() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+
+
 
 
 }

@@ -1,6 +1,6 @@
 package UI_tests;
 
-import BaseTest.BaseTest;
+import BaseTest.BaseTest_UI;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -9,7 +9,7 @@ import pages.ecommerceSite.ShoppingCart;
 
 
 
-public class EcommerceSiteTest extends BaseTest {
+public class EcommerceSiteTest extends BaseTest_UI {
 
     @Test (groups = {"smoke"}, description = "Add 2 Featured Products into the Cart")
     public void add2featuredProductsToCart(){

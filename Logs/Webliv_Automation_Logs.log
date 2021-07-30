@@ -1,7 +1,7 @@
-29-07-2021 20:11:39 INFO [BaseTest]: I am in onStart method Automation-Projects
-29-07-2021 20:11:39 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-29-07-2021 20:11:39 INFO [BaseTest]: #addNewPetTest# test is starting.
-29-07-2021 20:11:39 INFO [BaseTest]: Test Description: 
-29-07-2021 20:11:43 INFO [BaseTest]: addNewPetTest test is succeed.
-29-07-2021 20:11:43 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-29-07-2021 20:11:43 INFO [BaseTest]: I am in onFinish method Automation-Projects
+30-07-2021 19:41:22 INFO [BaseTest]: I am in onStart method Automation-Projects
+30-07-2021 19:41:22 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+30-07-2021 19:41:22 INFO [BaseTest]: #updatePet# test is starting.
+30-07-2021 19:41:22 INFO [BaseTest]: Test Description: 
+30-07-2021 19:41:28 INFO [BaseTest]: updatePet test is succeed.
+30-07-2021 19:41:28 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+30-07-2021 19:41:28 INFO [BaseTest]: I am in onFinish method Automation-Projects
