@@ -1,5 +1,7 @@
 package RestAssuredTests.dataentities.petstore;
 
+import com.codeborne.selenide.conditions.Or;
+
 public class Order {
     private int id;
     private int petId;
@@ -8,8 +10,12 @@ public class Order {
     private String status;
     private boolean complete;
 
+    public Order() {
+    }
+
     public Order(int id, int petId, int qty, String shipDate, String status, boolean complete) {
         this.id = id;
+        this.petId = petId;
         this.quantity = qty;
         this.shipDate = shipDate;
         this.status = status;

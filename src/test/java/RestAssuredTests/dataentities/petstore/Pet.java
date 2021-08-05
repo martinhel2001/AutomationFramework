@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Pet {
 
-    private int id;
+    private String id;
     private Category category;
     private String name;
     private List<String> photoUrls;
@@ -18,7 +18,7 @@ public class Pet {
 
 
     public Pet(){
-        id=1;
+        id="1";
 
         Category category = new Category();
         this.category = category;
@@ -40,11 +40,11 @@ public class Pet {
         this.status="available";
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
