@@ -1,8 +1,6 @@
-package RestAssuredTests.dataentities.petstore;
+package API_RestAssuredTests.dataentities.petstore;
 
 //import org.junit.experimental.categories.Category;
-
-import org.apache.commons.compress.archivers.StreamingNotSupportedException;
 
 import java.util.ArrayList;
 import java.util.List;

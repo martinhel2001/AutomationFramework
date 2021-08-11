@@ -1,4 +1,4 @@
-package RestAssuredTests.dataentities.petstore;
+package API_RestAssuredTests.dataentities.petstore;
 
 public class Tag {
 

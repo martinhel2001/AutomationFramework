@@ -1,4 +1,4 @@
-package RestAssuredTests.dataentities.zippopotam;
+package API_RestAssuredTests.dataentities.zippopotam;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

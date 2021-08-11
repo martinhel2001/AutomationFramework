@@ -4,7 +4,6 @@ import BaseTest.BaseTest_UI;
 import Connectors.SQLConnector;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.kapsch.*;
 
@@ -148,8 +147,8 @@ public class KapschSmokeTest extends BaseTest_UI {
 
 
     @Test
-    public void dbConnectionTest() throws SQLException, ClassNotFoundException {
-        Statement stmt = sql.openConn(testsConfig.getDBurl(),testsConfig.getDBuser(),testsConfig.getDBpass());
+    public void dbKapschConnectionTest() throws SQLException, ClassNotFoundException {
+        Statement stmt = sql .openConnSQL(testsConfig.getDBKapsch_url(),testsConfig.getDBKapsch_user(),testsConfig.getDBKapsch_pass());
 
         //Query to Execute
         String query = "SELECT * FROM [OBO].[mva].[ManValConfiguration];";
@@ -165,8 +164,6 @@ public class KapschSmokeTest extends BaseTest_UI {
         }
         // closing DB Connection
         sql.closeDBconn();
-
-
     }
 
 

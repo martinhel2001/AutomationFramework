@@ -1,6 +1,4 @@
-package RestAssuredTests.dataentities.petstore;
-
-import com.codeborne.selenide.conditions.Or;
+package API_RestAssuredTests.dataentities.petstore;
 
 public class Order {
     private int id;

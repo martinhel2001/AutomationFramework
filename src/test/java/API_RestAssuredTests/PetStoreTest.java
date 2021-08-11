@@ -1,13 +1,13 @@
-package RestAssuredTests;
+package API_RestAssuredTests;
 
 
 // using API examples from https://petstore.swagger.io/#/pet
 
 import BaseTest.BaseTest_API;
-import RestAssuredTests.dataentities.petstore.APIs.StoreHelperAPI;
-import RestAssuredTests.dataentities.petstore.Order;
-import RestAssuredTests.dataentities.petstore.Pet;
-import RestAssuredTests.dataentities.petstore.APIs.PetHelperAPI;
+import API_RestAssuredTests.dataentities.petstore.APIs.StoreHelperAPI;
+import API_RestAssuredTests.dataentities.petstore.Order;
+import API_RestAssuredTests.dataentities.petstore.Pet;
+import API_RestAssuredTests.dataentities.petstore.APIs.PetHelperAPI;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -19,6 +19,7 @@ import java.util.List;
 import static io.restassured.RestAssured.post;
 
 import static io.restassured.RestAssured.given;
+import static java.lang.String.valueOf;
 
 @Listeners(utils.Listeners.TestListener.class)
 
@@ -44,8 +45,8 @@ public class PetStoreTest extends BaseTest_API {
     }
 
     @Test (dataProvider = "petIDsToRetrieve")
-    public void requestPetsFromDataprovider(String petId, String petName){
-        Pet pet = petAPI.getPetById(petId);
+    public void requestPetsFromDataprovider(int petId, String petName){
+        Pet pet = petAPI.getPetById(valueOf(petId));
         Assert.assertEquals(pet.getName(),petName);
     }
 
@@ -137,7 +138,7 @@ public class PetStoreTest extends BaseTest_API {
         int statusCode = storeAPI.placeOrder(orderToPlace);
         Assert.assertEquals(statusCode,200);
 
-        Assert.assertEquals(storeAPI.deleteOrder(String.valueOf(orderToPlace.getId())),200);
+        Assert.assertEquals(storeAPI.deleteOrder(valueOf(orderToPlace.getId())),200);
 
     }
 

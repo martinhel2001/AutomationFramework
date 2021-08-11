@@ -1,12 +1,11 @@
-package RestAssuredTests.dataentities.petstore.APIs;
+package API_RestAssuredTests.dataentities.petstore.APIs;
 
-import RestAssuredTests.dataentities.petstore.Pet;
+import API_RestAssuredTests.dataentities.petstore.Pet;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.mortbay.jetty.HttpStatus;
 
 import java.util.Arrays;
 import java.util.List;
