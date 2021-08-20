@@ -8,6 +8,8 @@ import  java.sql.SQLException;
 
 public class  SQLConnector {
     Connection conn;
+
+
     public Statement openConnSQL(String dbURL, String dbUser, String dbPass) throws  ClassNotFoundException, SQLException {
         String dbUrl="";
         switch (dbURL){

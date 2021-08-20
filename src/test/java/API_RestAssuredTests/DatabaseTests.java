@@ -3,6 +3,7 @@ package API_RestAssuredTests;
 import BaseTest.BaseTest_API;
 import Connectors.SQLConnector;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import java.sql.ResultSet;
@@ -33,4 +34,5 @@ public class DatabaseTests extends BaseTest_API {
         // closing DB Connection
         sql.closeDBconn();
     }
+
 }

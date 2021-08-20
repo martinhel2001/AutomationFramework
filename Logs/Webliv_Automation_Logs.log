@@ -1,7 +1,15 @@
-11-08-2021 15:47:06 INFO [BaseTest]: I am in onStart method Automation-Projects
-11-08-2021 15:47:06 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-11-08-2021 15:47:06 INFO [BaseTest]: #dbKapschConnectionTest# test is starting.
-11-08-2021 15:47:06 INFO [BaseTest]: Test Description: Validate MySQL database connection with query
-11-08-2021 15:47:10 INFO [BaseTest]: dbKapschConnectionTest test is succeed.
-11-08-2021 15:47:10 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-11-08-2021 15:47:10 INFO [BaseTest]: I am in onFinish method Automation-Projects
+20-08-2021 15:20:07 INFO [BaseTest]: I am in onStart method Automation-Projects
+20-08-2021 15:20:07 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+20-08-2021 15:20:08 INFO [BaseTest]: #read# test is starting.
+20-08-2021 15:20:08 INFO [BaseTest]: Test Description: Test using EXCEL file as Data Provider
+20-08-2021 15:20:08 INFO [BaseTest]: read test is succeed.
+20-08-2021 15:20:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+20-08-2021 15:20:08 INFO [BaseTest]: #read# test is starting.
+20-08-2021 15:20:08 INFO [BaseTest]: Test Description: Test using EXCEL file as Data Provider
+20-08-2021 15:20:08 INFO [BaseTest]: read test is succeed.
+20-08-2021 15:20:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+20-08-2021 15:20:08 INFO [BaseTest]: #read# test is starting.
+20-08-2021 15:20:08 INFO [BaseTest]: Test Description: Test using EXCEL file as Data Provider
+20-08-2021 15:20:08 INFO [BaseTest]: read test is succeed.
+20-08-2021 15:20:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+20-08-2021 15:20:08 INFO [BaseTest]: I am in onFinish method Automation-Projects
