@@ -1,15 +1,7 @@
-20-08-2021 15:20:07 INFO [BaseTest]: I am in onStart method Automation-Projects
-20-08-2021 15:20:07 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-08-2021 15:20:08 INFO [BaseTest]: #read# test is starting.
-20-08-2021 15:20:08 INFO [BaseTest]: Test Description: Test using EXCEL file as Data Provider
-20-08-2021 15:20:08 INFO [BaseTest]: read test is succeed.
-20-08-2021 15:20:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-08-2021 15:20:08 INFO [BaseTest]: #read# test is starting.
-20-08-2021 15:20:08 INFO [BaseTest]: Test Description: Test using EXCEL file as Data Provider
-20-08-2021 15:20:08 INFO [BaseTest]: read test is succeed.
-20-08-2021 15:20:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-08-2021 15:20:08 INFO [BaseTest]: #read# test is starting.
-20-08-2021 15:20:08 INFO [BaseTest]: Test Description: Test using EXCEL file as Data Provider
-20-08-2021 15:20:08 INFO [BaseTest]: read test is succeed.
-20-08-2021 15:20:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-08-2021 15:20:08 INFO [BaseTest]: I am in onFinish method Automation-Projects
+20-08-2021 17:00:57 INFO [BaseTest]: I am in onStart method Automation-Projects
+20-08-2021 17:00:57 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+20-08-2021 17:00:57 INFO [BaseTest]: #verifyContentInPDf# test is starting.
+20-08-2021 17:00:57 INFO [BaseTest]: Test Description: 
+20-08-2021 17:01:00 INFO [BaseTest]: verifyContentInPDf test is succeed.
+20-08-2021 17:01:00 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+20-08-2021 17:01:00 INFO [BaseTest]: I am in onFinish method Automation-Projects

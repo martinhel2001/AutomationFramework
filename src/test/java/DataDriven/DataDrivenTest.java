@@ -58,6 +58,7 @@ public class DataDrivenTest extends BaseTest {
     @Test(dataProvider = "excelData", dataProviderClass = DataProviderSources.class, description = "Test using EXCEL file as Data Provider")
     public void read(String name, String lastname, String occupation) {
         System.out.println("Name: "+name + ":" +", Lastname: "+lastname+", Occupation: "+occupation);
-
     }
+
+
 }
