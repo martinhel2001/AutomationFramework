@@ -21,9 +21,10 @@ public class PdfFileTest extends BaseTest_UI {
         //specify the url of the pdf file
         String url ="http://www.pdf995.com/samples/pdf.pdf";
         driver.get(url);
+        String expectedText="The Pdf995 Suite offers the following features";
         try {
             String pdfContent = readPdfContent(url);
-            Assert.assertTrue(pdfContent.contains("The Pdf995 Suite offers the following features"));
+            Assert.assertTrue(pdfContent.contains(expectedText),"PDF does not contain the exact same text as: "+expectedText);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
