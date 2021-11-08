@@ -1,7 +1,7 @@
-27-08-2021 14:41:58 INFO [BaseTest]: I am in onStart method Automation-Projects
-27-08-2021 14:41:58 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-27-08-2021 14:41:58 INFO [BaseTest]: #verifyContentInPDf# test is starting.
-27-08-2021 14:41:58 INFO [BaseTest]: Test Description: 
-27-08-2021 14:42:01 INFO [BaseTest]: verifyContentInPDf test is succeed.
-27-08-2021 14:42:01 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-27-08-2021 14:42:01 INFO [BaseTest]: I am in onFinish method Automation-Projects
+08-11-2021 17:38:17 INFO [BaseTest]: I am in onStart method Automation-Projects
+08-11-2021 17:38:17 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+08-11-2021 17:38:17 INFO [BaseTest]: #dbFreeMySQLConnectionTest# test is starting.
+08-11-2021 17:38:17 INFO [BaseTest]: Test Description: Validate MySQL database connection with query
+08-11-2021 17:38:20 INFO [BaseTest]: dbFreeMySQLConnectionTest test is succeed.
+08-11-2021 17:38:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+08-11-2021 17:38:20 INFO [BaseTest]: I am in onFinish method Automation-Projects
