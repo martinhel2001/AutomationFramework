@@ -17,7 +17,7 @@ public class DatabaseTests extends BaseTest_API {
 
     @Test (description = "Validate MySQL database connection with query")
     public void dbFreeMySQLConnectionTest() throws SQLException, ClassNotFoundException {
-        Statement stmt = sql .openConnSQL(testsConfig.getDBFree_url(),testsConfig.getDBFree_user(),testsConfig.getDBFree_pass());
+        Statement stmt = sql.openConnSQL(testsConfig.getDBFree_url(),testsConfig.getDBFree_user(),testsConfig.getDBFree_pass());
 
         //Query to Execute
         String query = "SELECT * FROM employee;";
