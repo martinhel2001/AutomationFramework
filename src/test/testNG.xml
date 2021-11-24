@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="N11 Test Suite" >
+    <listeners>
+        <listener class-name="utils.Listeners.TestListener"/>
+    </listeners>
+    <test name="All tests from the Project" enabled="true" preserve-order="true" parallel="methods" thread-count="3">
+        <classes>
+<!--            <class name="UI_tests.KapschSmokeTest"/>-->
+            <class name="API_RestAssuredTests.Zippopotam_Test"></class>
+            <class name="API_RestAssuredTests.DatabaseTests"></class>
+            <class name="API_RestAssuredTests.PetStoreTest"></class>
+            <class name="selenideTests.SelenideSmokeTest"></class>
+            <class name="UI_tests.EcommerceSiteTest"></class>
+        </classes>
+    </test>
+</suite>

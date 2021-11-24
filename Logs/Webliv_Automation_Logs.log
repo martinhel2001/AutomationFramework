@@ -1,0 +1,7 @@
+08-11-2021 17:38:17 INFO [BaseTest]: I am in onStart method Automation-Projects
+08-11-2021 17:38:17 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+08-11-2021 17:38:17 INFO [BaseTest]: #dbFreeMySQLConnectionTest# test is starting.
+08-11-2021 17:38:17 INFO [BaseTest]: Test Description: Validate MySQL database connection with query
+08-11-2021 17:38:20 INFO [BaseTest]: dbFreeMySQLConnectionTest test is succeed.
+08-11-2021 17:38:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+08-11-2021 17:38:20 INFO [BaseTest]: I am in onFinish method Automation-Projects
