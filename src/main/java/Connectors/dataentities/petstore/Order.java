@@ -1,4 +1,4 @@
-package API_RestAssuredTests.dataentities.petstore;
+package Connectors.dataentities.petstore;
 
 public class Order {
     private int id;

@@ -1,6 +1,6 @@
-package API_RestAssuredTests.dataentities.petstore.APIs;
+package Connectors.dataentities.petstore.APIs;
 
-import API_RestAssuredTests.dataentities.petstore.Pet;
+import Connectors.dataentities.petstore.Pet;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;

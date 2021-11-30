@@ -4,10 +4,10 @@ package API_RestAssuredTests;
 // using API examples from https://petstore.swagger.io/#/pet
 
 import BaseTest.BaseTest_API;
-import API_RestAssuredTests.dataentities.petstore.APIs.StoreHelperAPI;
-import API_RestAssuredTests.dataentities.petstore.Order;
-import API_RestAssuredTests.dataentities.petstore.Pet;
-import API_RestAssuredTests.dataentities.petstore.APIs.PetHelperAPI;
+import Connectors.dataentities.petstore.APIs.StoreHelperAPI;
+import Connectors.dataentities.petstore.Order;
+import Connectors.dataentities.petstore.Pet;
+import Connectors.dataentities.petstore.APIs.PetHelperAPI;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
