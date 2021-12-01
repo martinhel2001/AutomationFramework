@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="utils.Listeners.TestListener"/>
     </listeners>
-    <test name="All tests from the Project" enabled="true" preserve-order="true" parallel="methods" thread-count="3">
+    <test name="All tests from the Project" enabled="false" preserve-order="true" >
         <classes>
 <!--            <class name="UI_tests.KapschSmokeTest"/>-->
             <class name="API_RestAssuredTests.Zippopotam_Test"></class>
@@ -14,4 +14,17 @@
             <class name="UI_tests.EcommerceSiteTest"></class>
         </classes>
     </test>
+    <test name="All UI tests" enabled="true" preserve-order="true" >
+        <classes>
+            <!--            <class name="UI_tests.KapschSmokeTest"/>-->
+            <class name="UI_tests.EcommerceSiteTest"></class>
+        </classes>
+    </test>
+    <test name="All API tests" enabled="true" preserve-order="true" >
+        <classes>
+            <!--            <class name="UI_tests.KapschSmokeTest"/>-->
+            <class name="API_RestAssuredTests.Zippopotam_Test"></class>
+        </classes>
+    </test>
+
 </suite>

@@ -8,22 +8,19 @@ import Connectors.mantis.MantisConnector;
 import com.aventstack.extentreports.Status;
 
 import java.io.File;
-import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import extentReports.ExtentManager;
+import extentReports.ExtentTestManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import BaseTest.BaseTest;
 
 import static Connectors.mantis.MantisConnector.encodeFileToBase64Binary;
+import static extentReports.ExtentTestManager.getTest;
+import static extentReports.ExtentTestManager.startTest;
 
 //import utils.logs.Log;
 public class TestListener extends BaseTest implements ITestListener {
@@ -43,23 +40,27 @@ public class TestListener extends BaseTest implements ITestListener {
     public void onFinish(ITestContext iTestContext) {
         log.info("I am in onFinish method " + iTestContext.getName());
         //Do tier down operations for ExtentReports reporting!
-        //getExtentReports().flush();
+        ExtentTestManager.endTest();
+        ExtentManager.getInstance().flush();
     }
     @Override
     public void onTestStart(ITestResult iTestResult) {
         log.info("#"+getTestMethodName(iTestResult) + "# test is starting.");
         log.info("Test Description: "+iTestResult.getMethod().getDescription());
+        startTest(getTestMethodName(iTestResult),iTestResult.getMethod().getDescription());
     }
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is succeed.");
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
         //ExtentReports log operation for passed tests.
-        //getTest().log(Status.PASS, "Test passed");
+        getTest().log(Status.PASS, "Test passed");
     }
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is failed.");
+        File f;
+        String encodstring=null;
         //Get driver from BaseTest and assign to local webdriver variable.
 //        Object testClass = iTestResult.getInstance();
         //WebDriver driver = ((BaseTest) testClass).getDriver();
@@ -72,8 +73,8 @@ public class TestListener extends BaseTest implements ITestListener {
 
         //Take the screenshot
         try {
-            File f = takeScreenshot(getTestMethodName(iTestResult));
-            String encodstring = encodeFileToBase64Binary(f);
+            f = takeScreenshot(getTestMethodName(iTestResult));
+            encodstring = encodeFileToBase64Binary(f);
 
             String timestamp = ZonedDateTime
                     .now( ZoneId.systemDefault() ).toString();
@@ -88,17 +89,25 @@ public class TestListener extends BaseTest implements ITestListener {
                     Severity.feature,
                     encodstring,
                     false);
+
+            getTest().log(Status.FAIL, iTestResult.getThrowable().getMessage(),
+                    getTest().addScreenCaptureFromBase64String(encodstring).getModel().getMedia().get(0));
+
             System.out.println("Bug posted to Mantis with Status code: "+ statusCodeReceived);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
+
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is skipped.");
         //ExtentReports log operation for skipped tests.
-        //getTest().log(Status.SKIP, "Test Skipped");
+        getTest().log(Status.SKIP, "Test Skipped");
     }
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
