@@ -1,4 +1,4 @@
-package API_RestAssuredTests;
+package DatabaseTests;
 
 import BaseTest.BaseTest_API;
 import Connectors.SQLConnector;

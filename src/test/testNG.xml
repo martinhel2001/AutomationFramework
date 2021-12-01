@@ -8,7 +8,7 @@
         <classes>
 <!--            <class name="UI_tests.KapschSmokeTest"/>-->
             <class name="API_RestAssuredTests.Zippopotam_Test"></class>
-            <class name="API_RestAssuredTests.DatabaseTests"></class>
+            <class name="DatabaseTests.DatabaseTests"></class>
             <class name="API_RestAssuredTests.PetStoreTest"></class>
             <class name="selenideTests.SelenideSmokeTest"></class>
             <class name="UI_tests.EcommerceSiteTest"></class>
