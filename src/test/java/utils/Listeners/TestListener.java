@@ -1,5 +1,10 @@
 package utils.Listeners;
 
+import Connectors.dataentities.mantis.Category;
+import Connectors.dataentities.mantis.Priority;
+import Connectors.dataentities.mantis.Project;
+import Connectors.dataentities.mantis.Severity;
+import Connectors.mantis.MantisConnector;
 import com.aventstack.extentreports.Status;
 
 import java.io.File;
@@ -17,8 +22,14 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import BaseTest.BaseTest;
+
+import static Connectors.mantis.MantisConnector.encodeFileToBase64Binary;
+
 //import utils.logs.Log;
 public class TestListener extends BaseTest implements ITestListener {
+
+    MantisConnector mantisAPI = new MantisConnector();
+
     private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
@@ -58,9 +69,26 @@ public class TestListener extends BaseTest implements ITestListener {
         //ExtentReports log and screenshot operations for failed tests.
         //getTest().log(Status.FAIL, "Test Failed",
                 //getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
+
         //Take the screenshot
         try {
-            takeScreenshot(getTestMethodName(iTestResult));
+            File f = takeScreenshot(getTestMethodName(iTestResult));
+            String encodstring = encodeFileToBase64Binary(f);
+
+            String timestamp = ZonedDateTime
+                    .now( ZoneId.systemDefault() ).toString();
+
+            String msg = iTestResult.getThrowable().getMessage();
+            int statusCodeReceived = mantisAPI.createCompleteIssueWithAttachment(
+                    "Bug from "+getTestMethodName(iTestResult)+" TC",
+                    "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
+                    "Bug found at "+timestamp, Project.AUTOMATION_BUGS,
+                    Category.UI,
+                    Priority.normal,
+                    Severity.feature,
+                    encodstring,
+                    false);
+            System.out.println("Bug posted to Mantis with Status code: "+ statusCodeReceived);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package API_RestAssuredTests.dataentities.petstore;
+package Connectors.dataentities.petstore;
 
 //import org.junit.experimental.categories.Category;
 

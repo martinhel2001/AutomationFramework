@@ -1,6 +1,6 @@
 package API_RestAssuredTests;
 
-import API_RestAssuredTests.dataentities.zippopotam.Location;
+import Connectors.dataentities.zippopotam.Location;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
