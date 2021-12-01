@@ -135,7 +135,7 @@ public class BaseTest {
 
     }
 
-    protected void takeScreenshot(String methodName){
+    protected File takeScreenshot(String methodName){
         File screenshot = null;
         try {
             screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -151,9 +151,11 @@ public class BaseTest {
                 .format( DateTimeFormatter.ofPattern( "uuuu.MM.dd.HH.mm.ss" ) );
         try {
             FileUtils.copyFile(screenshot, new File("C:\\Automation\\"+methodName+"_"+timestamp+".png"));
+            System.out.println("Screenshot saved at: C:\\Automation\\"+methodName+"_"+timestamp+".png");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        return screenshot;
     }
 
     @BeforeSuite

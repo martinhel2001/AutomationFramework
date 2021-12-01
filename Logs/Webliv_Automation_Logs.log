@@ -1,7 +1,8 @@
-18-11-2021 15:08:03 INFO [BaseTest]: I am in onStart method Automation-Projects
-18-11-2021 15:08:03 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-18-11-2021 15:08:03 INFO [BaseTest]: #dbFreeMySQLConnectionTest# test is starting.
-18-11-2021 15:08:03 INFO [BaseTest]: Test Description: Validate MySQL database connection with query
-18-11-2021 15:08:05 INFO [BaseTest]: dbFreeMySQLConnectionTest test is succeed.
-18-11-2021 15:08:05 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-18-11-2021 15:08:05 INFO [BaseTest]: I am in onFinish method Automation-Projects
+01-12-2021 14:05:47 INFO [BaseTest]: I am in onStart method Automation-Projects
+01-12-2021 14:05:47 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+01-12-2021 14:05:47 INFO [BaseTest]: #add2featuredProductsToCart# test is starting.
+01-12-2021 14:05:47 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
+01-12-2021 14:05:56 INFO [BaseTest]: add2featuredProductsToCart test is failed.
+01-12-2021 14:05:56 INFO [BaseTest]: Screenshot taken
+01-12-2021 14:05:58 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+01-12-2021 14:05:58 INFO [BaseTest]: I am in onFinish method Automation-Projects
