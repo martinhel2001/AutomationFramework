@@ -14,8 +14,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       - checkout # this pulls code down from GitHub
       
       - run: mvn  --version
-      - run: cat testng.xml
-      - run: mvn clean test -DsuiteXmlFile=testng.xml 
+      - run: mvn clean test 
   two: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: circleci/ruby:2.4.1
