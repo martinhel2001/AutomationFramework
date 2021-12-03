@@ -5,7 +5,10 @@ version: 2.1
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
     docker: # it uses the docker executor
-      - image: cimg/openjdk:17.0.0
+      - image: cypress/base:8
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
