@@ -160,7 +160,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void setUser(){
-        UserPropertiesReader userReader = new UserPropertiesReader("Administrator");
+        UserPropertiesReader userReader = new UserPropertiesReader("administrator");
         username = userReader.getUsername();
         password = userReader.getPassword();
     }
