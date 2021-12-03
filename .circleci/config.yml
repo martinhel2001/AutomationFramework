@@ -12,7 +12,9 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
     # Steps are a list of commands to run inside the docker container above.
     steps:
       - checkout # this pulls code down from GitHub
+      
       - run: mvn  --version
+      - run: echo testng.xml
       - run: mvn clean test -DsuiteXmlFile=testng.xml 
   two: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
