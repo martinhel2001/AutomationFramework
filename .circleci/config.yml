@@ -5,7 +5,7 @@ version: 2.1
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
     docker: # it uses the docker executor
-      - image: cimg/openjdk:1.14-browsers
+      - image: cimg/openjdk:17.0.0-browsers
         environment:
           ## this enables colors in the output
           TERM: xterm
