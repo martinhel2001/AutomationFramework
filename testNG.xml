@@ -5,10 +5,17 @@
         <listener class-name="utils.Listeners.TestListener"/>
     </listeners>
 
-    <test name="All UI tests" enabled="true" preserve-order="true" >
+    <test name="All UI tests" enabled="false" preserve-order="true" >
         <classes>
             <!--            <class name="UI_tests.KapschSmokeTest"/>-->
             <class name="UI_tests.EcommerceSiteTest"></class>
+        </classes>
+    </test>
+    <test name="All API tests" enabled="true" preserve-order="true" >
+        <classes>
+            <!--            <class name="UI_tests.KapschSmokeTest"/>-->
+            <class name="API_RestAssuredTests.PetStoreTest"></class>
+            <class name="API_RestAssuredTests.Zippopotam_Test"></class>
         </classes>
     </test>
 
