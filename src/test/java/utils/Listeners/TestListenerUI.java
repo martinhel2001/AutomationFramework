@@ -23,7 +23,7 @@ import static extentReports.ExtentTestManager.getTest;
 import static extentReports.ExtentTestManager.startTest;
 
 //import utils.logs.Log;
-public class TestListener extends BaseTest implements ITestListener {
+public class TestListenerUI extends BaseTest implements ITestListener {
 
     MantisConnector mantisAPI = new MantisConnector();
 
