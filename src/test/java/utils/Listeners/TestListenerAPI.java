@@ -38,8 +38,7 @@ public class TestListenerAPI extends BaseTest implements ITestListener {
     public void onFinish(ITestContext iTestContext) {
         log.info("I am in onFinish method " + iTestContext.getName());
         //Do tier down operations for ExtentReports reporting!
-        ExtentTestManager.endTest();
-        ExtentManager.getInstance().flush();
+        ExtentManager.extentReports.flush();
     }
     @Override
     public void onTestStart(ITestResult iTestResult) {
