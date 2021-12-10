@@ -1,40 +1,12 @@
-01-12-2021 17:18:48 INFO [BaseTest]: I am in onStart method All UI tests
-01-12-2021 17:18:48 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:18:49 INFO [BaseTest]: #add1featuredProductToCartAndCheckout# test is starting.
-01-12-2021 17:18:49 INFO [BaseTest]: Test Description: Add 2 Featured Product to Cart
-01-12-2021 17:19:06 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is succeed.
-01-12-2021 17:19:06 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:06 INFO [BaseTest]: #add2featuredProductsToCart# test is starting.
-01-12-2021 17:19:06 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
-01-12-2021 17:19:16 INFO [BaseTest]: add2featuredProductsToCart test is failed.
-01-12-2021 17:19:17 INFO [BaseTest]: Screenshot taken
-01-12-2021 17:19:21 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:21 INFO [BaseTest]: I am in onFinish method All UI tests
-01-12-2021 17:19:21 INFO [BaseTest]: I am in onStart method All API tests
-01-12-2021 17:19:21 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:21 INFO [BaseTest]: #requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills# test is starting.
-01-12-2021 17:19:21 INFO [BaseTest]: Test Description: 
-01-12-2021 17:19:22 INFO [BaseTest]: requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills test is succeed.
-01-12-2021 17:19:22 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:22 INFO [BaseTest]: #requestZipCodeFromZippopotam# test is starting.
-01-12-2021 17:19:22 INFO [BaseTest]: Test Description: 
-01-12-2021 17:19:24 INFO [BaseTest]: requestZipCodeFromZippopotam test is succeed.
-01-12-2021 17:19:24 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:24 INFO [BaseTest]: #requestZipCodeFromZippopotam# test is starting.
-01-12-2021 17:19:24 INFO [BaseTest]: Test Description: 
-01-12-2021 17:19:24 INFO [BaseTest]: requestZipCodeFromZippopotam test is succeed.
-01-12-2021 17:19:24 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:24 INFO [BaseTest]: #requestZipCodeFromZippopotam# test is starting.
-01-12-2021 17:19:24 INFO [BaseTest]: Test Description: 
-01-12-2021 17:19:25 INFO [BaseTest]: requestZipCodeFromZippopotam test is succeed.
-01-12-2021 17:19:25 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:25 INFO [BaseTest]: #sendLvZipCode1050_checkStatusCode_expect200# test is starting.
-01-12-2021 17:19:25 INFO [BaseTest]: Test Description: 
-01-12-2021 17:19:25 INFO [BaseTest]: sendLvZipCode1050_checkStatusCode_expect200 test is failed.
-01-12-2021 17:19:26 INFO [BaseTest]: Screenshot taken
-01-12-2021 17:19:28 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:28 INFO [BaseTest]: #testWithExtract# test is starting.
-01-12-2021 17:19:28 INFO [BaseTest]: Test Description: 
-01-12-2021 17:19:29 INFO [BaseTest]: testWithExtract test is succeed.
-01-12-2021 17:19:29 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-12-2021 17:19:29 INFO [BaseTest]: I am in onFinish method All API tests
+10-12-2021 12:56:28 INFO [BaseTest]: I am in onStart method Automation-Projects
+10-12-2021 12:56:28 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+10-12-2021 12:56:28 INFO [BaseTest]: #add1featuredProductToCartAndCheckout# test is starting.
+10-12-2021 12:56:28 INFO [BaseTest]: Test Description: Add 2 Featured Product to Cart
+10-12-2021 12:56:58 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is succeed.
+10-12-2021 12:56:58 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+10-12-2021 12:56:58 INFO [BaseTest]: #add2featuredProductsToCart# test is starting.
+10-12-2021 12:56:58 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
+10-12-2021 12:57:22 INFO [BaseTest]: add2featuredProductsToCart test is failed.
+10-12-2021 12:57:23 INFO [BaseTest]: Screenshot taken
+10-12-2021 12:57:25 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+10-12-2021 12:57:25 INFO [BaseTest]: I am in onFinish method Automation-Projects

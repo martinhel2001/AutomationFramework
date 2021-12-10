@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.Listeners.TestListenerUI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ import static io.restassured.RestAssured.post;
 import static io.restassured.RestAssured.given;
 import static java.lang.String.valueOf;
 
-@Listeners(utils.Listeners.TestListener.class)
+//@Listeners(TestListenerUI.class)
 
 public class PetStoreTest extends BaseTest_API {
 
