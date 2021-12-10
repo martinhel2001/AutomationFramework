@@ -3,14 +3,14 @@ package DatabaseTests;
 import BaseTest.BaseTest_API;
 import Connectors.SQLConnector;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
+import utils.Listeners.TestListenerUI;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@Listeners(utils.Listeners.TestListener.class)
+@Listeners(TestListenerUI.class)
 public class DatabaseTests extends BaseTest_API {
     SQLConnector sql = new SQLConnector();
 
