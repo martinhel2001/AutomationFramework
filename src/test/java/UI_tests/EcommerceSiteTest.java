@@ -1,6 +1,8 @@
 package UI_tests;
 
 import BaseTest.BaseTest_UI;
+import com.aventstack.extentreports.Status;
+import extentReports.ExtentTestManager;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -26,4 +28,15 @@ public class EcommerceSiteTest extends BaseTest_UI {
         ShoppingCart obj_ShoppingCart = obj_Home.addProductFromFeatured(2).proceedToCheckout();
         Assert.assertTrue(obj_ShoppingCart.getHeadingCounter().contains("Your shopping cart contains: 1 Product"));
     }
+
+    @Test
+    public void baseTest1() {
+        ExtentTestManager.getTest().log(Status.INFO, "Hellooo started base test1");
+        System.out.println("Hey im in test1 test");
+        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 1");
+        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 2");
+        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 3");
+        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 4");
+    }
+
 }
