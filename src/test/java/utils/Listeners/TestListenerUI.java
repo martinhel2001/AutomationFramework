@@ -38,16 +38,15 @@ public class TestListenerUI extends BaseTest implements ITestListener {
     }
     @Override
     public void onFinish(ITestContext iTestContext) {
-        log.info("I am in onFinish method " + iTestContext.getName());
+        log.info("I am in onFinish method 2" + iTestContext.getName());
         //Do tier down operations for ExtentReports reporting!
-        ExtentTestManager.endTest();
-        ExtentManager.getInstance().flush();
+        ExtentManager.extentReports.flush();
     }
     @Override
     public void onTestStart(ITestResult iTestResult) {
         log.info("#"+getTestMethodName(iTestResult) + "# test is starting.");
         log.info("Test Description: "+iTestResult.getMethod().getDescription());
-        startTest(getTestMethodName(iTestResult),iTestResult.getMethod().getDescription());
+        startTest(getTestMethodName(iTestResult),iTestResult.getMethod().getDescription());//Extent Reports
     }
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
@@ -98,11 +97,9 @@ public class TestListenerUI extends BaseTest implements ITestListener {
             e.printStackTrace();
         }
 
-
-
-
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
+
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is skipped.");

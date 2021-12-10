@@ -6,6 +6,7 @@ import org.testng.annotations.Listeners;
 import utils.Listeners.TestListenerUI;
 
 @Listeners(TestListenerUI.class)
+
 public class BaseTest_UI extends BaseTest{
     @BeforeSuite(alwaysRun = true)
     public void openDriver() {

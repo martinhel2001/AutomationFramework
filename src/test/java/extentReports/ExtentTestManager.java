@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class ExtentTestManager {
     static Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
-    static ExtentReports extent  = ExtentManager.getInstance();
+    static ExtentReports extent  = ExtentManager.createExtentReports();
 
     public static synchronized ExtentTest getTest() {
         return extentTestMap.get((int) Thread.currentThread().getId());
