@@ -16,7 +16,7 @@ import utils.Listeners.TestListenerUI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-@Listeners(TestListenerUI.class)
+//@Listeners(TestListenerUI.class)
 
 public class Zippopotam_Test {
     private static RequestSpecification requestSpec;
