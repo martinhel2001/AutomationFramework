@@ -29,7 +29,7 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-            <!-- Compiler plugin configures the java version to be usedfor compiling
+            <!-- Compiler plugin configures the java version to be used for compiling
                 the code -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -151,12 +151,6 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.4.0</version>
-            <scope>compile</scope>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
         <dependency>
             <groupId>com.aventstack</groupId>
@@ -168,6 +162,13 @@
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
             <version>3.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.4.0</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

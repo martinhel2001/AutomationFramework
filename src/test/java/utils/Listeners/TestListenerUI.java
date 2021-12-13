@@ -11,16 +11,15 @@ import java.io.File;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-import extentReports.ExtentManager;
-import extentReports.ExtentTestManager;
+import utils.extentReports.ExtentManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import BaseTest.BaseTest;
 
 import static Connectors.mantis.MantisConnector.encodeFileToBase64Binary;
-import static extentReports.ExtentTestManager.getTest;
-import static extentReports.ExtentTestManager.startTest;
+import static utils.extentReports.ExtentTestManager.getTest;
+import static utils.extentReports.ExtentTestManager.startTest;
 
 //import utils.logs.Log;
 public class TestListenerUI extends BaseTest implements ITestListener {

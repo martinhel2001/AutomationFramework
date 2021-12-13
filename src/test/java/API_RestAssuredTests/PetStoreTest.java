@@ -10,7 +10,6 @@ import Connectors.dataentities.petstore.Pet;
 import Connectors.dataentities.petstore.APIs.PetHelperAPI;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.Listeners.TestListenerUI;
 
