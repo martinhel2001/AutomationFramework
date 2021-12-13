@@ -2,9 +2,8 @@ package UI_tests;
 
 import BaseTest.BaseTest_UI;
 import com.aventstack.extentreports.Status;
-import extentReports.ExtentTestManager;
+import utils.extentReports.ExtentTestManager;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.ecommerceSite.HomePage;
 import pages.ecommerceSite.ShoppingCart;
