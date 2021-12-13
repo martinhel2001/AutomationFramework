@@ -6,8 +6,11 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.net.PrintCommandListener;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPReply;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.*;
@@ -18,12 +21,10 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Listeners;
-import utils.Listeners.TestListenerUI;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -157,6 +158,52 @@ public class BaseTest {
             System.out.println(e.getMessage());
         }
         return screenshot;
+    }
+
+    public class FTPUploader {
+
+        FTPClient ftp = null;
+
+        public FTPUploader(String host, String user, String pwd) throws Exception{
+            ftp = new FTPClient();
+            ftp.addProtocolCommandListener(new PrintCommandListener(new PrintWriter(System.out)));
+            int reply;
+            ftp.connect(host,21);
+            reply = ftp.getReplyCode();
+            if (!FTPReply.isPositiveCompletion(reply)) {
+                ftp.disconnect();
+                throw new Exception("Exception in connecting to FTP Server");
+            }
+            ftp.login(user, pwd);
+            ftp.setFileType(FTP.BINARY_FILE_TYPE);
+            ftp.enterLocalPassiveMode();
+        }
+
+        public void uploadFile(String localFileFullName, String fileName, String hostDir)
+                throws Exception {
+            try(InputStream input = new FileInputStream(new File(localFileFullName))){
+                this.ftp.storeFile(hostDir + fileName, input);
+            }
+        }
+
+        public void disconnect(){
+            if (this.ftp.isConnected()) {
+                try {
+                    this.ftp.logout();
+                    this.ftp.disconnect();
+                } catch (IOException f) {
+                    // do nothing as file is already saved to server
+                }
+            }
+        }
+    }
+
+    @AfterSuite
+    public void uploadExtentReport() throws Exception {
+        FTPUploader ftpUploader = new FTPUploader("files.000webhost.com", "mantisautomation", "trinity110");
+        ftpUploader.uploadFile("./extent-reports/extent-report.html", "extent-report.html", "/public_html/extent-reports/");
+        ftpUploader.disconnect();
+        System.out.println("Done");
     }
 
     @BeforeSuite
