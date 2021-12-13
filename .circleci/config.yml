@@ -20,7 +20,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       
       - run: java  --version
       - browser-tools/install-browser-tools
-      - run: mvn clean test -DsuiteXmlFile=testng.xml 
+      - run: mvn clean test -DsuiteXmlFile=testNG.xml 
   two: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: circleci/ruby:2.4.1
@@ -34,7 +34,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
 # Under the workflows: map, we can coordinate our two jobs, defined above.
 workflows:
   version: 2
-  one_and_two: # this is the name of our workflow
+  sanity_tests: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - one
      #- two
