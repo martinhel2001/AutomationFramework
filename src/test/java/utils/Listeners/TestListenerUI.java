@@ -80,7 +80,7 @@ public class TestListenerUI extends BaseTest implements ITestListener {
             System.out.println("Bug posted to Mantis with ID: "+ mantisID);
 
             uploadFile(localScreenshotCompleteFileName,localScreenshotFileName, "/public_html/screenshots/");
-            slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg, testsConfig.getFTP_url()+"/screenshots/"+localScreenshotFileName,mantisID);
+            slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg, testsConfig.getFTP_url()+"/screenshots/"+localScreenshotFileName,mantisID,testsConfig.getCI_url(), testsConfig.getMantis_url());
         } catch (Exception e) {
             e.printStackTrace();
         }

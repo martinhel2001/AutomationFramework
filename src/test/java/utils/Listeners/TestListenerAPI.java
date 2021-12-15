@@ -72,7 +72,7 @@ public class TestListenerAPI extends BaseTest implements ITestListener {
         getTest().log(Status.FAIL, iTestResult.getThrowable().getMessage());
 
         System.out.println("Bug posted to Mantis with ID: "+ mantisID);
-        slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg,"",mantisID);
+        slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg,"",mantisID, testsConfig.getCI_url(),testsConfig.getMantis_url());
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
     @Override

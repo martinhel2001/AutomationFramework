@@ -232,6 +232,6 @@ public class BaseTest {
     public void uploadLog() throws Exception {
         this.uploadFile("./extent-reports/extent-report.html", "report-"+timestamp+".html", "/public_html/extent-reports/");
         this.uploadFile("./Logs/Webliv_Automation_Logs.log", "automationLog-"+timestamp+".log", "/public_html/logs/");
-        slack.postMessageTestRunFinished(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),testsConfig.getFTP_url()+"/logs/automationLog-"+timestamp+".log",testsConfig.getFTP_url()+"/extent-reports/report-"+timestamp+".html");
+        slack.postMessageTestRunFinished(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),testsConfig.getFTP_url()+"/logs/automationLog-"+timestamp+".log",testsConfig.getFTP_url()+"/extent-reports/report-"+timestamp+".html",testsConfig.getCI_url());
     }
 }

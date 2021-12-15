@@ -93,4 +93,6 @@ public class TestsConfigReader {
         return properties.getProperty("slack_Token");
     }
     public String getSlack_channel() {return properties.getProperty("slack_Channel");}
+
+    public String getCI_url() {return properties.getProperty("CI_url");}
 }
