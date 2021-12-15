@@ -14,12 +14,6 @@ public class SlackConnector {
     String channel;
 
     public SlackConnector () {
-
-        // TODO: borrar cuando se configuren los valores en tests.config
-        token = "xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w";
-        channel="#ci-runs";
-        //
-
         slack = Slack.getInstance();
     }
 

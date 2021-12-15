@@ -65,4 +65,32 @@ public class TestsConfigReader {
     public String getDBFree_pass() {
         return properties.getProperty("DBfree_pass");
     }
+
+    public String getMantis_url() {
+        return properties.getProperty("mantis_URL");
+    }
+    public String getMantis_host() {
+        return properties.getProperty("mantis_Host");
+    }
+    public String getMantis_token() {
+        return properties.getProperty("mantis_Token");
+    }
+
+    public String getFTP_host() {
+        return properties.getProperty("ftp_Host");
+    }
+    public String getFTP_user() {
+        return properties.getProperty("ftp_User");
+    }
+    public String getFTP_pass() {
+        return properties.getProperty("ftp_Pass");
+    }
+    public String getFTP_url() {
+        return properties.getProperty("ftp_URL");
+    }
+
+    public String getSlack_token() {
+        return properties.getProperty("slack_Token");
+    }
+    public String getSlack_channel() {return properties.getProperty("slack_Channel");}
 }

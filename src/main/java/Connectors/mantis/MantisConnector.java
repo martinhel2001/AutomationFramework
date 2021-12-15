@@ -23,13 +23,13 @@ public class MantisConnector {
     public static RequestSpecification requestSpec;
     public static ResponseSpecification responseSpec;
 
-    public MantisConnector(){
+    public MantisConnector(String mantisURL, String host, String token){
         this.requestSpec = given().
                 //log().all().
-                baseUri("https://mantisautomation.000webhostapp.com/mantis/api/rest/issues/").
+                baseUri(mantisURL+"/api/rest/issues/").
                 contentType(ContentType.JSON).
-                header("Authorization", "-e9SzcXWvYiDYQnHmjWCgLF1aFUjOjGq").
-                header("Host","mantisautomation.000webhostapp.com");
+                header("Authorization", token).
+                header("Host",host);
 
         this.responseSpec = new ResponseSpecBuilder().
                 expectStatusCode(200).
