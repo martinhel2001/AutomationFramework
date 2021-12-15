@@ -1,6 +1,7 @@
 package UI_tests;
 
 import BaseTest.BaseTest_UI;
+import Connectors.SlackConnector;
 import com.aventstack.extentreports.Status;
 import utils.extentReports.ExtentTestManager;
 import org.testng.Assert;
