@@ -23,7 +23,7 @@ public class SlackConnector {
         slack = Slack.getInstance();
     }
 
-    public void postMessage(String token, String channel, String TCname, String errorMessage, String screenshotURL, String mantisID) {
+    public void postMessageFailedTC(String token, String channel, String TCname, String errorMessage, String screenshotURL, String mantisID) {
 
         if (screenshotURL=="") screenshotURL="https://mantisautomation.000webhostapp.com/mantis/images/spotbugs_icon_only_zoom_256px.png";
 
@@ -75,6 +75,84 @@ public class SlackConnector {
                                             "\t\t\t]\n" +
                                             "\t\t}\n" +
                                             "\t]")
+                    )
+                    //.text("Write one, post anywhere"))
+                    ;
+
+
+
+            if (response.isOk()) {
+                Message postedMessage = response.getMessage();
+                System.out.println("Slack message posted succesfully: "+postedMessage);
+            } else {
+                String errorCode = response.getError(); // e.g., "invalid_auth", "channel_not_found"
+                System.out.println("Slack message posted with errors: "+errorCode);
+            }
+        } catch (SlackApiException requestFailure) {
+            // Slack API responded with unsuccessful status code (= not 20x)
+            System.out.println("Slack API responded with unsuccesful status code: "+requestFailure.getMessage());
+        } catch (IOException connectivityIssue) {
+            // Throwing this exception indicates your app or Slack servers had a connectivity issue.
+            System.out.println("Slack API responded with connectiviy issues: "+connectivityIssue.getMessage());
+        }
+    }
+
+
+    public void postMessageTestRunFinished(String token, String channel, String logURL, String extentReportsURL) {
+
+        try {
+            ChatPostMessageResponse response = slack.methods(token).chatPostMessage
+                    (req -> req
+                            .channel(channel).blocksAsString("[\n" +
+                                    "\t\t{\n" +
+                                    "\t\t\t\"type\": \"divider\"\n" +
+                                    "\t\t},\n" +
+                                    "\t\t{\n" +
+                                    "\t\t\t\"type\": \"section\",\n" +
+                                    "\t\t\t\"text\": {\n" +
+                                    "\t\t\t\t\"type\": \"mrkdwn\",\n" +
+                                    "\t\t\t\t\"text\": \"*Suite run FINISHED at * "+extentReportsURL+"\"\n" +
+                                    "\t\t\t}\n" +
+                                    "\t\t},\n" +
+                                    "\t\t{\n" +
+                                    "\t\t\t\"type\": \"actions\",\n" +
+                                    "\t\t\t\"elements\": [\n" +
+                                    "\t\t\t\t{\n" +
+                                    "\t\t\t\t\t\"type\": \"button\",\n" +
+                                    "\t\t\t\t\t\"text\": {\n" +
+                                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
+                                    "\t\t\t\t\t\t\"text\": \"See CI run\",\n" +
+                                    "\t\t\t\t\t\t\"emoji\": true\n" +
+                                    "\t\t\t\t\t},\n" +
+                                    "\t\t\t\t\t\"value\": \"click_me_CIrun\",\n" +
+                                    "\t\t\t\t\t\"action_id\": \"actionId-0\",\n" +
+                                    "\t\t\t\t\t\"url\": \"https://app.circleci.com/pipelines/github/martinhel2001\"\n" +
+                                    "\t\t\t\t},\n" +
+                                    "\t\t\t\t{\n" +
+                                    "\t\t\t\t\t\"type\": \"button\",\n" +
+                                    "\t\t\t\t\t\"text\": {\n" +
+                                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
+                                    "\t\t\t\t\t\t\"text\": \"See Log file\",\n" +
+                                    "\t\t\t\t\t\t\"emoji\": true\n" +
+                                    "\t\t\t\t\t},\n" +
+                                    "\t\t\t\t\t\"value\": \"click_me_Log\",\n" +
+                                    "\t\t\t\t\t\"action_id\": \"actionId-1\",\n" +
+                                    "\t\t\t\t\t\"url\": \""+logURL+"\"\n" +
+                                    "\t\t\t\t},\n" +
+                                    "\t\t\t\t{\n" +
+                                    "\t\t\t\t\t\"type\": \"button\",\n" +
+                                    "\t\t\t\t\t\"text\": {\n" +
+                                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
+                                    "\t\t\t\t\t\t\"text\": \"See Report\",\n" +
+                                    "\t\t\t\t\t\t\"emoji\": true\n" +
+                                    "\t\t\t\t\t},\n" +
+                                    "\t\t\t\t\t\"value\": \"click_me_Report\",\n" +
+                                    "\t\t\t\t\t\"action_id\": \"actionId-2\",\n" +
+                                    "\t\t\t\t\t\"url\": \""+extentReportsURL+"\"\n" +
+                                    "\t\t\t\t}\n" +
+                                    "\t\t\t]\n" +
+                                    "\t\t}\n" +
+                                    "\t]")
                     )
                     //.text("Write one, post anywhere"))
                     ;

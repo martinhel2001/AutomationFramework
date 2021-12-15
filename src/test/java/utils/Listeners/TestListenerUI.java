@@ -9,8 +9,6 @@ import Connectors.mantis.MantisConnector;
 import com.aventstack.extentreports.Status;
 
 import java.io.File;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 
 import utils.extentReports.ExtentManager;
 import org.testng.ITestContext;
@@ -60,14 +58,10 @@ public class TestListenerUI extends BaseTest implements ITestListener {
         log.info(getTestMethodName(iTestResult) + " test is failed.");
         File f;
         String encodstring=null;
-        SlackConnector slack = new SlackConnector();
 
         try {
             f = takeScreenshot(getTestMethodName(iTestResult));
             encodstring = encodeFileToBase64Binary(f);
-
-            String timestamp = ZonedDateTime
-                    .now( ZoneId.systemDefault() ).toString();
 
             String msg = iTestResult.getThrowable().getMessage();
             String mantisID = mantisAPI.createCompleteIssueWithAttachment(
@@ -86,7 +80,7 @@ public class TestListenerUI extends BaseTest implements ITestListener {
             System.out.println("Bug posted to Mantis with ID: "+ mantisID);
 
             uploadFile(localScreenshotCompleteFileName,localScreenshotFileName, "/public_html/screenshots/");
-            slack.postMessage("xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w","#ci-runs",getTestMethodName(iTestResult),msg, "https://mantisautomation.000webhostapp.com/screenshots/"+localScreenshotFileName,mantisID);
+            slack.postMessageFailedTC("xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w","#ci-runs",getTestMethodName(iTestResult),msg, "https://mantisautomation.000webhostapp.com/screenshots/"+localScreenshotFileName,mantisID);
         } catch (Exception e) {
             e.printStackTrace();
         }
