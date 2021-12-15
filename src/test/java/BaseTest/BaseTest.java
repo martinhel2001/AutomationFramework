@@ -1,5 +1,6 @@
 package BaseTest;
 
+import Connectors.SlackConnector;
 import baseMain.TestsConfigReader;
 import baseMain.UserPropertiesReader;
 import com.aventstack.extentreports.ExtentReports;
@@ -21,6 +22,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.*;
@@ -46,8 +48,11 @@ public class BaseTest {
     static ExtentReports report;
     public String localScreenshotCompleteFileName;
     public String localScreenshotFileName;
+    public String timestamp = ZonedDateTime
+            .now( ZoneId.systemDefault() )
+            .format( DateTimeFormatter.ofPattern( "uuuu.MM.dd.HH.mm.ss" ) );
 
-
+    public SlackConnector slack = new SlackConnector();
 
 
     public void initializeDriver(boolean isResponsive)
@@ -207,11 +212,8 @@ public class BaseTest {
         ftpUploader.disconnect();
 
     }
-    //@AfterSuite
-    public void uploadExtentReport() throws Exception {
-        this.uploadFile("./extent-reports/extent-report.html", "extent-report.html", "/public_html/extent-reports/");
-        System.out.println("Extent Reports upload -> Done");
-    }
+
+
 
     @BeforeSuite
     public void setUser(){
@@ -226,11 +228,10 @@ public class BaseTest {
         DOMConfigurator.configure("log4j.xml");
     }
 
-
-
-
-
-
-
-
+    @AfterSuite
+    public void uploadLog() throws Exception {
+        this.uploadFile("./extent-reports/extent-report.html", "report-"+timestamp+".html", "/public_html/extent-reports/");
+        this.uploadFile("./Logs/Webliv_Automation_Logs.log", "automationLog-"+timestamp+".log", "/public_html/logs/");
+        slack.postMessageTestRunFinished("xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w","#ci-runs","https://mantisautomation.000webhostapp.com/logs/automationLog-"+timestamp+".log","https://mantisautomation.000webhostapp.com/extent-reports/report-"+timestamp+".html");
+    }
 }
