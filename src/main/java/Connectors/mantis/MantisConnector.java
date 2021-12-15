@@ -10,6 +10,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -25,7 +26,7 @@ public class MantisConnector {
     public MantisConnector(){
         this.requestSpec = given().
                 //log().all().
-                baseUri("https://mantisautomation.000webhostapp.com/mantisbt/api/rest/issues/").
+                baseUri("https://mantisautomation.000webhostapp.com/mantis/api/rest/issues/").
                 contentType(ContentType.JSON).
                 header("Authorization", "-e9SzcXWvYiDYQnHmjWCgLF1aFUjOjGq").
                 header("Host","mantisautomation.000webhostapp.com");
@@ -36,17 +37,20 @@ public class MantisConnector {
                 build();
     }
 
-    public int postIssue(String jsonBody) {
+    public String postIssue(String jsonBody) {
         requestSpec.body(jsonBody);
 
         Response response = requestSpec.post("");
         System.out.println("Obtained status message: "+response.getStatusLine());
+        String mantisID = StringUtils.substringAfter(response.getStatusLine(),"Created with id ");
+        System.out.println();
 
-       return response.getStatusCode();
+       //return response.getStatusCode();
+        return mantisID;
     }
 
 
-    public int createSimpleIssue(String summary, String desc, Project proj, Category cat) {
+    public String createSimpleIssue(String summary, String desc, Project proj, Category cat) {
         JSONObject jo = new JSONObject();
         JSONObject category = new JSONObject();
         JSONObject project = new JSONObject();
@@ -61,7 +65,7 @@ public class MantisConnector {
         return postIssue(jo.toString());
     }
 
-    public int createCompleteIssueWithoutAttachement(String summary, String desc, String additionalInfo, Project proj, Category cat, Priority prio, Severity sev, boolean isSticky){
+    public String createCompleteIssueWithoutAttachment(String summary, String desc, String additionalInfo, Project proj, Category cat, Priority prio, Severity sev, boolean isSticky){
         JSONObject jo = new JSONObject();
         JSONObject category = new JSONObject();
         JSONObject project = new JSONObject();
@@ -101,7 +105,7 @@ public class MantisConnector {
         fileInputStreamReader.read(bytes);
         return new String(Base64.encodeBase64(bytes), "UTF-8");
     }
-    public int createCompleteIssueWithAttachment(String summary, String desc, String additionalInfo, Project proj, Category cat, Priority prio, Severity sev, String fileBase64, boolean isSticky){
+    public String createCompleteIssueWithAttachment(String summary, String desc, String additionalInfo, Project proj, Category cat, Priority prio, Severity sev, String fileBase64, boolean isSticky){
         JSONObject jo = new JSONObject();
         JSONObject category = new JSONObject();
         JSONObject project = new JSONObject();

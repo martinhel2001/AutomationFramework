@@ -21,7 +21,6 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.*;
@@ -45,6 +44,8 @@ public class BaseTest {
     public TestsConfigReader testsConfig = new TestsConfigReader();
     static ExtentTest test;
     static ExtentReports report;
+    public String localScreenshotCompleteFileName;
+    public String localScreenshotFileName;
 
 
 
@@ -151,16 +152,18 @@ public class BaseTest {
         String timestamp = ZonedDateTime
                 .now( ZoneId.systemDefault() )
                 .format( DateTimeFormatter.ofPattern( "uuuu.MM.dd.HH.mm.ss" ) );
+        localScreenshotFileName=methodName+"_"+timestamp+".png";
+        localScreenshotCompleteFileName ="C:\\Automation\\"+localScreenshotFileName;
         try {
-            FileUtils.copyFile(screenshot, new File("C:\\Automation\\"+methodName+"_"+timestamp+".png"));
-            System.out.println("Screenshot saved at: C:\\Automation\\"+methodName+"_"+timestamp+".png");
+            FileUtils.copyFile(screenshot, new File(localScreenshotCompleteFileName));
+            System.out.println("Screenshot saved at: "+ localScreenshotCompleteFileName);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
         return screenshot;
     }
 
-    public class FTPUploader {
+    public static class FTPUploader {
 
         FTPClient ftp = null;
 
@@ -198,12 +201,16 @@ public class BaseTest {
         }
     }
 
-    @AfterSuite
-    public void uploadExtentReport() throws Exception {
+    public void uploadFile (String localFileFullName, String fileName, String hostDir) throws Exception {
         FTPUploader ftpUploader = new FTPUploader("files.000webhost.com", "mantisautomation", "trinity110");
-        ftpUploader.uploadFile("./extent-reports/extent-report.html", "extent-report.html", "/public_html/extent-reports/");
+        ftpUploader.uploadFile(localFileFullName, fileName, hostDir);
         ftpUploader.disconnect();
-        System.out.println("Done");
+
+    }
+    //@AfterSuite
+    public void uploadExtentReport() throws Exception {
+        this.uploadFile("./extent-reports/extent-report.html", "extent-report.html", "/public_html/extent-reports/");
+        System.out.println("Extent Reports upload -> Done");
     }
 
     @BeforeSuite

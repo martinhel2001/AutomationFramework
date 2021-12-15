@@ -1,6 +1,7 @@
 package utils.Listeners;
 
 import BaseTest.BaseTest;
+import Connectors.SlackConnector;
 import Connectors.dataentities.mantis.Category;
 import Connectors.dataentities.mantis.Priority;
 import Connectors.dataentities.mantis.Project;
@@ -53,12 +54,13 @@ public class TestListenerAPI extends BaseTest implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is failed.");
+        SlackConnector slack = new SlackConnector();
 
         String timestamp = ZonedDateTime
                     .now( ZoneId.systemDefault() ).toString();
 
         String msg = iTestResult.getThrowable().getMessage();
-        int statusCodeReceived = mantisAPI.createCompleteIssueWithoutAttachement(
+        String mantisID = mantisAPI.createCompleteIssueWithoutAttachment(
                 "Bug from "+getTestMethodName(iTestResult)+" TC",
                 "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
                 "Bug found at "+timestamp,
@@ -70,7 +72,8 @@ public class TestListenerAPI extends BaseTest implements ITestListener {
 
         getTest().log(Status.FAIL, iTestResult.getThrowable().getMessage());
 
-        System.out.println("Bug posted to Mantis with Status code: "+ statusCodeReceived);
+        System.out.println("Bug posted to Mantis with ID: "+ mantisID);
+        slack.postMessage("xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w","#ci-runs",getTestMethodName(iTestResult),msg,"",mantisID);
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
     @Override

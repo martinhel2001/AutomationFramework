@@ -1,5 +1,6 @@
 package utils.Listeners;
 
+import Connectors.SlackConnector;
 import Connectors.dataentities.mantis.Category;
 import Connectors.dataentities.mantis.Priority;
 import Connectors.dataentities.mantis.Project;
@@ -59,17 +60,8 @@ public class TestListenerUI extends BaseTest implements ITestListener {
         log.info(getTestMethodName(iTestResult) + " test is failed.");
         File f;
         String encodstring=null;
-        //Get driver from BaseTest and assign to local webdriver variable.
-//        Object testClass = iTestResult.getInstance();
-        //WebDriver driver = ((BaseTest) testClass).getDriver();
-        //Take base64Screenshot screenshot for extent reports
-//        String base64Screenshot =
-//                "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
-        //ExtentReports log and screenshot operations for failed tests.
-        //getTest().log(Status.FAIL, "Test Failed",
-                //getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
+        SlackConnector slack = new SlackConnector();
 
-        //Take the screenshot
         try {
             f = takeScreenshot(getTestMethodName(iTestResult));
             encodstring = encodeFileToBase64Binary(f);
@@ -78,7 +70,7 @@ public class TestListenerUI extends BaseTest implements ITestListener {
                     .now( ZoneId.systemDefault() ).toString();
 
             String msg = iTestResult.getThrowable().getMessage();
-            int statusCodeReceived = mantisAPI.createCompleteIssueWithAttachment(
+            String mantisID = mantisAPI.createCompleteIssueWithAttachment(
                     "Bug from "+getTestMethodName(iTestResult)+" TC",
                     "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
                     "Bug found at "+timestamp, Project.AUTOMATION_BUGS,
@@ -91,7 +83,10 @@ public class TestListenerUI extends BaseTest implements ITestListener {
             getTest().log(Status.FAIL, iTestResult.getThrowable().getMessage(),
                     getTest().addScreenCaptureFromBase64String(encodstring).getModel().getMedia().get(0));
 
-            System.out.println("Bug posted to Mantis with Status code: "+ statusCodeReceived);
+            System.out.println("Bug posted to Mantis with ID: "+ mantisID);
+
+            uploadFile(localScreenshotCompleteFileName,localScreenshotFileName, "/public_html/screenshots/");
+            slack.postMessage("xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w","#ci-runs",getTestMethodName(iTestResult),msg, "https://mantisautomation.000webhostapp.com/screenshots/"+localScreenshotFileName,mantisID);
         } catch (Exception e) {
             e.printStackTrace();
         }
