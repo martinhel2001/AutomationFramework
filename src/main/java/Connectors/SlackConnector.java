@@ -14,16 +14,10 @@ public class SlackConnector {
     String channel;
 
     public SlackConnector () {
-
-        // TODO: borrar cuando se configuren los valores en tests.config
-        token = "xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w";
-        channel="#ci-runs";
-        //
-
         slack = Slack.getInstance();
     }
 
-    public void postMessageFailedTC(String token, String channel, String TCname, String errorMessage, String screenshotURL, String mantisID) {
+    public void postMessageFailedTC(String token, String channel, String TCname, String errorMessage, String screenshotURL, String mantisID, String ciUrl, String mantisURL) {
 
         if (screenshotURL=="") screenshotURL="https://mantisautomation.000webhostapp.com/mantis/images/spotbugs_icon_only_zoom_256px.png";
 
@@ -59,7 +53,7 @@ public class SlackConnector {
                                             "\t\t\t\t\t},\n" +
                                             "\t\t\t\t\t\"value\": \"click_me_CIrun\",\n" +
                                             "\t\t\t\t\t\"action_id\": \"actionId-0\",\n" +
-                                            "\t\t\t\t\t\"url\": \"https://app.circleci.com/pipelines/github/martinhel2001\"\n" +
+                                            "\t\t\t\t\t\"url\": \""+ciUrl+"\"\n" +
                                             "\t\t\t\t},\n" +
                                             "\t\t\t\t{\n" +
                                             "\t\t\t\t\t\"type\": \"button\",\n" +
@@ -70,7 +64,7 @@ public class SlackConnector {
                                             "\t\t\t\t\t},\n" +
                                             "\t\t\t\t\t\"value\": \"click_me_Mantis\",\n" +
                                             "\t\t\t\t\t\"action_id\": \"actionId-1\",\n" +
-                                            "\t\t\t\t\t\"url\": \"https://mantisautomation.000webhostapp.com/mantis/view.php?id="+mantisID+"\"\n" +
+                                            "\t\t\t\t\t\"url\": \""+mantisURL+"/view.php?id="+mantisID+"\"\n" +
                                             "\t\t\t\t}\n" +
                                             "\t\t\t]\n" +
                                             "\t\t}\n" +
@@ -98,7 +92,7 @@ public class SlackConnector {
     }
 
 
-    public void postMessageTestRunFinished(String token, String channel, String logURL, String extentReportsURL) {
+    public void postMessageTestRunFinished(String token, String channel, String logURL, String extentReportsURL, String ciUrl) {
 
         try {
             ChatPostMessageResponse response = slack.methods(token).chatPostMessage
@@ -126,7 +120,7 @@ public class SlackConnector {
                                     "\t\t\t\t\t},\n" +
                                     "\t\t\t\t\t\"value\": \"click_me_CIrun\",\n" +
                                     "\t\t\t\t\t\"action_id\": \"actionId-0\",\n" +
-                                    "\t\t\t\t\t\"url\": \"https://app.circleci.com/pipelines/github/martinhel2001\"\n" +
+                                    "\t\t\t\t\t\"url\": \""+ciUrl+"\"\n" +
                                     "\t\t\t\t},\n" +
                                     "\t\t\t\t{\n" +
                                     "\t\t\t\t\t\"type\": \"button\",\n" +

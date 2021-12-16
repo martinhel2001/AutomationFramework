@@ -37,7 +37,7 @@ public class EcommerceSiteTest extends BaseTest_UI {
         ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 2");
         ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 3");
         ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 4");
-        Assert.assertTrue(1==1);
+        Assert.assertTrue(1==2);
     }
 
 }

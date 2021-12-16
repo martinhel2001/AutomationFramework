@@ -207,7 +207,7 @@ public class BaseTest {
     }
 
     public void uploadFile (String localFileFullName, String fileName, String hostDir) throws Exception {
-        FTPUploader ftpUploader = new FTPUploader("files.000webhost.com", "mantisautomation", "trinity110");
+        FTPUploader ftpUploader = new FTPUploader(testsConfig.getFTP_host(), testsConfig.getFTP_user(), testsConfig.getFTP_pass());
         ftpUploader.uploadFile(localFileFullName, fileName, hostDir);
         ftpUploader.disconnect();
 
@@ -232,6 +232,6 @@ public class BaseTest {
     public void uploadLog() throws Exception {
         this.uploadFile("./extent-reports/extent-report.html", "report-"+timestamp+".html", "/public_html/extent-reports/");
         this.uploadFile("./Logs/Webliv_Automation_Logs.log", "automationLog-"+timestamp+".log", "/public_html/logs/");
-        slack.postMessageTestRunFinished("xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w","#ci-runs","https://mantisautomation.000webhostapp.com/logs/automationLog-"+timestamp+".log","https://mantisautomation.000webhostapp.com/extent-reports/report-"+timestamp+".html");
+        slack.postMessageTestRunFinished(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),testsConfig.getFTP_url()+"/logs/automationLog-"+timestamp+".log",testsConfig.getFTP_url()+"/extent-reports/report-"+timestamp+".html",testsConfig.getCI_url());
     }
 }

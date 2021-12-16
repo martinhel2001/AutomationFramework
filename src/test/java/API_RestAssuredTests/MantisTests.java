@@ -1,5 +1,6 @@
 package API_RestAssuredTests;
 
+import BaseTest.BaseTest;
 import Connectors.dataentities.mantis.Category;
 import Connectors.dataentities.mantis.Priority;
 import Connectors.dataentities.mantis.Project;
@@ -7,8 +8,9 @@ import Connectors.dataentities.mantis.Severity;
 import Connectors.mantis.MantisConnector;
 import org.testng.annotations.Test;
 
-public class MantisTests {
-    MantisConnector mantisAPI = new MantisConnector();
+public class MantisTests extends BaseTest {
+
+    MantisConnector mantisAPI = new MantisConnector(testsConfig.getMantis_url(),testsConfig.getMantis_host(),testsConfig.getMantis_token());
 
     @Test
     public void createSimpleMantisIssue()  {

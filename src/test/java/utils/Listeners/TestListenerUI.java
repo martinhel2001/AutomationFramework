@@ -23,7 +23,7 @@ import static utils.extentReports.ExtentTestManager.startTest;
 //import utils.logs.Log;
 public class TestListenerUI extends BaseTest implements ITestListener {
 
-    MantisConnector mantisAPI = new MantisConnector();
+    MantisConnector mantisAPI = new MantisConnector(testsConfig.getMantis_url(),testsConfig.getMantis_host(),testsConfig.getMantis_token());
 
     private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
@@ -80,7 +80,7 @@ public class TestListenerUI extends BaseTest implements ITestListener {
             System.out.println("Bug posted to Mantis with ID: "+ mantisID);
 
             uploadFile(localScreenshotCompleteFileName,localScreenshotFileName, "/public_html/screenshots/");
-            slack.postMessageFailedTC("xoxb-2835256584579-2832653447381-Q7xdoEQZZVva0AJ1vB967X1w","#ci-runs",getTestMethodName(iTestResult),msg, "https://mantisautomation.000webhostapp.com/screenshots/"+localScreenshotFileName,mantisID);
+            slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg, testsConfig.getFTP_url()+"/screenshots/"+localScreenshotFileName,mantisID,testsConfig.getCI_url(), testsConfig.getMantis_url());
         } catch (Exception e) {
             e.printStackTrace();
         }
