@@ -1,16 +1,11 @@
-13-12-2021 14:13:50 INFO [BaseTest]: I am in onStart method All UI tests
-13-12-2021 14:13:50 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-13-12-2021 14:13:50 INFO [BaseTest]: #add1featuredProductToCartAndCheckout# test is starting.
-13-12-2021 14:13:50 INFO [BaseTest]: Test Description: Add 2 Featured Product to Cart
-13-12-2021 14:14:00 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is succeed.
-13-12-2021 14:14:00 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-13-12-2021 14:14:00 INFO [BaseTest]: #add2featuredProductsToCart# test is starting.
-13-12-2021 14:14:00 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
-13-12-2021 14:14:05 INFO [BaseTest]: add2featuredProductsToCart test is failed.
-13-12-2021 14:14:06 INFO [BaseTest]: Screenshot taken
-13-12-2021 14:14:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-13-12-2021 14:14:08 INFO [BaseTest]: #baseTest1# test is starting.
-13-12-2021 14:14:08 INFO [BaseTest]: Test Description: 
-13-12-2021 14:14:08 INFO [BaseTest]: baseTest1 test is succeed.
-13-12-2021 14:14:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-13-12-2021 14:14:08 INFO [BaseTest]: I am in onFinish method 2All UI tests
+16-12-2021 15:15:35 INFO [BaseTest]: I am in onStart method Automation-Projects
+16-12-2021 15:15:35 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+16-12-2021 15:15:35 INFO [BaseTest]: #unitTestValidations_HomePage# test is starting.
+16-12-2021 15:15:35 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
+16-12-2021 15:15:44 INFO [BaseTest]: Let's validate all web elements are displayed 2
+16-12-2021 15:15:45 INFO [BaseTest]: Let's validate background at Header section
+16-12-2021 15:15:45 INFO [BaseTest]: Let's validate buttons work OK
+16-12-2021 15:15:47 INFO [BaseTest]: unitTestValidations_HomePage test is failed.
+16-12-2021 15:15:48 INFO [BaseTest]: Screenshot taken
+16-12-2021 15:15:58 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+16-12-2021 15:15:58 INFO [BaseTest]: I am in onFinish method 2Automation-Projects

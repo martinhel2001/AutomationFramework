@@ -95,4 +95,10 @@ public class TestsConfigReader {
     public String getSlack_channel() {return properties.getProperty("slack_Channel");}
 
     public String getCI_url() {return properties.getProperty("CI_url");}
+
+    public String isSlackEnabled() {return properties.getProperty("slackIntegration");}
+    public String isMantisEnabled() {return properties.getProperty("mantisIntegration");}
+    public String isUploadLogEnabled() {return properties.getProperty("uploadLog");}
+    public String isUploadScreenshotEnabled() {return properties.getProperty("uploadScreenshot");}
+    public String isUploadReportEnabled() {return properties.getProperty("uploadReport");}
 }

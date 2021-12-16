@@ -59,22 +59,28 @@ public class TestListenerAPI extends BaseTest implements ITestListener {
                     .now( ZoneId.systemDefault() ).toString();
 
         String msg = iTestResult.getThrowable().getMessage();
-        String mantisID = mantisAPI.createCompleteIssueWithoutAttachment(
-                "Bug from "+getTestMethodName(iTestResult)+" TC",
-                "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
-                "Bug found at "+timestamp,
-                Project.AUTOMATION_BUGS,
-                Category.UI,
-                Priority.normal,
-                Severity.feature,
-                false);
+
+        if (testsConfig.isMantisEnabled().equals("on")){
+            String mantisID = mantisAPI.createCompleteIssueWithoutAttachment(
+            "Bug from "+getTestMethodName(iTestResult)+" TC",
+            "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
+            "Bug found at "+timestamp,
+            Project.AUTOMATION_BUGS,
+            Category.UI,
+            Priority.normal,
+            Severity.feature,
+            false);
+            System.out.println("Bug posted to Mantis with ID: "+ mantisID);
+            if (testsConfig.isSlackEnabled().equals("on")){
+                slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg,"",mantisID, testsConfig.getCI_url(),testsConfig.getMantis_url());
+            }
+        }
 
         getTest().log(Status.FAIL, iTestResult.getThrowable().getMessage());
 
-        System.out.println("Bug posted to Mantis with ID: "+ mantisID);
-        slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg,"",mantisID, testsConfig.getCI_url(),testsConfig.getMantis_url());
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
+
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is skipped.");
