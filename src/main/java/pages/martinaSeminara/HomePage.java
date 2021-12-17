@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
-import java.util.List;
-
 public class HomePage extends BasePage {
     public HomePage(WebDriver driver, String url) {
         super(driver);
@@ -15,6 +13,7 @@ public class HomePage extends BasePage {
     }
 
     BioPage bioPage = new BioPage(driver);
+    PortfolioItemPage portfolioItemPage = new PortfolioItemPage(driver);
     ContactoPage contactoPage = new ContactoPage(driver);
     By mainMenu = new By.ById("menu-main_menu");
     By inicioMenu = new By.ByLinkText("INICIO");
@@ -22,11 +21,10 @@ public class HomePage extends BasePage {
     By contactoMenu = new By.ByLinkText("CONTACTO");
     By mainTitle = new By.ByCssSelector(".page-title.h2");
     By subTitle = new By.ByCssSelector(".la-breadcrumbs.use-custom-text");
-    By portfolioMain = new By.ByClassName("la-portfolio-masonry");
+    public By portfolioMain = new By.ByClassName("la-portfolio-masonry");
     By sectionPageHeader = new By.ById("section_page_header");
-    By portfolioItem = new By.ByClassName("item-inner");
+    By portfolioItem = new By.ByCssSelector(".portfolio-item");
 
-    public List<WebElement> getPortfolioItem = driver.findElements(portfolioItem);
 
 
     public void goToInicio() {
@@ -39,6 +37,10 @@ public class HomePage extends BasePage {
         return bioPage;
     }
 
+    public PortfolioItemPage goToAnyPortfolioItem() {
+        driver.findElement(portfolioItem).click();
+        return portfolioItemPage;
+    }
 
     public ContactoPage goToContacto() {
         driver.findElement(contactoMenu).click();
@@ -71,6 +73,10 @@ public class HomePage extends BasePage {
 
     public WebElement getPortfolioMain() {
         return driver.findElement(portfolioMain);
+    }
+
+    public WebElement getPortfolioItem() {
+        return driver.findElement(portfolioItem);
     }
 
     public WebElement getSectionPageHeader() {

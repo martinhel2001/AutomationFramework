@@ -2,17 +2,17 @@ package UI_tests;
 
 import BaseTest.BaseTest_UI;
 import com.aventstack.extentreports.Status;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.martinaSeminara.BioPage;
 import pages.martinaSeminara.HomePage;
 import utils.extentReports.ExtentTestManager;
 
-import static BaseTest.BaseTest.driver;
-
 public class MartinaSeminaraTest extends BaseTest_UI {
 
-    @Test(description = "Unit test validations from www.martinaseminara.com.ar home page")
-    public void unitTestValidations_HomePage(){
+    @Test(description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"})
+    public void unitTestValidations_HomePage() throws InterruptedException {
         HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
 
         // Validate visualization of all web elements
@@ -40,12 +40,32 @@ public class MartinaSeminaraTest extends BaseTest_UI {
 
         Assert.assertTrue(msHome.goToBio().getMainTitle().getText().contains("BIO"),"BIO page title is wrong");
         msHome.goToInicio();
-        //driver.navigate().back();
         Assert.assertTrue(msHome.goToContacto().getMainTitle().getText().contains("Contacto"), "Contacto page title is wrong");
-        //driver.navigate().back();
         msHome.goToInicio();
-        System.out.println("Number of elements:" +msHome.getPortfolioItem.size());
+        wait.until(ExpectedConditions.elementToBeClickable(msHome.getPortfolioItem()));
+        Thread.sleep(2000);
+        mouseOverOn(msHome.getPortfolioItem());
+        Assert.assertTrue(isDisplayed(msHome.goToAnyPortfolioItem().getPageTitle()));
+        msHome.goToInicio();
+
+    }
+
+    @Test (description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"})
+    public void unitTestsValidation_BIOpage() {
+        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+        BioPage bioPage = msHome.goToBio();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate text in BIO page");
+        log.info("Let's validate text in BIO page");
+        Assert.assertTrue(bioPage.getBodyText().getText().contains("Martina Seminara nació en Argentina y vive en Madrid. "));
+        Assert.assertTrue(bioPage.getMainTitle().getText().equals("BIO"));
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate background photo in BIO");
+        log.info("Let's validate background photo in BIO");
+        Assert.assertTrue(bioPage.getBodyText().getText().contains("Martina Seminara nació en Argentina y vive en Madrid. "));
+        Assert.assertTrue(bioPage.getHeaderSection().getCssValue("background-image").contains("url(\"http://martinaseminara.com.ar/wordpress/wp-content/uploads"), "Invalid background image in header section: "+bioPage.getHeaderSection().getCssValue("background-image"));
 
 
     }
+
 }

@@ -1,10 +1,9 @@
-16-12-2021 17:29:39 INFO [BaseTest]: I am in onStart method Automation-Projects
-16-12-2021 17:29:39 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-16-12-2021 17:29:39 INFO [BaseTest]: #unitTestValidations_HomePage# test is starting.
-16-12-2021 17:29:39 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
-16-12-2021 17:29:51 INFO [BaseTest]: Let's validate all web elements are displayed 2
-16-12-2021 17:29:55 INFO [BaseTest]: Let's validate background at Header section
-16-12-2021 17:29:55 INFO [BaseTest]: Let's validate buttons work OK
-16-12-2021 17:30:03 INFO [BaseTest]: unitTestValidations_HomePage test is succeed.
-16-12-2021 17:30:03 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-16-12-2021 17:30:03 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
+17-12-2021 16:27:29 INFO [BaseTest]: I am in onStart method Automation-Projects
+17-12-2021 16:27:29 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+17-12-2021 16:27:29 INFO [BaseTest]: #unitTestsValidation_BIOpage# test is starting.
+17-12-2021 16:27:29 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
+17-12-2021 16:27:36 INFO [BaseTest]: Let's validate text in BIO page
+17-12-2021 16:27:36 INFO [BaseTest]: Let's validate background photo in BIO
+17-12-2021 16:27:36 INFO [BaseTest]: unitTestsValidation_BIOpage test is succeed.
+17-12-2021 16:27:36 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+17-12-2021 16:27:36 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
