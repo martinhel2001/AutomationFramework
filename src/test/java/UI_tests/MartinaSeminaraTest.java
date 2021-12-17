@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.martinaSeminara.BioPage;
+import pages.martinaSeminara.ContactoPage;
 import pages.martinaSeminara.HomePage;
 import utils.extentReports.ExtentTestManager;
 
@@ -50,7 +51,7 @@ public class MartinaSeminaraTest extends BaseTest_UI {
 
     }
 
-    @Test (description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"})
+    @Test (description = "Unit test validations from www.martinaseminara.com.ar BIO page", groups = {"seminaraCI","regression"})
     public void unitTestsValidation_BIOpage() {
         HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
         BioPage bioPage = msHome.goToBio();
@@ -62,9 +63,24 @@ public class MartinaSeminaraTest extends BaseTest_UI {
 
         ExtentTestManager.getTest().log(Status.INFO, "Let's validate background photo in BIO");
         log.info("Let's validate background photo in BIO");
-        Assert.assertTrue(bioPage.getBodyText().getText().contains("Martina Seminara nació en Argentina y vive en Madrid. "));
         Assert.assertTrue(bioPage.getHeaderSection().getCssValue("background-image").contains("url(\"http://martinaseminara.com.ar/wordpress/wp-content/uploads"), "Invalid background image in header section: "+bioPage.getHeaderSection().getCssValue("background-image"));
 
+    }
+
+    @Test (description = "Unit test validations from www.martinaseminara.com.ar CONTACT page", groups = {"seminaraCI","regression"})
+    public void unitTestsValidation_CONTACTpage() {
+        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+        ContactoPage contactoPage = msHome.goToContacto();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate text in CONTACTO page");
+        log.info("Let's validate text in CONTACTO page");
+        Assert.assertTrue(contactoPage.getContactOptions().getText().contains("(0034) 656639128"),"Falta el numero de telefono en CONTACTO");
+        Assert.assertTrue(contactoPage.getContactOptions().getText().contains("MARSEMINAR@GMAIL.COM"),"Falta el mail en CONTACTO");
+        Assert.assertTrue(contactoPage.getMainTitle().getText().equals("Contacto"));
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate background photo in CONTACTO");
+        log.info("Let's validate background photo in CONTACTO");
+        Assert.assertTrue(contactoPage.getHeaderSection().getCssValue("background-image").contains("url(\"http://martinaseminara.com.ar/wordpress/wp-content/uploads"), "Invalid background image in header section: "+contactoPage.getHeaderSection().getCssValue("background-image"));
 
     }
 

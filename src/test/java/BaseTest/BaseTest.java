@@ -139,7 +139,6 @@ public class BaseTest {
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         if (isResponsive) driver.manage().window().setSize(new Dimension(375, 812));
-        wait = new WebDriverWait(driver,20);
 
     }
 
@@ -213,11 +212,7 @@ public class BaseTest {
 
     }
 
-    public boolean isDisplayed(WebElement element) {
-        if (element.getAttribute("display")=="none"||!element.isDisplayed()) {
-            return false;
-        } else return true;
-    }
+
 
 
     @BeforeSuite

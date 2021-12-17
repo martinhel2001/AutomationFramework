@@ -16,7 +16,7 @@ import java.sql.Statement;
 public class KapschSmokeTest extends BaseTest_UI {
     SQLConnector sql = new SQLConnector();
 
-    @Test (groups = "OPERIANPD-3293")
+    @Test (groups = "OPERIANPD-3293" , enabled=false )
     public void loginTest(){
        log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
         LoginPage objLoginPage = new LoginPage(driver, testsConfig.getOBOurl());
@@ -24,7 +24,7 @@ public class KapschSmokeTest extends BaseTest_UI {
         Assert.assertTrue( objLoginPage.objHomePage.getWelcomeMessage().isDisplayed());
         }
 
-    @Test (groups = "OPERIANPD-3286",dependsOnMethods = {"loginTest"})
+    @Test (groups = "OPERIANPD-3286",dependsOnMethods = {"loginTest"}, enabled=false )
     public void logoutTest(){
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
         LoginPage objLoginPage = new LoginPage(driver, testsConfig.getOBOurl());
@@ -34,7 +34,7 @@ public class KapschSmokeTest extends BaseTest_UI {
         Assert.assertTrue( objLoginPage.getLoginBox().isDisplayed());
     }
 
-    @Test (groups = "OPERIANPD-3298", dependsOnMethods = {"loginTest"})
+    @Test (groups = "OPERIANPD-3298", dependsOnMethods = {"loginTest"}, enabled=false )
     public void manualValidationConfirm() {
         HomePage obj_HomePage = new HomePage(driver);
         ManualValidationPage obj_MVpage = new ManualValidationPage(driver);
@@ -69,7 +69,7 @@ public class KapschSmokeTest extends BaseTest_UI {
         //obj_ViewTrx.moreActionsView();
     }
 
-    @Test (dependsOnMethods = {"loginTest"})
+    @Test (dependsOnMethods = {"loginTest"}, enabled=false )
     public void verifyViewTrxResults(){
         HomePage obj_HomePage = new HomePage(driver);
         ViewTrxPage obj_VTpage = new ViewTrxPage(driver);
@@ -86,7 +86,7 @@ public class KapschSmokeTest extends BaseTest_UI {
 
     }
 
-    @Test (dependsOnMethods = {"loginTest"}, groups = "OPERIANPD-3300")
+    @Test (dependsOnMethods = {"loginTest"}, groups = "OPERIANPD-3300", enabled=false )
     public void navigationTest() throws InterruptedException {
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" TEST Has Started");
@@ -138,7 +138,7 @@ public class KapschSmokeTest extends BaseTest_UI {
         objHomePage.logout();
     }
 
-    @Test (dependsOnMethods = {"loginTest"})
+    @Test (dependsOnMethods = {"loginTest"}, enabled=false )
     public void countTableRowsCols(){
         HomePage obj_HomePage = new HomePage(driver);
 
@@ -146,7 +146,7 @@ public class KapschSmokeTest extends BaseTest_UI {
     }
 
 
-    @Test
+    @Test ( enabled=false )
     public void dbKapschConnectionTest() throws SQLException, ClassNotFoundException {
         Statement stmt = sql .openConnSQL(testsConfig.getDBKapsch_url(),testsConfig.getDBKapsch_user(),testsConfig.getDBKapsch_pass());
 

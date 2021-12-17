@@ -29,15 +29,5 @@ public class EcommerceSiteTest extends BaseTest_UI {
         Assert.assertTrue(obj_ShoppingCart.getHeadingCounter().contains("Your shopping cart contains: 1 Product"));
     }
 
-    @Test
-    public void baseTest1() {
-        ExtentTestManager.getTest().log(Status.INFO, "Hellooo started base test1");
-        System.out.println("Hey im in test1 test");
-        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 1");
-        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 2");
-        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 3");
-        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test1 4");
-        Assert.assertTrue(1==2);
-    }
 
 }

@@ -1,9 +1,22 @@
-17-12-2021 16:27:29 INFO [BaseTest]: I am in onStart method Automation-Projects
-17-12-2021 16:27:29 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-17-12-2021 16:27:29 INFO [BaseTest]: #unitTestsValidation_BIOpage# test is starting.
-17-12-2021 16:27:29 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
-17-12-2021 16:27:36 INFO [BaseTest]: Let's validate text in BIO page
-17-12-2021 16:27:36 INFO [BaseTest]: Let's validate background photo in BIO
-17-12-2021 16:27:36 INFO [BaseTest]: unitTestsValidation_BIOpage test is succeed.
-17-12-2021 16:27:36 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-17-12-2021 16:27:36 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
+17-12-2021 17:04:30 INFO [BaseTest]: I am in onStart method Automation-Projects
+17-12-2021 17:04:30 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+17-12-2021 17:04:30 INFO [BaseTest]: #unitTestValidations_HomePage# test is starting.
+17-12-2021 17:04:30 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
+17-12-2021 17:04:32 INFO [BaseTest]: Let's validate all web elements are displayed 2
+17-12-2021 17:04:37 INFO [BaseTest]: Let's validate background at Header section
+17-12-2021 17:04:37 INFO [BaseTest]: Let's validate buttons work OK
+17-12-2021 17:04:55 INFO [BaseTest]: unitTestValidations_HomePage test is succeed.
+17-12-2021 17:04:55 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+17-12-2021 17:04:55 INFO [BaseTest]: #unitTestsValidation_BIOpage# test is starting.
+17-12-2021 17:04:55 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar BIO page
+17-12-2021 17:04:59 INFO [BaseTest]: Let's validate text in BIO page
+17-12-2021 17:04:59 INFO [BaseTest]: Let's validate background photo in BIO
+17-12-2021 17:04:59 INFO [BaseTest]: unitTestsValidation_BIOpage test is succeed.
+17-12-2021 17:04:59 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+17-12-2021 17:04:59 INFO [BaseTest]: #unitTestsValidation_CONTACTpage# test is starting.
+17-12-2021 17:04:59 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar CONTACT page
+17-12-2021 17:05:02 INFO [BaseTest]: Let's validate text in CONTACTO page
+17-12-2021 17:05:03 INFO [BaseTest]: Let's validate background photo in CONTACTO
+17-12-2021 17:05:03 INFO [BaseTest]: unitTestsValidation_CONTACTpage test is succeed.
+17-12-2021 17:05:03 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+17-12-2021 17:05:03 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
