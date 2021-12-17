@@ -10,7 +10,7 @@ public class ContactoPage extends BasePage {
         super(driver);
     }
 
-    By mainTitle = new By.ByCssSelector("div[id^='la_heading_'] [class='la-headings'] [class='spacer-position-middle']");
+    By mainTitle = new By.ByCssSelector(".la-headings.text-center.spacer-position-middle");
     By contactOptions = new By.ByCssSelector(".vc_row.wpb_row.vc_inner.vc_row-fluid");
 
     public WebElement getMainTitle(){

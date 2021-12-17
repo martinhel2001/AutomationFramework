@@ -39,9 +39,12 @@ public class MartinaSeminaraTest extends BaseTest_UI {
         log.info("Let's validate buttons work OK");
 
         Assert.assertTrue(msHome.goToBio().getMainTitle().getText().contains("BIO"),"BIO page title is wrong");
-        driver.navigate().back();
+        msHome.goToInicio();
+        //driver.navigate().back();
         Assert.assertTrue(msHome.goToContacto().getMainTitle().getText().contains("Contacto"), "Contacto page title is wrong");
-        driver.navigate().back();
+        //driver.navigate().back();
+        msHome.goToInicio();
+        System.out.println("Number of elements:" +msHome.getPortfolioItem.size());
 
 
     }

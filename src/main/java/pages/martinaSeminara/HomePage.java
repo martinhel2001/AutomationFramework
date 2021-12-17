@@ -3,7 +3,10 @@ package pages.martinaSeminara;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
+
+import java.util.List;
 
 public class HomePage extends BasePage {
     public HomePage(WebDriver driver, String url) {
@@ -21,9 +24,14 @@ public class HomePage extends BasePage {
     By subTitle = new By.ByCssSelector(".la-breadcrumbs.use-custom-text");
     By portfolioMain = new By.ByClassName("la-portfolio-masonry");
     By sectionPageHeader = new By.ById("section_page_header");
+    By portfolioItem = new By.ByClassName("item-inner");
+
+    public List<WebElement> getPortfolioItem = driver.findElements(portfolioItem);
+
 
     public void goToInicio() {
         driver.findElement(inicioMenu).click();
+        wait.until(ExpectedConditions.elementToBeClickable(portfolioItem));
     }
 
     public BioPage goToBio() {

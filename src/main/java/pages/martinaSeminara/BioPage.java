@@ -11,7 +11,7 @@ public class BioPage extends BasePage {
         super(driver);
     }
 
-    By mainTitle = new By.ByCssSelector("div[id^='la_heading_'] [class='la-headings'] [class='spacer-position-middle']");
+    By mainTitle = new By.ByCssSelector(".la-headings.text-center.spacer-position-middle");
     By bodyText = new By.ByClassName("subheading-tag");
 
     public WebElement getMainTitle(){
