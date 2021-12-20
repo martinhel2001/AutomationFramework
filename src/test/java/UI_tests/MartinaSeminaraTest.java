@@ -76,7 +76,7 @@ public class MartinaSeminaraTest extends BaseTest_UI {
         log.info("Let's validate text in CONTACTO page");
         Assert.assertTrue(contactoPage.getContactOptions().getText().contains("(0034) 656639128"),"Falta el numero de telefono en CONTACTO");
         Assert.assertTrue(contactoPage.getContactOptions().getText().contains("MARSEMINAR@GMAIL.COM"),"Falta el mail en CONTACTO");
-        Assert.assertTrue(contactoPage.getMainTitle().getText().equals("Contacto"));
+        Assert.assertTrue(contactoPage.getMainTitle().getText().equals("Contacto"), "El titulo de la pàgina CONTACTO està mal");
 
         ExtentTestManager.getTest().log(Status.INFO, "Let's validate background photo in CONTACTO");
         log.info("Let's validate background photo in CONTACTO");
