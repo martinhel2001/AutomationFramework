@@ -39,6 +39,7 @@ public class HomePage extends BasePage {
     }
 
     public PortfolioItemPage goToAnyPortfolioItem() {
+        wait.until(ExpectedConditions.elementToBeClickable(portfolioItem));
         driver.findElement(portfolioItem).click();
         wait.until(ExpectedConditions.visibilityOf(portfolioItemPage.getPageTitle()));
         return portfolioItemPage;
