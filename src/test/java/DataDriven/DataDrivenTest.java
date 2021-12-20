@@ -13,7 +13,7 @@ public class DataDrivenTest extends BaseTest {
     private String range = "UserInfo!A2:E";
 
 
-    @Test
+    @Test (enabled = false) // DISABLED porque falta actualizar el permiso para ver el Gspreadsheet
     public void reviewDataFromGSpreadsheet() throws IOException {
          GoogleSheetAPI sheetAPI = new GoogleSheetAPI();
          List<List<Object>> values = sheetAPI.getSpreadSheetRecords("1N6Cj4wogX-FBVnFml5jLyuUbbcvYOr41VQ91q_OGS-E", range);
@@ -24,7 +24,7 @@ public class DataDrivenTest extends BaseTest {
         }
     }
 
-    @Test (dataProvider = "dpGSpreadsheet", dataProviderClass = DataProviderSources.class)
+    @Test (dataProvider = "dpGSpreadsheet", dataProviderClass = DataProviderSources.class, enabled = false) // DISABLED porque falta actualizar el permiso para ver el Gspreadsheet
     public void testDataProviderFromGspreadsheet() throws IOException {
         GoogleSheetAPI sheetAPI = new GoogleSheetAPI();
         List<List<Object>> values = sheetAPI.getSpreadSheetRecords("1N6Cj4wogX-FBVnFml5jLyuUbbcvYOr41VQ91q_OGS-E", range);

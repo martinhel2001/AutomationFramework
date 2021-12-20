@@ -91,7 +91,7 @@ public class DataProviderSources {
     public Object[][] dpMethod (Method m){
         switch (m.getName()) {
             case "Sum":
-                return new Object[][] {{2, 3 , 5}, {5, 7, 9}};
+                return new Object[][] {{2, 3 , 5}, {5, 7, 12}};
             case "Diff":
                 return new Object[][] {{2, 3, -1}, {5, 7, -2}};
         }
