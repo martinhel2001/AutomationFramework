@@ -20,7 +20,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       
       - run: java  --version
       - browser-tools/install-browser-tools
-      - run: mvn clean test -DsuiteXmlFile=testNG_martina.xml 
+      - run: mvn clean test -Dsurefire.suiteXmlFiles=testNG_martina.xml 
   two: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: circleci/ruby:2.4.1
