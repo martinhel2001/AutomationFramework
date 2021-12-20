@@ -34,16 +34,19 @@ public class HomePage extends BasePage {
 
     public BioPage goToBio() {
         driver.findElement(bioMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(bioPage.getMainTitle()));
         return bioPage;
     }
 
     public PortfolioItemPage goToAnyPortfolioItem() {
         driver.findElement(portfolioItem).click();
+        wait.until(ExpectedConditions.visibilityOf(portfolioItemPage.getPageTitle()));
         return portfolioItemPage;
     }
 
     public ContactoPage goToContacto() {
         driver.findElement(contactoMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(contactoPage.getMainTitle()));
         return contactoPage;
     }
 

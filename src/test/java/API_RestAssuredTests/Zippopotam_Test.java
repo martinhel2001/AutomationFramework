@@ -87,7 +87,7 @@ public class Zippopotam_Test {
         );
     }
 
-    @Test
+    @Test (enabled = false)
     public void sendLvZipCode1050_checkStatusCode_expect200() {  // SERIALIZE
 
         Location location = new Location();
