@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.*;
 public class SelenideSmokeTest extends BaseTest_UI {
 
 
-    @Test
+    @Test (enabled = false) // DISABLED porque ya no tengo acceso a Kapsch OBO
     public void userCanLoginByUsername() {
         open(testsConfig.getOBOurl());
         $("#username").setValue(username);

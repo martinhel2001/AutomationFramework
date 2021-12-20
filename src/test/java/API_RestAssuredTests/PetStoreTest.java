@@ -38,19 +38,14 @@ public class PetStoreTest extends BaseTest_API {
         };
     }
 
-    @Test
-    public void testPet1(){
-        Pet petToSearch = petAPI.getPetById("1");
-        Assert.assertEquals(petToSearch.getName(),"doberman");
-    }
 
-    @Test (dataProvider = "petIDsToRetrieve")
+    @Test (dataProvider = "petIDsToRetrieve", enabled = false) // Disabled porque siempre hay alguien modificando los nombres de los Pets en el server
     public void requestPetsFromDataprovider(int petId, String petName){
         Pet pet = petAPI.getPetById(valueOf(petId));
         Assert.assertEquals(pet.getName(),petName);
     }
 
-    @Test
+    @Test (enabled = false) // porque tarda mucho en actualizarse la DB remota con el nuevo Pet ingresado
     public void addNewPetTest() throws InterruptedException {
         String petId = "0";
         String petName="Diana";
@@ -62,7 +57,7 @@ public class PetStoreTest extends BaseTest_API {
 
         Pet insertedPet = petAPI.postPet(newlyPet);
         System.out.println("Pet ID assigned to new Pet: "+insertedPet.getId());
-        Thread.sleep(15000);
+        Thread.sleep(25000);
         Pet petVerification = petAPI.getPetById(insertedPet.getId());
         System.out.println("Pet ID insertado: "+insertedPet.getId());
         System.out.println("Pet name grabado: "+insertedPet.getName());
@@ -70,7 +65,7 @@ public class PetStoreTest extends BaseTest_API {
 //        Assert.assertEquals(petVerification.getName(),petName,"Pet name didn't match expected "+petName+" and got "+petVerification.getName());
     }
 
-    @Test
+    @Test (enabled = false)
     public void updatePet() {
         String petId = "9";
         String newName = "Lucrecia";
@@ -109,7 +104,7 @@ public class PetStoreTest extends BaseTest_API {
         System.out.println("Qty of pets on status "+status+": "+petList.size());
     }
 
-    @Test (dependsOnMethods = {"addNewPetTest"})
+    @Test (dependsOnMethods = {"addNewPetTest"}, enabled = false)
     public void deletePetTest() {
         petAPI.deletePet(petIDtoDelete);
 
@@ -123,21 +118,23 @@ public class PetStoreTest extends BaseTest_API {
     }
 
     @Test
-    public void placeOrderAndGetIt() {
+    public void placeOrderAndGetIt() throws InterruptedException {
         Order orderToPlace = new Order(1,9,5,"2021-08-04T20:50:06.467Z","placed",true);
         int statusCode = storeAPI.placeOrder(orderToPlace);
         Assert.assertEquals(statusCode,200);
 
+        Thread.sleep(10000);
         Order orderRetrieved = storeAPI.getOrder(orderToPlace.getId());
         Assert.assertEquals(orderRetrieved.getPetId(),orderToPlace.getPetId());
     }
 
     @Test
-    public void placeOrderAndDeleteIt() {
+    public void placeOrderAndDeleteIt() throws InterruptedException {
         Order orderToPlace = new Order(8,10,3,"2021-08-04T20:50:06.467Z","placed",true);
         int statusCode = storeAPI.placeOrder(orderToPlace);
         Assert.assertEquals(statusCode,200);
 
+        Thread.sleep(10000);
         Assert.assertEquals(storeAPI.deleteOrder(valueOf(orderToPlace.getId())),200);
 
     }
