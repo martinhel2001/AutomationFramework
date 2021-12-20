@@ -16,7 +16,7 @@ import static baseMain.PDF_ContentReader.readPdfContent;
 
 public class PdfFileTest extends BaseTest_UI {
 
-    @Test (description = "Validating text in PDF ")
+    @Test (description = "Validating text in PDF", groups = ("regression"))
     public void verifyContentInPDf() {
         //specify the url of the pdf file
         String url ="http://www.pdf995.com/samples/pdf.pdf";

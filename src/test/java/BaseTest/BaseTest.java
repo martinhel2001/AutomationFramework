@@ -139,7 +139,6 @@ public class BaseTest {
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         if (isResponsive) driver.manage().window().setSize(new Dimension(375, 812));
-        wait = new WebDriverWait(driver,20);
 
     }
 
@@ -215,6 +214,7 @@ public class BaseTest {
 
 
 
+
     @BeforeSuite
     public void setUser(){
         UserPropertiesReader userReader = new UserPropertiesReader("Administrator");
@@ -229,9 +229,15 @@ public class BaseTest {
     }
 
     @AfterSuite
-    public void uploadLog() throws Exception {
-        this.uploadFile("./extent-reports/extent-report.html", "report-"+timestamp+".html", "/public_html/extent-reports/");
-        this.uploadFile("./Logs/Webliv_Automation_Logs.log", "automationLog-"+timestamp+".log", "/public_html/logs/");
-        slack.postMessageTestRunFinished(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),testsConfig.getFTP_url()+"/logs/automationLog-"+timestamp+".log",testsConfig.getFTP_url()+"/extent-reports/report-"+timestamp+".html",testsConfig.getCI_url());
-    }
+    public void uploadLogAndReport() throws Exception {
+        if (testsConfig.isUploadLogEnabled().equals("on")){
+            this.uploadFile("./Logs/Webliv_Automation_Logs.log", "automationLog-"+timestamp+".log", "/public_html/logs/");
+        }
+        if (testsConfig.isUploadReportEnabled().equals("on")){
+            this.uploadFile("./extent-reports/extent-report.html", "report-"+timestamp+".html", "/public_html/extent-reports/");
+        }
+        if (testsConfig.isSlackEnabled().equals("on")){
+            slack.postMessageTestRunFinished(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),testsConfig.getFTP_url()+"/logs/automationLog-"+timestamp+".log",testsConfig.getFTP_url()+"/extent-reports/report-"+timestamp+".html",testsConfig.getCI_url());
+        }
+        }
 }

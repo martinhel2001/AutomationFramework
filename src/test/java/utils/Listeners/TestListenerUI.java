@@ -56,6 +56,7 @@ public class TestListenerUI extends BaseTest implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         log.info(getTestMethodName(iTestResult) + " test is failed.");
+
         File f;
         String encodstring=null;
 
@@ -64,23 +65,32 @@ public class TestListenerUI extends BaseTest implements ITestListener {
             encodstring = encodeFileToBase64Binary(f);
 
             String msg = iTestResult.getThrowable().getMessage();
-            String mantisID = mantisAPI.createCompleteIssueWithAttachment(
-                    "Bug from "+getTestMethodName(iTestResult)+" TC",
-                    "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
-                    "Bug found at "+timestamp, Project.AUTOMATION_BUGS,
-                    Category.UI,
-                    Priority.normal,
-                    Severity.feature,
-                    encodstring,
-                    false);
+
+            if (testsConfig.isMantisEnabled().equals("on")){
+                String mantisID = mantisAPI.createCompleteIssueWithAttachment(
+                        "Bug from "+getTestMethodName(iTestResult)+" TC",
+                        "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
+                        "Bug found at "+timestamp, Project.AUTOMATION_BUGS,
+                        Category.UI,
+                        Priority.normal,
+                        Severity.feature,
+                        encodstring,
+                        false);
+                    System.out.println("Bug posted to Mantis with ID: "+ mantisID);
+
+                if (testsConfig.isSlackEnabled().equals("on")){
+                    slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg, testsConfig.getFTP_url()+"/screenshots/"+localScreenshotFileName,mantisID,testsConfig.getCI_url(), testsConfig.getMantis_url());
+                }
+
+            }
 
             getTest().log(Status.FAIL, iTestResult.getThrowable().getMessage(),
-                    getTest().addScreenCaptureFromBase64String(encodstring).getModel().getMedia().get(0));
+            getTest().addScreenCaptureFromBase64String(encodstring).getModel().getMedia().get(0));
 
-            System.out.println("Bug posted to Mantis with ID: "+ mantisID);
+            if (testsConfig.isUploadScreenshotEnabled().equals("on")){
+                uploadFile(localScreenshotCompleteFileName,localScreenshotFileName, "/public_html/screenshots/");
+            }
 
-            uploadFile(localScreenshotCompleteFileName,localScreenshotFileName, "/public_html/screenshots/");
-            slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg, testsConfig.getFTP_url()+"/screenshots/"+localScreenshotFileName,mantisID,testsConfig.getCI_url(), testsConfig.getMantis_url());
         } catch (Exception e) {
             e.printStackTrace();
         }
