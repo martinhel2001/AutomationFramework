@@ -10,5 +10,9 @@
                     <include name="seminaraCI" />
                 </run>
             </groups>
+
+            <classes>
+                <class name="UI_tests.MartinaSeminaraTest"/>
+            </classes>
         </test>
     </suite>
