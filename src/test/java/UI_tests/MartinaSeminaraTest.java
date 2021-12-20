@@ -58,7 +58,7 @@ public class MartinaSeminaraTest extends BaseTest_UI {
 
         ExtentTestManager.getTest().log(Status.INFO, "Let's validate text in BIO page");
         log.info("Let's validate text in BIO page");
-        Assert.assertTrue(bioPage.getBodyText().getText().contains("Martina Seminara nació en Argentina y vive en Madrid. "));
+        Assert.assertTrue(bioPage.getBodyText().getText().contains("Martina Seminara nació en Argentina y vive en Madrid. "), "Texto en BIO no parece ser correcto; dice: "+bioPage.getBodyText().getText());
         Assert.assertTrue(bioPage.getMainTitle().getText().equals("BIO"));
 
         ExtentTestManager.getTest().log(Status.INFO, "Let's validate background photo in BIO");
