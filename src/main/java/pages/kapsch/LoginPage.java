@@ -4,6 +4,7 @@ package pages.kapsch;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends KapschBasePage {
@@ -15,9 +16,9 @@ public class LoginPage extends KapschBasePage {
     protected By passwordInput = By.id("password");
     protected By submitBtn = By.name("submit");
 
-    public HomePage objHomePage = new HomePage(driver);
+    public HomePage objHomePage = new HomePage(eventDriver);
 
-    public LoginPage (WebDriver driver, String url){
+    public LoginPage (EventFiringWebDriver driver, String url){
         super(driver);
         driver.manage().deleteAllCookies();
         //driver.get("http://intra.obo.test3.fraprr.phxcicd.ktc-int.net/");
@@ -25,13 +26,13 @@ public class LoginPage extends KapschBasePage {
     }
 
     public void login(String username, String password){
-        this.driver.findElement(userNameInput).sendKeys(username);
-        this.driver.findElement(passwordInput).sendKeys(password);
-        this.driver.findElement(submitBtn).click();
+        this.eventDriver.findElement(userNameInput).sendKeys(username);
+        this.eventDriver.findElement(passwordInput).sendKeys(password);
+        this.eventDriver.findElement(submitBtn).click();
         wait.until(ExpectedConditions.visibilityOf( objHomePage.getWelcomeMessage()));
     }
 
     public WebElement getLoginBox(){
-        return this.driver.findElement(loginHeader);
+        return this.eventDriver.findElement(loginHeader);
     }
 }

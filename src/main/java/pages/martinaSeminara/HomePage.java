@@ -1,20 +1,20 @@
 package pages.martinaSeminara;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
 public class HomePage extends BasePage {
-    public HomePage(WebDriver driver, String url) {
+    public HomePage(EventFiringWebDriver driver, String url) {
         super(driver);
         driver.get(url);
     }
 
-    BioPage bioPage = new BioPage(driver);
-    PortfolioItemPage portfolioItemPage = new PortfolioItemPage(driver);
-    ContactoPage contactoPage = new ContactoPage(driver);
+    BioPage bioPage = new BioPage(eventDriver);
+    PortfolioItemPage portfolioItemPage = new PortfolioItemPage(eventDriver);
+    ContactoPage contactoPage = new ContactoPage(eventDriver);
     By mainMenu = new By.ById("menu-main_menu");
     By inicioMenu = new By.ByLinkText("INICIO");
     By bioMenu = new By.ByLinkText("BIO");
@@ -24,67 +24,68 @@ public class HomePage extends BasePage {
     public By portfolioMain = new By.ByClassName("la-portfolio-masonry");
     By sectionPageHeader = new By.ById("section_page_header");
     By portfolioItem = new By.ByCssSelector(".portfolio-item");
+    By portfolioItemTitle = new By.ByCssSelector(".entry-title");
 
 
 
     public void goToInicio() {
-        driver.findElement(inicioMenu).click();
+        eventDriver.findElement(inicioMenu).click();
         wait.until(ExpectedConditions.elementToBeClickable(portfolioItem));
     }
 
     public BioPage goToBio() {
-        driver.findElement(bioMenu).click();
+        eventDriver.findElement(bioMenu).click();
         wait.until(ExpectedConditions.visibilityOf(bioPage.getMainTitle()));
         return bioPage;
     }
 
     public PortfolioItemPage goToAnyPortfolioItem() {
         wait.until(ExpectedConditions.elementToBeClickable(portfolioItem));
-        driver.findElement(portfolioItem).click();
+        eventDriver.findElement(portfolioItem).click();
        // driver.findElement(portfolioItem).click();
         wait.until(ExpectedConditions.visibilityOf(portfolioItemPage.getPageTitle()));
         return portfolioItemPage;
     }
 
     public ContactoPage goToContacto() {
-        driver.findElement(contactoMenu).click();
+        eventDriver.findElement(contactoMenu).click();
         wait.until(ExpectedConditions.visibilityOf(contactoPage.getMainTitle()));
         return contactoPage;
     }
 
     public WebElement getMainMenu() {
-        return driver.findElement(mainMenu);
+        return eventDriver.findElement(mainMenu);
     }
 
     public WebElement getInicioMenu() {
-        return driver.findElement(inicioMenu);
+        return eventDriver.findElement(inicioMenu);
     }
 
     public WebElement getBioMenu() {
-        return driver.findElement(bioMenu);
+        return eventDriver.findElement(bioMenu);
     }
 
     public WebElement getContactoMenu() {
-        return driver.findElement(contactoMenu);
+        return eventDriver.findElement(contactoMenu);
     }
 
     public WebElement getMainTitle() {
-        return driver.findElement(mainTitle);
+        return eventDriver.findElement(mainTitle);
     }
 
     public WebElement getSubTitle() {
-        return driver.findElement(subTitle);
+        return eventDriver.findElement(subTitle);
     }
 
     public WebElement getPortfolioMain() {
-        return driver.findElement(portfolioMain);
+        return eventDriver.findElement(portfolioMain);
     }
 
     public WebElement getPortfolioItem() {
-        return driver.findElement(portfolioItem);
+        return eventDriver.findElement(portfolioItem);
     }
 
     public WebElement getSectionPageHeader() {
-        return driver.findElement(sectionPageHeader);
+        return eventDriver.findElement(sectionPageHeader);
     }
 }

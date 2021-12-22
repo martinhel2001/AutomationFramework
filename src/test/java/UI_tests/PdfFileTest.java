@@ -20,7 +20,7 @@ public class PdfFileTest extends BaseTest_UI {
     public void verifyContentInPDf() {
         //specify the url of the pdf file
         String url ="http://www.pdf995.com/samples/pdf.pdf";
-        driver.get(url);
+        eventDriver.get(url);
         String expectedText="The Pdf995 Suite offers the following features";
         try {
             String pdfContent = readPdfContent(url);

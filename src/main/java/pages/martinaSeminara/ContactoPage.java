@@ -3,10 +3,11 @@ package pages.martinaSeminara;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePage;
 
 public class ContactoPage extends BasePage {
-    public ContactoPage(WebDriver driver) {
+    public ContactoPage(EventFiringWebDriver driver) {
         super(driver);
     }
 
@@ -15,14 +16,14 @@ public class ContactoPage extends BasePage {
     By headerSection = new By.ByCssSelector(".la_parallax_inner");
 
     public WebElement getMainTitle(){
-        return driver.findElement(mainTitle);
+        return eventDriver.findElement(mainTitle);
     }
 
     public WebElement getContactOptions(){
-        return driver.findElement(contactOptions);
+        return eventDriver.findElement(contactOptions);
     }
 
     public WebElement getHeaderSection(){
-        return driver.findElement(headerSection);
+        return eventDriver.findElement(headerSection);
     }
 }

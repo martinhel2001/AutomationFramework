@@ -30,7 +30,7 @@ public class TestListenerAPI extends BaseTest implements ITestListener {
     public void onStart(ITestContext iTestContext) {
         log.info("I am in onStart method " + iTestContext.getName());
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
-        iTestContext.setAttribute("WebDriver", this.driver);
+        //iTestContext.setAttribute("WebDriver", this.driver);
     }
     @Override
     public void onFinish(ITestContext iTestContext) {

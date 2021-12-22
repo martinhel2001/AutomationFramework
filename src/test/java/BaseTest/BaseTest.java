@@ -38,7 +38,6 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    public static WebDriver driver;
     public String username;
     public String password;
     public WebDriverWait wait ;
@@ -55,117 +54,7 @@ public class BaseTest {
     public SlackConnector slack = new SlackConnector();
 
 
-    public void initializeDriver(boolean isResponsive)
-    {
-        String[] browsers =
-                //{
-                //"CHROME",
-                //"FIREFOX",
-                //"EDGE"
-                (String[]) testsConfig.getBrowsers().split(",");
-                //};
 
-        int idx = new Random().nextInt(browsers.length);
-        String browser = (browsers [idx]);
-        System.out.println("Browser used for the test: "+browser);
-
-
-        // CHROME
-        if (browser.equals("CHROME")) {
-            WebDriverManager.chromedriver().setup();
-            WebDriverManager.chromedriver().clearResolutionCache();
-            //WebDriverManager.chromedriver().version("83").setup();
-            ChromeOptions options = new ChromeOptions();
-
-            if (isResponsive) {
-                Map<String, Object> deviceMetrics = new HashMap<>();
-                Map<String, Object> mobileEmulation = new HashMap<>();
-                mobileEmulation.put("deviceMetrics", deviceMetrics);
-                mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 6.0; HTC One M9 Build/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36");
-                options.setExperimentalOption("mobileEmulation", mobileEmulation);
-            } else {
-                options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
-                options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
-            }
-
-            options.addArguments("--disable-dev-shm-usage"); //https://stackoverflow.com/a/50725918/1689770
-
-            // SI QUEREMOS CORRERLO EN MODO HEADLESS   - BEGIN
-//            options.addArguments("--headless");
-//            options.addArguments("--disable-gpu");
-            // SI QUEREMOS CORRERLO EN MODO HEADLESS   - END
-
-             driver = new ChromeDriver(options);
-        }
-
-        // FIREFOX
-        if (browser.equals("FIREFOX")) {
-            WebDriverManager.firefoxdriver().clearResolutionCache();
-            WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions options = new FirefoxOptions();
-
-            if (isResponsive) {
-                Map<String, Object> deviceMetrics = new HashMap<>();
-                Map<String, Object> mobileEmulation = new HashMap<>();
-                mobileEmulation.put("deviceMetrics", deviceMetrics);
-                mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 6.0; HTC One M9 Build/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36");
-                //options.setExperimentalOption("mobileEmulation", mobileEmulation);
-            } else {
-                options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
-                options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
-            }
-            driver = new FirefoxDriver(options);
-        }
-
-        // EDGE
-        if (browser.equals("EDGE")) {
-            WebDriverManager.edgedriver().clearResolutionCache();
-            WebDriverManager.edgedriver().setup();
-            EdgeOptions options = new EdgeOptions();
-
-            if (isResponsive) {
-                Map<String, Object> deviceMetrics = new HashMap<>();
-                Map<String, Object> mobileEmulation = new HashMap<>();
-                mobileEmulation.put("deviceMetrics", deviceMetrics);
-                mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 6.0; HTC One M9 Build/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36");
-                //options.setExperimentalOption("mobileEmulation", mobileEmulation);
-            } else {
-                   //options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
-                   //options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
-            }
-            driver = new EdgeDriver(options);
-        }
-
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        if (isResponsive) driver.manage().window().setSize(new Dimension(375, 812));
-
-    }
-
-    protected File takeScreenshot(String methodName){
-        File screenshot = null;
-        try {
-            screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            log.info("Screenshot taken");
-        } catch (WebDriverException e) {
-            log.info("Exception while taking screenshot");
-            e.printStackTrace();
-        }
-
-        //Copy the file to a location and use try catch block to handle exception
-        String timestamp = ZonedDateTime
-                .now( ZoneId.systemDefault() )
-                .format( DateTimeFormatter.ofPattern( "uuuu.MM.dd.HH.mm.ss" ) );
-        localScreenshotFileName=methodName+"_"+timestamp+".png";
-        localScreenshotCompleteFileName ="C:\\Automation\\"+localScreenshotFileName;
-        try {
-            FileUtils.copyFile(screenshot, new File(localScreenshotCompleteFileName));
-            System.out.println("Screenshot saved at: "+ localScreenshotCompleteFileName);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-        return screenshot;
-    }
 
     public static class FTPUploader {
 
@@ -209,7 +98,6 @@ public class BaseTest {
         FTPUploader ftpUploader = new FTPUploader(testsConfig.getFTP_host(), testsConfig.getFTP_user(), testsConfig.getFTP_pass());
         ftpUploader.uploadFile(localFileFullName, fileName, hostDir);
         ftpUploader.disconnect();
-
     }
 
 

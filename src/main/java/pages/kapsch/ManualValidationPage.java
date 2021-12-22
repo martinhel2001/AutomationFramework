@@ -3,11 +3,12 @@ package pages.kapsch;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ManualValidationPage extends KapschBasePage{
 
-    public ManualValidationPage(WebDriver driver) {
+    public ManualValidationPage(EventFiringWebDriver driver) {
         super(driver);
     }
 
@@ -27,52 +28,52 @@ public class ManualValidationPage extends KapschBasePage{
     protected By headerHomeOption = By.cssSelector("span[translate='MANUAL_VALIDATION.NAV.HOME']");
 
     public void confirm(){
-        this.driver.findElement(btnConfirm).click();
+        this.eventDriver.findElement(btnConfirm).click();
     }
 
     public WebElement getVRM(){
-        return this.driver.findElement(inputVRM);
+        return this.eventDriver.findElement(inputVRM);
     }
     public WebElement getCountry(){
-        return this.driver.findElement(inputCountry);
+        return this.eventDriver.findElement(inputCountry);
     }
     public WebElement getRegion(){
-        return this.driver.findElement(inputRegion);
+        return this.eventDriver.findElement(inputRegion);
     }
     public WebElement getVehicleClass(){
-        return this.driver.findElement(inputVehicleClass);
+        return this.eventDriver.findElement(inputVehicleClass);
     }
     public WebElement getBtnConfirm() {
-        return this.driver.findElement(btnConfirm);
+        return this.eventDriver.findElement(btnConfirm);
     }
     public WebElement getPopupNoMoreTrx() {
-        return this.driver.findElement(popupNoMoreTransactions);
+        return this.eventDriver.findElement(popupNoMoreTransactions);
     }
 
     public WebElement getPopUpNoMoreTrx_No(){
-        return this.driver.findElement(popupNoMoreTransactions_No);
+        return this.eventDriver.findElement(popupNoMoreTransactions_No);
     }
 
 
     public ManualValidationPage setVRM(String vrm) {
-        wait.until(ExpectedConditions.elementToBeClickable(this.driver.findElement(inputVRM)));
-        this.driver.findElement(inputVRM).clear();
-        this.driver.findElement(inputVRM).sendKeys(vrm);
+        wait.until(ExpectedConditions.elementToBeClickable(this.eventDriver.findElement(inputVRM)));
+        this.eventDriver.findElement(inputVRM).clear();
+        this.eventDriver.findElement(inputVRM).sendKeys(vrm);
         return this;
     }
     public ManualValidationPage setCountry(String country) {
-        this.driver.findElement(inputCountry).clear();
-        this.driver.findElement(inputCountry).sendKeys(country);
+        this.eventDriver.findElement(inputCountry).clear();
+        this.eventDriver.findElement(inputCountry).sendKeys(country);
         return this;
     }
     public ManualValidationPage setRegion(String region) {
-        this.driver.findElement(inputRegion).clear();
-        this.driver.findElement(inputRegion).sendKeys(region);
+        this.eventDriver.findElement(inputRegion).clear();
+        this.eventDriver.findElement(inputRegion).sendKeys(region);
         return this;
     }
     public ManualValidationPage setVehicleClass(String vehicleClass) {
-        this.driver.findElement(inputVehicleClass).clear();
-        this.driver.findElement(inputVehicleClass).sendKeys(vehicleClass);
+        this.eventDriver.findElement(inputVehicleClass).clear();
+        this.eventDriver.findElement(inputVehicleClass).sendKeys(vehicleClass);
         return this;
     }
 
@@ -82,11 +83,11 @@ public class ManualValidationPage extends KapschBasePage{
     }
 
     public void clickNoMoreTrx_No() {
-        driver.findElement(popupNoMoreTransactions_No).click();
+        eventDriver.findElement(popupNoMoreTransactions_No).click();
     }
 
     public ManualValidationHomePage goBackHome(){
-        driver.findElement(headerHomeOption).click();
-        return new ManualValidationHomePage(driver);
+        eventDriver.findElement(headerHomeOption).click();
+        return new ManualValidationHomePage(eventDriver);
     }
 }
