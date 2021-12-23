@@ -1,8 +1,8 @@
-22-12-2021 16:41:07 INFO [BaseTest]: I am in onStart method Automation-Projects
-22-12-2021 16:41:07 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-22-12-2021 16:41:07 INFO [BaseTest]: #verifyContentInPDf# test is starting.
-22-12-2021 16:41:07 INFO [BaseTest]: Test Description: Validating text in PDF
-22-12-2021 16:41:11 INFO [BaseTest]: verifyContentInPDf test is failed.
-22-12-2021 16:41:11 INFO [BaseTest]: Screenshot taken
-22-12-2021 16:41:11 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-22-12-2021 16:41:11 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
+23-12-2021 15:15:01 INFO [BaseTest]: I am in onStart method Automation-Projects
+23-12-2021 15:15:01 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+23-12-2021 15:15:01 INFO [BaseTest]: # API_RestAssuredTests.PetStoreTest.placeOrderAndDeleteIt # test is starting.
+23-12-2021 15:15:01 INFO [BaseTest]: Test Description: 
+23-12-2021 15:15:14 INFO [BaseTest]: # API_RestAssuredTests.PetStoreTest.placeOrderAndDeleteIt # test is failed.
+23-12-2021 15:15:15 INFO [BaseTest]: Bug posted to Mantis with ID: 395
+23-12-2021 15:15:16 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+23-12-2021 15:15:16 INFO [BaseTest]: I am in onFinish method Automation-Projects

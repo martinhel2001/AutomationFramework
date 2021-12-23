@@ -1,11 +1,10 @@
 package utils.Listeners;
 
-import Connectors.SlackConnector;
 import Connectors.dataentities.mantis.Category;
 import Connectors.dataentities.mantis.Priority;
 import Connectors.dataentities.mantis.Project;
 import Connectors.dataentities.mantis.Severity;
-import Connectors.mantis.MantisConnector;
+import Connectors.MantisConnector;
 import com.aventstack.extentreports.Status;
 
 import java.io.File;
@@ -16,7 +15,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import BaseTest.BaseTest_UI;
 
-import static Connectors.mantis.MantisConnector.encodeFileToBase64Binary;
+import static Connectors.MantisConnector.encodeFileToBase64Binary;
 import static utils.extentReports.ExtentTestManager.getTest;
 import static utils.extentReports.ExtentTestManager.startTest;
 
@@ -28,6 +27,12 @@ public class TestListenerUI extends BaseTest_UI implements ITestListener {
     private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
+
+    private static String getTestClassName(ITestResult iTestResult) {
+        return iTestResult.getTestClass().getName();
+    }
+
+
     @Override
     public void onStart(ITestContext iTestContext) {
         log.info("I am in onStart method " + iTestContext.getName());
@@ -42,20 +47,20 @@ public class TestListenerUI extends BaseTest_UI implements ITestListener {
     }
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        log.info("#"+getTestMethodName(iTestResult) + "# test is starting.");
+        log.info("# "+getTestClassName(iTestResult)+"."+getTestMethodName(iTestResult) + " # test is starting.");
         log.info("Test Description: "+iTestResult.getMethod().getDescription());
         startTest(getTestMethodName(iTestResult),iTestResult.getMethod().getDescription());//Extent Reports
     }
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        log.info(getTestMethodName(iTestResult) + " test is succeed.");
+        log.info("# "+getTestClassName(iTestResult)+"."+getTestMethodName(iTestResult) + " # test is succeed.");
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
         //ExtentReports log operation for passed tests.
         getTest().log(Status.PASS, "Test passed");
     }
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        log.info(getTestMethodName(iTestResult) + " test is failed.");
+        log.info("# "+getTestClassName(iTestResult)+"."+getTestMethodName(iTestResult) + " # test is failed.");
 
         File f;
         String encodstring=null;
@@ -65,10 +70,11 @@ public class TestListenerUI extends BaseTest_UI implements ITestListener {
             encodstring = encodeFileToBase64Binary(f);
 
             String msg = iTestResult.getThrowable().getMessage();
+            String shortMsg = iTestResult.getThrowable().getMessage().substring(0,50);
 
             if (testsConfig.isMantisEnabled().equals("on")){
                 String mantisID = mantisAPI.createCompleteIssueWithAttachment(
-                        "Bug from "+getTestMethodName(iTestResult)+" TC",
+                        getTestClassName(iTestResult)+"."+getTestMethodName(iTestResult)+": <strong>"+shortMsg+"</strong>",
                         "Issue when running TC <strong>"+getTestMethodName(iTestResult)+"</strong>   <br><br>Error message: <strong>"+msg+"</strong>",
                         "Bug found at "+timestamp, Project.AUTOMATION_BUGS,
                         Category.UI,
@@ -77,6 +83,8 @@ public class TestListenerUI extends BaseTest_UI implements ITestListener {
                         encodstring,
                         false);
                     System.out.println("Bug posted to Mantis with ID: "+ mantisID);
+                    log.info("Bug posted to Mantis with ID: "+ mantisID);
+
 
                 if (testsConfig.isSlackEnabled().equals("on")){
                     slack.postMessageFailedTC(testsConfig.getSlack_token(), testsConfig.getSlack_channel(),getTestMethodName(iTestResult),msg, testsConfig.getFTP_url()+"/screenshots/"+localScreenshotFileName,mantisID,testsConfig.getCI_url(), testsConfig.getMantis_url());
@@ -100,7 +108,7 @@ public class TestListenerUI extends BaseTest_UI implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        log.info(getTestMethodName(iTestResult) + " test is skipped.");
+        log.info("# "+getTestClassName(iTestResult)+"."+getTestMethodName(iTestResult) + " # test is skipped.");
         //ExtentReports log operation for skipped tests.
         getTest().log(Status.SKIP, "Test Skipped");
     }

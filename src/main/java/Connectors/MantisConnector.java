@@ -1,4 +1,4 @@
-package Connectors.mantis;
+package Connectors;
 
 import Connectors.dataentities.mantis.Category;
 import Connectors.dataentities.mantis.Priority;
@@ -105,6 +105,7 @@ public class MantisConnector {
         fileInputStreamReader.read(bytes);
         return new String(Base64.encodeBase64(bytes), "UTF-8");
     }
+
     public String createCompleteIssueWithAttachment(String summary, String desc, String additionalInfo, Project proj, Category cat, Priority prio, Severity sev, String fileBase64, boolean isSticky){
         JSONObject jo = new JSONObject();
         JSONObject category = new JSONObject();
