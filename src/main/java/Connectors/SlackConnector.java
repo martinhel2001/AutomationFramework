@@ -99,58 +99,61 @@ public class SlackConnector {
     public void postMessageTestRunFinished(String token, String channel, String logURL, String extentReportsURL, String ciUrl) {
 
         try {
+            String blocks2 = "[\n" +
+                    "\t\t{\n" +
+                    "\t\t\t\"type\": \"divider\"\n" +
+                    "\t\t},\n" +
+                    "\t\t{\n" +
+                    "\t\t\t\"type\": \"section\",\n" +
+                    "\t\t\t\"text\": {\n" +
+                    "\t\t\t\t\"type\": \"mrkdwn\",\n" +
+                    "\t\t\t\t\"text\": \"*Suite run FINISHED at * "+extentReportsURL+"\"\n" +
+                    "\t\t\t}\n" +
+                    "\t\t},\n" +
+                    "\t\t{\n" +
+                    "\t\t\t\"type\": \"actions\",\n" +
+                    "\t\t\t\"elements\": [\n" +
+                    "\t\t\t\t{\n" +
+                    "\t\t\t\t\t\"type\": \"button\",\n" +
+                    "\t\t\t\t\t\"text\": {\n" +
+                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
+                    "\t\t\t\t\t\t\"text\": \"See CI run\",\n" +
+                    "\t\t\t\t\t\t\"emoji\": true\n" +
+                    "\t\t\t\t\t},\n" +
+                    "\t\t\t\t\t\"value\": \"click_me_CIrun\",\n" +
+                    "\t\t\t\t\t\"action_id\": \"actionId-0\",\n" +
+                    "\t\t\t\t\t\"url\": \""+ciUrl+"\"\n" +
+                    "\t\t\t\t},\n" +
+                    "\t\t\t\t{\n" +
+                    "\t\t\t\t\t\"type\": \"button\",\n" +
+                    "\t\t\t\t\t\"text\": {\n" +
+                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
+                    "\t\t\t\t\t\t\"text\": \"See Log file\",\n" +
+                    "\t\t\t\t\t\t\"emoji\": true\n" +
+                    "\t\t\t\t\t},\n" +
+                    "\t\t\t\t\t\"value\": \"click_me_Log\",\n" +
+                    "\t\t\t\t\t\"action_id\": \"actionId-1\",\n" +
+                    "\t\t\t\t\t\"url\": \""+logURL+"\"\n" +
+                    "\t\t\t\t},\n" +
+                    "\t\t\t\t{\n" +
+                    "\t\t\t\t\t\"type\": \"button\",\n" +
+                    "\t\t\t\t\t\"text\": {\n" +
+                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
+                    "\t\t\t\t\t\t\"text\": \"See Report\",\n" +
+                    "\t\t\t\t\t\t\"emoji\": true\n" +
+                    "\t\t\t\t\t},\n" +
+                    "\t\t\t\t\t\"value\": \"click_me_Report\",\n" +
+                    "\t\t\t\t\t\"action_id\": \"actionId-2\",\n" +
+                    "\t\t\t\t\t\"url\": \""+extentReportsURL+"\"\n" +
+                    "\t\t\t\t}\n" +
+                    "\t\t\t]\n" +
+                    "\t\t}\n" +
+                    "\t]";
+
+            System.out.println("Slack block a postear para fin de test: "+blocks2);
             ChatPostMessageResponse response = slack.methods(token).chatPostMessage
                     (req -> req
-                            .channel(channel).blocksAsString("[\n" +
-                                    "\t\t{\n" +
-                                    "\t\t\t\"type\": \"divider\"\n" +
-                                    "\t\t},\n" +
-                                    "\t\t{\n" +
-                                    "\t\t\t\"type\": \"section\",\n" +
-                                    "\t\t\t\"text\": {\n" +
-                                    "\t\t\t\t\"type\": \"mrkdwn\",\n" +
-                                    "\t\t\t\t\"text\": \"*Suite run FINISHED at * "+extentReportsURL+"\"\n" +
-                                    "\t\t\t}\n" +
-                                    "\t\t},\n" +
-                                    "\t\t{\n" +
-                                    "\t\t\t\"type\": \"actions\",\n" +
-                                    "\t\t\t\"elements\": [\n" +
-                                    "\t\t\t\t{\n" +
-                                    "\t\t\t\t\t\"type\": \"button\",\n" +
-                                    "\t\t\t\t\t\"text\": {\n" +
-                                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
-                                    "\t\t\t\t\t\t\"text\": \"See CI run\",\n" +
-                                    "\t\t\t\t\t\t\"emoji\": true\n" +
-                                    "\t\t\t\t\t},\n" +
-                                    "\t\t\t\t\t\"value\": \"click_me_CIrun\",\n" +
-                                    "\t\t\t\t\t\"action_id\": \"actionId-0\",\n" +
-                                    "\t\t\t\t\t\"url\": \""+ciUrl+"\"\n" +
-                                    "\t\t\t\t},\n" +
-                                    "\t\t\t\t{\n" +
-                                    "\t\t\t\t\t\"type\": \"button\",\n" +
-                                    "\t\t\t\t\t\"text\": {\n" +
-                                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
-                                    "\t\t\t\t\t\t\"text\": \"See Log file\",\n" +
-                                    "\t\t\t\t\t\t\"emoji\": true\n" +
-                                    "\t\t\t\t\t},\n" +
-                                    "\t\t\t\t\t\"value\": \"click_me_Log\",\n" +
-                                    "\t\t\t\t\t\"action_id\": \"actionId-1\",\n" +
-                                    "\t\t\t\t\t\"url\": \""+logURL+"\"\n" +
-                                    "\t\t\t\t},\n" +
-                                    "\t\t\t\t{\n" +
-                                    "\t\t\t\t\t\"type\": \"button\",\n" +
-                                    "\t\t\t\t\t\"text\": {\n" +
-                                    "\t\t\t\t\t\t\"type\": \"plain_text\",\n" +
-                                    "\t\t\t\t\t\t\"text\": \"See Report\",\n" +
-                                    "\t\t\t\t\t\t\"emoji\": true\n" +
-                                    "\t\t\t\t\t},\n" +
-                                    "\t\t\t\t\t\"value\": \"click_me_Report\",\n" +
-                                    "\t\t\t\t\t\"action_id\": \"actionId-2\",\n" +
-                                    "\t\t\t\t\t\"url\": \""+extentReportsURL+"\"\n" +
-                                    "\t\t\t\t}\n" +
-                                    "\t\t\t]\n" +
-                                    "\t\t}\n" +
-                                    "\t]")
+                            .channel(channel).blocksAsString(blocks2)
                     )
                     //.text("Write one, post anywhere"))
                     ;

@@ -3,11 +3,12 @@ package pages.martinaSeminara;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePage;
 
 public class BioPage extends BasePage {
 
-    public BioPage(WebDriver driver) {
+    public BioPage(EventFiringWebDriver driver) {
         super(driver);
     }
 
@@ -16,14 +17,14 @@ public class BioPage extends BasePage {
     By headerSection = new By.ByCssSelector(".la_parallax_inner");
 
     public WebElement getMainTitle(){
-        return driver.findElement(mainTitle);
+        return eventDriver.findElement(mainTitle);
     }
 
     public WebElement getBodyText() {
-        return driver.findElement(bodyText);
+        return eventDriver.findElement(bodyText);
     }
 
     public WebElement getHeaderSection(){
-        return driver.findElement(headerSection);
+        return eventDriver.findElement(headerSection);
     }
 }

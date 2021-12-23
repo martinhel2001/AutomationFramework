@@ -14,7 +14,7 @@ public class MartinaSeminaraTest extends BaseTest_UI {
 
     @Test(description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"})
     public void unitTestValidations_HomePage() throws InterruptedException {
-        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+        HomePage msHome = new HomePage(eventDriver, "http://www.martinaseminara.com.ar");
 
         // Validate visualization of all web elements
         ExtentTestManager.getTest().log(Status.INFO, "Let's validate all web elements are displayed");
@@ -44,7 +44,6 @@ public class MartinaSeminaraTest extends BaseTest_UI {
         Assert.assertTrue(msHome.goToContacto().getMainTitle().getText().contains("Contacto"), "Contacto page title is wrong");
         msHome.goToInicio();
         wait.until(ExpectedConditions.elementToBeClickable(msHome.getPortfolioItem()));
-        Thread.sleep(2000);
         mouseOverOn(msHome.getPortfolioItem());
         Assert.assertTrue(isDisplayed(msHome.goToAnyPortfolioItem().getPageTitle()));
         msHome.goToInicio();
@@ -53,7 +52,7 @@ public class MartinaSeminaraTest extends BaseTest_UI {
 
     @Test (description = "Unit test validations from www.martinaseminara.com.ar BIO page", groups = {"seminaraCI","regression"})
     public void unitTestsValidation_BIOpage() {
-        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+        HomePage msHome = new HomePage(eventDriver, "http://www.martinaseminara.com.ar");
         BioPage bioPage = msHome.goToBio();
 
         ExtentTestManager.getTest().log(Status.INFO, "Let's validate text in BIO page");
@@ -69,7 +68,7 @@ public class MartinaSeminaraTest extends BaseTest_UI {
 
     @Test (description = "Unit test validations from www.martinaseminara.com.ar CONTACT page", groups = {"seminaraCI","regression"})
     public void unitTestsValidation_CONTACTpage() {
-        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+        HomePage msHome = new HomePage(eventDriver, "http://www.martinaseminara.com.ar");
         ContactoPage contactoPage = msHome.goToContacto();
 
         ExtentTestManager.getTest().log(Status.INFO, "Let's validate text in CONTACTO page");

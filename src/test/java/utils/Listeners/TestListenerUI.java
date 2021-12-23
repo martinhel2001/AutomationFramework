@@ -14,14 +14,14 @@ import utils.extentReports.ExtentManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import BaseTest.BaseTest;
+import BaseTest.BaseTest_UI;
 
 import static Connectors.mantis.MantisConnector.encodeFileToBase64Binary;
 import static utils.extentReports.ExtentTestManager.getTest;
 import static utils.extentReports.ExtentTestManager.startTest;
 
 //import utils.logs.Log;
-public class TestListenerUI extends BaseTest implements ITestListener {
+public class TestListenerUI extends BaseTest_UI implements ITestListener {
 
     MantisConnector mantisAPI = new MantisConnector(testsConfig.getMantis_url(),testsConfig.getMantis_host(),testsConfig.getMantis_token());
 
@@ -32,7 +32,7 @@ public class TestListenerUI extends BaseTest implements ITestListener {
     public void onStart(ITestContext iTestContext) {
         log.info("I am in onStart method " + iTestContext.getName());
         log.info("# # # # # # # # # # # # # # # # # # # # # # # # # # # ");
-        iTestContext.setAttribute("WebDriver", this.driver);
+        iTestContext.setAttribute("WebDriver", this.eventDriver);
     }
     @Override
     public void onFinish(ITestContext iTestContext) {

@@ -3,6 +3,7 @@ package pages.ecommerceSite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
@@ -31,24 +32,24 @@ public class HomePage extends BasePage {
     By txtQtyItemsInCart = new By.ByClassName("layer_cart_cart");
     List<WebElement> featuredProductsList;
 
-    public HomePage(WebDriver driver, String url) {
+    public HomePage(EventFiringWebDriver driver, String url) {
         super(driver);
         driver.get(url);
         featuredProductsList = driver.findElements(featuredProducts);
     }
 
     public void search(String product){
-        driver.findElement(searchBox).sendKeys(product);
-        driver.findElement(searchSubmit);
+        eventDriver.findElement(searchBox).sendKeys(product);
+        eventDriver.findElement(searchSubmit);
     }
 
     public HomePage carrouselLeft(){
-        driver.findElement(btnCarrouselLeft).click();
+        eventDriver.findElement(btnCarrouselLeft).click();
         return this;
     }
 
     public HomePage carrouselRight() {
-        driver.findElement(btnCarrouselRight).click();
+        eventDriver.findElement(btnCarrouselRight).click();
         return this;
     }
 
@@ -62,7 +63,7 @@ public class HomePage extends BasePage {
     protected HomePage addToCart(List<WebElement> productList, int productIndex) {
         System.out.println("Producto a comprar: "+productList.get(productIndex).findElement(new By.ByClassName("product-name")).getText());
         productList.get(productIndex).findElement(new By.ByClassName("right-block")).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(modalLayerCart).findElement(iconOK)));
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(modalLayerCart).findElement(iconOK)));
         return  this;
     }
 
@@ -72,15 +73,15 @@ public class HomePage extends BasePage {
     }
 
     public void continueShopping() {
-        driver.findElement(modalLayerCart).findElement(btnContinueShopping).click();
+        eventDriver.findElement(modalLayerCart).findElement(btnContinueShopping).click();
     }
 
     public ShoppingCart proceedToCheckout() {
-        driver.findElement(modalLayerCart).findElement(btnProceedToCheckout).click();
-        return new ShoppingCart(driver);
+        eventDriver.findElement(modalLayerCart).findElement(btnProceedToCheckout).click();
+        return new ShoppingCart(eventDriver);
     }
 
     public WebElement getTxtQtyItemsInCart() {
-        return driver.findElement(txtQtyItemsInCart);
+        return eventDriver.findElement(txtQtyItemsInCart);
     }
 }

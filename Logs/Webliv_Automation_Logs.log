@@ -1,13 +1,8 @@
-20-12-2021 13:24:10 INFO [BaseTest]: I am in onStart method All UI tests
-20-12-2021 13:24:10 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-12-2021 13:24:10 INFO [BaseTest]: #add1featuredProductToCartAndCheckout# test is starting.
-20-12-2021 13:24:10 INFO [BaseTest]: Test Description: Add 2 Featured Product to Cart
-20-12-2021 13:24:21 INFO [BaseTest]: add1featuredProductToCartAndCheckout test is failed.
-20-12-2021 13:24:21 INFO [BaseTest]: Screenshot taken
-20-12-2021 13:24:21 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-12-2021 13:24:21 INFO [BaseTest]: #add2featuredProductsToCart# test is starting.
-20-12-2021 13:24:21 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
-20-12-2021 13:24:53 INFO [BaseTest]: add2featuredProductsToCart test is failed.
-20-12-2021 13:24:53 INFO [BaseTest]: Screenshot taken
-20-12-2021 13:24:54 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-20-12-2021 13:24:54 INFO [BaseTest]: I am in onFinish method 2All UI tests
+22-12-2021 16:41:07 INFO [BaseTest]: I am in onStart method Automation-Projects
+22-12-2021 16:41:07 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+22-12-2021 16:41:07 INFO [BaseTest]: #verifyContentInPDf# test is starting.
+22-12-2021 16:41:07 INFO [BaseTest]: Test Description: Validating text in PDF
+22-12-2021 16:41:11 INFO [BaseTest]: verifyContentInPDf test is failed.
+22-12-2021 16:41:11 INFO [BaseTest]: Screenshot taken
+22-12-2021 16:41:11 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+22-12-2021 16:41:11 INFO [BaseTest]: I am in onFinish method 2Automation-Projects

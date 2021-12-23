@@ -2,14 +2,12 @@ package pages.kapsch;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import javax.swing.text.View;
 
 public class ViewTrxPage extends KapschBasePage {
 
-    public ViewTrxPage(WebDriver driver) {
+    public ViewTrxPage(EventFiringWebDriver driver) {
         super(driver);
     }
 
@@ -22,7 +20,7 @@ public class ViewTrxPage extends KapschBasePage {
 
 
     public ViewTrxPage clickSearch() {
-        this.driver.findElement(btnSearch).click();
+        this.eventDriver.findElement(btnSearch).click();
         return this;
     }
 
@@ -30,22 +28,22 @@ public class ViewTrxPage extends KapschBasePage {
         wait.until(ExpectedConditions.elementToBeClickable(inputLPN));
         //wait.until(ExpectedConditions.elementToBeSelected(inputLPN));
         //this.driver.findElement(inputLPN).clear();
-        this.driver.findElement(inputLPN).click();
-        this.driver.findElement(inputLPN).sendKeys(LPN);
+        this.eventDriver.findElement(inputLPN).click();
+        this.eventDriver.findElement(inputLPN).sendKeys(LPN);
         return this;
     }
 
     public void moreActionsView(){
-        this.mouseOver(driver.findElements(moreActions).get(0));
-        driver.findElement(moreActionsView).click();
+        this.mouseOver(eventDriver.findElements(moreActions).get(0));
+        eventDriver.findElement(moreActionsView).click();
     }
 
     public void inspectTrxTable(){
-        this.htmlTableNumberOfColumns(driver.findElement(tableTransactions));
+        this.htmlTableNumberOfColumns(eventDriver.findElement(tableTransactions));
     }
 
     public boolean vrmFound(String vrm){
-        if (getRows("VRM/Tag ID",vrm,driver.findElement(tableTransactions)).size()>0) {
+        if (getRows("VRM/Tag ID",vrm, eventDriver.findElement(tableTransactions)).size()>0) {
             return true;
         } else {return false;}
     }

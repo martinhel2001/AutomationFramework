@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class KapschBasePage extends BasePage {
 
-    public KapschBasePage(WebDriver driver){
+    public KapschBasePage(EventFiringWebDriver driver){
         super(driver);
     }
 
@@ -27,79 +28,79 @@ public class KapschBasePage extends BasePage {
     protected By menuLogout = By.cssSelector("a[translate='HEADER.SIGN_OUT_MENU_TEXT']");
     protected By homeTitle = By.cssSelector("span[translate='HOME.TITLE']");
 
-    Actions actions = new Actions(driver);
+    Actions actions = new Actions(eventDriver);
 
 
     public void mouseOver(WebElement webElement ) {
         actions.moveToElement(webElement).build().perform();
     }
 
-    public WebElement getHomeTitle() { return driver.findElement(homeTitle);}
+    public WebElement getHomeTitle() { return eventDriver.findElement(homeTitle);}
 
 
     public void goToConfiguration() {
-        driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
+        eventDriver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(menuGoTo)));
+        eventDriver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuConfiguration));
-        driver.findElement(menuConfiguration).click();
+        eventDriver.findElement(menuConfiguration).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
         wait.until(ExpectedConditions.visibilityOf(getHomeTitle()));
     }
 
     public void goToAudit() {
-        driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
+        eventDriver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(menuGoTo)));
+        eventDriver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuAudit));
-        driver.findElement(menuAudit).click();
+        eventDriver.findElement(menuAudit).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
 
     public ManualValidationHomePage goToManualValidation() {
-        driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
+        eventDriver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(menuGoTo)));
+        eventDriver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuManualValidation));
-        driver.findElement(menuManualValidation).click();
+        eventDriver.findElement(menuManualValidation).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
-        return new ManualValidationHomePage(driver);
+        return new ManualValidationHomePage(eventDriver);
     }
 
     public void goToMonitoring() {
-        driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
+        eventDriver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(menuGoTo)));
+        eventDriver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuMonitoring));
-        driver.findElement(menuMonitoring).click();
+        eventDriver.findElement(menuMonitoring).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
 
     public void goToSecurity() {
-        driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
+        eventDriver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(menuGoTo)));
+        eventDriver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuSecurity));
-        driver.findElement(menuSecurity).click();
+        eventDriver.findElement(menuSecurity).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
     public TransactionManagerHomePage goToTransactionManager() {
-        driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
+        eventDriver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(menuGoTo)));
+        eventDriver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuTransactionManager));
-        driver.findElement(menuTransactionManager).click();
+        eventDriver.findElement(menuTransactionManager).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
-        return new TransactionManagerHomePage(driver);
+        return new TransactionManagerHomePage(eventDriver);
     }
 
 
     public void goToVehicleManager() {
-        driver.findElement(headerMenu).click();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuGoTo)));
-        driver.findElement(menuGoTo).click();
+        eventDriver.findElement(headerMenu).click();
+        wait.until(ExpectedConditions.visibilityOf(eventDriver.findElement(menuGoTo)));
+        eventDriver.findElement(menuGoTo).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuVehicleManager));
-        driver.findElement(menuVehicleManager).click();
+        eventDriver.findElement(menuVehicleManager).click();
         wait.until(ExpectedConditions.elementToBeClickable(headerMenu));
     }
 
@@ -156,8 +157,8 @@ public class KapschBasePage extends BasePage {
 
 
     public void logout() {
-        driver.findElement(headerMenu).click();
+        eventDriver.findElement(headerMenu).click();
         wait.until(ExpectedConditions.elementToBeClickable(menuLogout));
-        driver.findElement(menuLogout).click();
+        eventDriver.findElement(menuLogout).click();
     }
 }
