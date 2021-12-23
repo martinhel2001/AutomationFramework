@@ -26,6 +26,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.*;
+import java.net.ConnectException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -64,15 +65,21 @@ public class BaseTest {
             ftp = new FTPClient();
             ftp.addProtocolCommandListener(new PrintCommandListener(new PrintWriter(System.out)));
             int reply;
-            ftp.connect(host,21);
-            reply = ftp.getReplyCode();
-            if (!FTPReply.isPositiveCompletion(reply)) {
-                ftp.disconnect();
-                throw new Exception("Exception in connecting to FTP Server");
+            try {
+                ftp.connect(host,21);
+                reply = ftp.getReplyCode();
+                if (!FTPReply.isPositiveCompletion(reply)) {
+                    ftp.disconnect();
+                    throw new Exception("Exception in connecting to FTP Server");
+                }
+                ftp.login(user, pwd);
+                ftp.setFileType(FTP.BINARY_FILE_TYPE);
+                ftp.enterLocalPassiveMode();
+            } catch (ConnectException f) {
+                System.out.println("Exception when trying to connect to FTP: "+f.getMessage());
             }
-            ftp.login(user, pwd);
-            ftp.setFileType(FTP.BINARY_FILE_TYPE);
-            ftp.enterLocalPassiveMode();
+            //ftp.connect(host,21);
+
         }
 
         public void uploadFile(String localFileFullName, String fileName, String hostDir)

@@ -12,7 +12,7 @@ import utils.extentReports.ExtentTestManager;
 
 public class MartinaSeminaraTest extends BaseTest_UI {
 
-    @Test(description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"}, invocationCount = 5)
+    @Test(description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"})
     public void unitTestValidations_HomePage() throws InterruptedException {
         HomePage msHome = new HomePage(eventDriver, "http://www.martinaseminara.com.ar");
 
