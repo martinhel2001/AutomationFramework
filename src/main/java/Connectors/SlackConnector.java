@@ -72,7 +72,7 @@ public class SlackConnector {
 
             ChatPostMessageResponse response = slack.methods(token).chatPostMessage
                     (req -> req
-                    .channel(channel).blocksAsString(blocks)
+                    .channel(channel).text("Bug found during Test run").blocksAsString(blocks)
                     )
                     //.text("Write one, post anywhere"))
                     ;
@@ -153,7 +153,7 @@ public class SlackConnector {
             System.out.println("Slack block a postear para fin de test: "+blocks2);
             ChatPostMessageResponse response = slack.methods(token).chatPostMessage
                     (req -> req
-                            .channel(channel).blocksAsString(blocks2)
+                            .channel(channel).text("Test Run finished!").blocksAsString(blocks2)
                     )
                     //.text("Write one, post anywhere"))
                     ;
