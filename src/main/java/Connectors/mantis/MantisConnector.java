@@ -95,7 +95,7 @@ public class MantisConnector {
         jo.put("project",project);
         jo.put("tags",tagsArray);
 
-
+        System.out.println("Complete issue body: "+jo.toString());
         return postIssue(jo.toString());
     }
 
