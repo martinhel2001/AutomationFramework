@@ -45,7 +45,7 @@ public class PetStoreTest extends BaseTest_API {
         Assert.assertEquals(pet.getName(),petName);
     }
 
-    @Test (enabled = false) // porque tarda mucho en actualizarse la DB remota con el nuevo Pet ingresado
+    @Test (enabled = true) // porque tarda mucho en actualizarse la DB remota con el nuevo Pet ingresado
     public void addNewPetTest() throws InterruptedException {
         String petId = "0";
         String petName="Diana";

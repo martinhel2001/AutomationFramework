@@ -110,20 +110,20 @@ public class BaseTest {
 
 
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun=true)
     public void setUser(){
         UserPropertiesReader userReader = new UserPropertiesReader("Administrator");
         username = userReader.getUsername();
         password = userReader.getPassword();
     }
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun=true)
     public static void Setup() {
         // loading log4j.xml file
         DOMConfigurator.configure("log4j.xml");
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun=true)
     public void uploadLogAndReport() throws Exception {
         if (testsConfig.isUploadLogEnabled().equals("on")){
             this.uploadFile("./Logs/Webliv_Automation_Logs.log", "automationLog-"+timestamp+".log", "/public_html/logs/");
