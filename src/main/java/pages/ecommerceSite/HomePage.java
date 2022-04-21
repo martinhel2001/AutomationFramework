@@ -1,15 +1,14 @@
 package pages.ecommerceSite;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.BasePage;
+import pages.BasePageInteractions;
 
 import java.util.List;
 
-public class HomePage extends BasePage {
+public class HomePage extends BasePageInteractions {
 
 
     By banner = new By.ByCssSelector("#header > div.banner > div.container");

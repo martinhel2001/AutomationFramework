@@ -26,7 +26,7 @@ public class WebDriverWaitListener extends AbstractWebDriverEventListener {
         js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
         long startTime = System.currentTimeMillis();
         log.info("beforeClickOn '"+element.getText()+"':: start");
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        //wait.until(ExpectedConditions.elementToBeClickable(element));
         long endTime = System.currentTimeMillis();
         log.info("beforeClickOn '"+element.getText()+"':: end, took "+(endTime-startTime)+" milliseconds");
     }

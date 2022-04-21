@@ -1,12 +1,11 @@
 package pages.martinaSeminara;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import pages.BasePage;
+import pages.BasePageInteractions;
 
-public class PortfolioItemPage extends BasePage {
+public class PortfolioItemPage extends BasePageInteractions {
 
     By pageTitle = new By.ByCssSelector(".page-title.h3");
     By videoWrapper = new By.ByClassName("wpb_video_wrapper");

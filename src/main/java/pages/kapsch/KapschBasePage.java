@@ -1,16 +1,15 @@
 package pages.kapsch;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.BasePage;
+import pages.BasePageInteractions;
 
 import java.util.List;
 
-public class KapschBasePage extends BasePage {
+public class KapschBasePage extends BasePageInteractions {
 
     public KapschBasePage(EventFiringWebDriver driver){
         super(driver);

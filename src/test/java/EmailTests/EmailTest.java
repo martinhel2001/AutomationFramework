@@ -22,4 +22,11 @@ public class EmailTest {
     public void sentrifugoTest() {
         emailsConnector.check(EmailServer.AUTOMATIONCAMPUS.getHost(),"pop3", EmailUser.SENTRIFUGO_admin.getUserName(), EmailUser.SENTRIFUGO_admin.getPassword());
     }
+
+    @Test (description = "display all emails on sentrifugo-admin@automationcampus.com.ar")
+    public void churchTest() {
+        emailsConnector.check(EmailServer.AUTOMATIONCAMPUS.getHost(),"pop3", EmailUser.CHURCH_admin.getUserName(), EmailUser.CHURCH_admin.getPassword());
+    }
+
+
 }

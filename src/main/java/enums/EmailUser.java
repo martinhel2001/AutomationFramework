@@ -1,10 +1,10 @@
 package enums;
 
 public enum EmailUser {
-    AKAUNTING_admin("akaunting-admin@automationcampus.com.ar","Trinity110"),
-    CHURCH_admin("church-admin@automationcampus.com.ar","Trinity110"),
+    AKAUNTING_admin("akaunting-admin@automationcampus.com.ar","trinity110"),
+    CHURCH_admin("church-admin@automationcampus.com.ar","trinity110"),
     SENTRIFUGO_admin("sentrifugo-admin@automationcampus.com.ar","Trinity110"),
-    YETI_admin("yeti-admin@automationcampus.com.ar","Trinity110");
+    YETI_admin("yeti-admin@automationcampus.com.ar","trinity110");
 
     private String userName;
     private String password;
