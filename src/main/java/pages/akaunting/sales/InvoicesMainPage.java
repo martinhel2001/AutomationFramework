@@ -1,13 +1,13 @@
-package pages.akaunting;
+package pages.akaunting.sales;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePageInteractions;
 
-public class InvoicesMain extends BasePageInteractions {
+public class InvoicesMainPage extends BasePageInteractions {
 
-    public InvoicesMain(EventFiringWebDriver eventDriver) {
+    public InvoicesMainPage(EventFiringWebDriver eventDriver) {
         super(eventDriver);
     }
 
@@ -22,8 +22,8 @@ public class InvoicesMain extends BasePageInteractions {
         return eventDriver.findElement(addNewBtn);
     }
 
-    public NewInvoice addNewInvoice() {
+    public NewInvoicePage addNewInvoice() {
         eventDriver.findElement(addNewBtn).click();
-        return new NewInvoice(eventDriver);
+        return new NewInvoicePage(eventDriver);
     }
 }
