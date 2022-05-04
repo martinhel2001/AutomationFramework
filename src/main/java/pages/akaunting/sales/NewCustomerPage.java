@@ -29,7 +29,6 @@ public class NewCustomerPage extends BasePageInteractions {
     By disabledRadioBtn = new By.ById("enabled-0"); //radio btn
     By canLoginChkbox = new By.ById("create_user"); // checkbox
     By cancelBtn = new By.ByLinkText("Cancel");
-    //By saveBtn = new By.ByLinkText("Save");
     By saveBtn = new By.ByCssSelector("button");
 
     public WebElement getHeader() {
