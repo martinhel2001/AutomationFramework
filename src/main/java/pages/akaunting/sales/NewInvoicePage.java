@@ -19,4 +19,19 @@ public class NewInvoicePage extends BasePageInteractions {
     public WebElement getHeaderTitle() {
         return eventDriver.findElement(headerTitle);
     }
+
+    public WebElement getAddCustomerCard() {
+        return eventDriver.findElement(addCustomerCard);
+    }
+
+    public WebElement getCustomerInput() {
+        return eventDriver.findElement(customerInput);
+    }
+
+    public WebElement getInvoiceDatePicker() {
+        return eventDriver.findElement(invoiceDatePicker);
+    }
+
+
+
 }

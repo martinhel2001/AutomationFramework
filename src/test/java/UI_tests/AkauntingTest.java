@@ -2,6 +2,8 @@ package UI_tests;
 
 import BaseTest.BaseTest_UI;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,6 +11,8 @@ import pages.akaunting.*;
 import pages.akaunting.sales.*;
 
 public class AkauntingTest extends BaseTest_UI {
+
+    String customerName="";
 
     @Test (description = "Testing login button")
     public void loginSmokeTest() {
@@ -22,17 +26,24 @@ public class AkauntingTest extends BaseTest_UI {
     }
 
     @Test (description = "Testing Invoice creation", dependsOnMethods = "createCustomer")
-    public void createInvoice() {
+    public void createInvoice() throws InterruptedException {
         Dashboard objDashboard = new Dashboard(eventDriver);
-        InvoicesMainPage objInvoices;
-        NewInvoicePage objNewInvoicePage = new NewInvoicePage(eventDriver);
+        InvoicesMainPage invoicesMainPage;
+        NewInvoicePage newInvoicePage = new NewInvoicePage(eventDriver);
 
         // Step 1: Navigate to Invoices page
-        objInvoices = objDashboard.goToInvoices();
+        invoicesMainPage = objDashboard.goToInvoices();
 
         // Step 2: Add New Invoice
-        objInvoices.getAddNewBtn().click();
-        Assert.assertTrue(objNewInvoicePage.getHeaderTitle().isDisplayed());
+        invoicesMainPage.getAddNewBtn().click();
+        Assert.assertTrue(newInvoicePage.getHeaderTitle().isDisplayed());
+        newInvoicePage.getAddCustomerCard().click();
+        newInvoicePage.getCustomerInput().sendKeys(customerName);
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.elementToBeClickable(eventDriver.findElement(new By.ByXPath("//span[text()='"+customerName+"']"))));
+        eventDriver.findElement(new By.ByXPath("//span[text()='"+customerName+"']")).click();
+        newInvoicePage.getInvoiceDatePicker().click();
+        newInvoicePage.getInvoiceDatePicker().sendKeys(Keys.ARROW_UP);
 
         //....
     }
@@ -52,7 +63,8 @@ public class AkauntingTest extends BaseTest_UI {
         Assert.assertTrue(objNewCustomerPage.getHeader().getText().contains("New Customer"));
         String randomString = RandomStringUtils.randomAlphabetic(5);
 
-        objNewCustomerPage.getName().sendKeys("John Snow "+ randomString);
+        customerName="John Snow "+ randomString;
+        objNewCustomerPage.getName().sendKeys(customerName);
         objNewCustomerPage.getAddress().sendKeys("Elm Street 232");
         objNewCustomerPage.getCity().sendKeys("Toronto");
         objNewCustomerPage.getState().sendKeys("TO");
@@ -69,7 +81,7 @@ public class AkauntingTest extends BaseTest_UI {
 
         // Step 3: Validate the adding Customer step finished and the user is placed in Customer Detail page
         CustomerDetailPage objCustomerDetailPage = new CustomerDetailPage(eventDriver);
-        wait.until(ExpectedConditions.elementToBeClickable(objCustomerDetailPage.getPaidCard()));
+        wait.until(ExpectedConditions.visibilityOf(objCustomerDetailPage.getPaidCard()));
         Assert.assertTrue(objCustomerDetailPage.getCustomerName().getText().equals("John Snow "+ randomString),"Customer name shown: "+objCustomerDetailPage.getCustomerName().getText());
         Assert.assertTrue(objCustomerDetailPage.getPaidCard().getText().equals("PAID"),"Text obtained: "+objCustomerDetailPage.getPaidCard().getText());
         Assert.assertTrue(objCustomerDetailPage.getOpenInvoicesCard().getText().equals("OPEN INVOICES"),"Text obtained: "+objCustomerDetailPage.getOpenInvoicesCard().getText());
