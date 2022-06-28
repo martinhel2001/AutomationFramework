@@ -1,4 +1,4 @@
-package Connectors.dataentities.petstore;
+package dataentities.petstore;
 
 public class ApiResponse {
     private int code;

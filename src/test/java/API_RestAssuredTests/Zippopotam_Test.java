@@ -1,6 +1,6 @@
 package API_RestAssuredTests;
 
-import Connectors.dataentities.zippopotam.Location;
+import dataentities.zippopotam.Location;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -10,7 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utils.Listeners.TestListenerUI;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;

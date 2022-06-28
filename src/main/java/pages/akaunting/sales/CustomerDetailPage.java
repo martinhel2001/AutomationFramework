@@ -13,11 +13,12 @@ public class CustomerDetailPage extends BasePageInteractions {
 
     private By customerName = new By.ByCssSelector("div#header h2");
     private By cardAmount = new By.ByCssSelector(".card-body span");
-    private By paidCard = new By.ByXPath("//*[text()='Paid']");
+    private By paidCard = new By.ByCssSelector(".card.bg-gradient-success.border-0");
     private By openInvoicesCard = new By.ByXPath("//*[text()='Open Invoices']");
     private By overdueInvoicesCard = new By.ByXPath("//*[text()='Overdue Invoices']");
     private By moreActionsDropdown = new By.ByXPath("//button[contains()='More Actions'");
     private By createInvoiceMenuOption = new By.ByLinkText("Create Invoice");
+    private By invoicesTab = new By.ByCssSelector("#invoices-tab");
 
 
     public WebElement getCustomerName() {
@@ -48,4 +49,9 @@ public class CustomerDetailPage extends BasePageInteractions {
     public WebElement createInvoice(){
         return eventDriver.findElement(createInvoiceMenuOption);
     }
+
+    public WebElement getInvoicesTab() {
+        return eventDriver.findElement(invoicesTab);
+    }
+
 }

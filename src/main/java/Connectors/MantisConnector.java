@@ -1,9 +1,9 @@
 package Connectors;
 
-import Connectors.dataentities.mantis.Category;
-import Connectors.dataentities.mantis.Priority;
-import Connectors.dataentities.mantis.Project;
-import Connectors.dataentities.mantis.Severity;
+import dataentities.mantis.Category;
+import dataentities.mantis.Priority;
+import dataentities.mantis.Project;
+import dataentities.mantis.Severity;
 import com.google.api.client.util.Base64;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;

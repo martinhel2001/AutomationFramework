@@ -1,4 +1,4 @@
-package Connectors.dataentities.zippopotam;
+package dataentities.zippopotam;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

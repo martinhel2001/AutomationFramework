@@ -1,51 +1,45 @@
-04-05-2022 19:33:36 INFO [BaseTest]: I am in onStart method Automation-Projects
-04-05-2022 19:33:36 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-04-05-2022 19:33:36 INFO [BaseTest]: # UI_tests.AkauntingTest.loginSmokeTest # test is starting.
-04-05-2022 19:33:36 INFO [BaseTest]: Test Description: Testing login button
-04-05-2022 19:34:27 INFO [BaseTest]: beforeClickOn 'Login':: start
-04-05-2022 19:34:27 INFO [BaseTest]: beforeClickOn 'Login':: end, took 131 milliseconds
-04-05-2022 19:34:43 INFO [BaseTest]: # UI_tests.AkauntingTest.loginSmokeTest # test is succeed.
-04-05-2022 19:34:43 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-04-05-2022 19:34:43 INFO [BaseTest]: # UI_tests.AkauntingTest.createCustomer # test is starting.
-04-05-2022 19:34:43 INFO [BaseTest]: Test Description: Validating regular Customer creation
-04-05-2022 19:34:43 INFO [BaseTest]: beforeClickOn 'Sales':: start
-04-05-2022 19:34:43 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 110 milliseconds
-04-05-2022 19:34:44 INFO [BaseTest]: beforeClickOn 'Customers':: start
-04-05-2022 19:34:44 INFO [BaseTest]: beforeClickOn 'Customers':: end, took 126 milliseconds
-04-05-2022 19:34:50 INFO [BaseTest]: beforeClickOn 'Add New':: start
-04-05-2022 19:34:50 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 64 milliseconds
-04-05-2022 19:34:52 INFO [BaseTest]: beforeGetText 'New Customer
+28-06-2022 10:42:20 INFO [BaseTest]: I am in onStart method Automation-Projects
+28-06-2022 10:42:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+28-06-2022 10:42:20 INFO [BaseTest]: # UI_tests.AkauntingTest.loginSmokeTest # test is starting.
+28-06-2022 10:42:20 INFO [BaseTest]: Test Description: Testing login button
+28-06-2022 10:42:25 INFO [BaseTest]: beforeClickOn 'Login':: start
+28-06-2022 10:42:25 INFO [BaseTest]: beforeClickOn 'Login':: end, took 47 milliseconds
+28-06-2022 10:42:30 INFO [BaseTest]: # UI_tests.AkauntingTest.loginSmokeTest # test is succeed.
+28-06-2022 10:42:30 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+28-06-2022 10:42:30 INFO [BaseTest]: # UI_tests.AkauntingTest.createCustomer # test is starting.
+28-06-2022 10:42:30 INFO [BaseTest]: Test Description: Validating regular Customer creation
+28-06-2022 10:42:30 INFO [BaseTest]: beforeClickOn 'Sales':: start
+28-06-2022 10:42:30 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 56 milliseconds
+28-06-2022 10:42:31 INFO [BaseTest]: beforeClickOn 'Customers':: start
+28-06-2022 10:42:31 INFO [BaseTest]: beforeClickOn 'Customers':: end, took 81 milliseconds
+28-06-2022 10:42:35 INFO [BaseTest]: beforeClickOn 'Add New':: start
+28-06-2022 10:42:35 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 42 milliseconds
+28-06-2022 10:42:36 INFO [BaseTest]: beforeGetText 'New Customer
 Custom Fields':: start
-04-05-2022 19:34:52 INFO [BaseTest]: beforeGetText 'New Customer
-Custom Fields':: end, took 56 milliseconds
-04-05-2022 19:34:55 INFO [BaseTest]: beforeClickOn 'Save':: start
-04-05-2022 19:34:55 INFO [BaseTest]: beforeClickOn 'Save':: end, took 73 milliseconds
-04-05-2022 19:34:58 INFO [BaseTest]: beforeGetText 'John Snow KyVvK':: start
-04-05-2022 19:34:58 INFO [BaseTest]: beforeGetText 'John Snow KyVvK':: end, took 50 milliseconds
-04-05-2022 19:34:58 INFO [BaseTest]: beforeGetText 'John Snow KyVvK':: start
-04-05-2022 19:34:58 INFO [BaseTest]: beforeGetText 'John Snow KyVvK':: end, took 43 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'PAID':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'PAID':: end, took 49 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'PAID':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'PAID':: end, took 45 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: end, took 51 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: end, took 44 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: end, took 44 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: end, took 35 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: # UI_tests.AkauntingTest.createCustomer # test is succeed.
-04-05-2022 19:34:59 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-04-05-2022 19:34:59 INFO [BaseTest]: # UI_tests.AkauntingTest.createInvoice # test is starting.
-04-05-2022 19:34:59 INFO [BaseTest]: Test Description: Testing Invoice creation
-04-05-2022 19:34:59 INFO [BaseTest]: beforeClickOn 'Sales':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 68 milliseconds
-04-05-2022 19:34:59 INFO [BaseTest]: beforeClickOn 'Invoices':: start
-04-05-2022 19:34:59 INFO [BaseTest]: beforeClickOn 'Invoices':: end, took 64 milliseconds
-04-05-2022 19:35:08 INFO [BaseTest]: beforeClickOn 'Add New':: start
-04-05-2022 19:35:08 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 48 milliseconds
-04-05-2022 19:35:13 INFO [BaseTest]: # UI_tests.AkauntingTest.createInvoice # test is succeed.
-04-05-2022 19:35:13 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-04-05-2022 19:35:13 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
+28-06-2022 10:42:36 INFO [BaseTest]: beforeGetText 'New Customer
+Custom Fields':: end, took 33 milliseconds
+28-06-2022 10:42:38 INFO [BaseTest]: beforeClickOn 'Save':: start
+28-06-2022 10:42:38 INFO [BaseTest]: beforeClickOn 'Save':: end, took 44 milliseconds
+28-06-2022 10:44:08 INFO [BaseTest]: beforeGetText 'John Snow JlnDu':: start
+28-06-2022 10:44:09 INFO [BaseTest]: beforeGetText 'John Snow JlnDu':: end, took 549 milliseconds
+28-06-2022 10:44:09 INFO [BaseTest]: beforeGetText 'John Snow JlnDu':: start
+28-06-2022 10:44:09 INFO [BaseTest]: beforeGetText 'John Snow JlnDu':: end, took 563 milliseconds
+28-06-2022 10:44:12 INFO [BaseTest]: beforeGetText 'PAID
+$0.00':: start
+28-06-2022 10:44:12 INFO [BaseTest]: beforeGetText 'PAID
+$0.00':: end, took 530 milliseconds
+28-06-2022 10:44:12 INFO [BaseTest]: beforeGetText 'PAID
+$0.00':: start
+28-06-2022 10:44:13 INFO [BaseTest]: beforeGetText 'PAID
+$0.00':: end, took 507 milliseconds
+28-06-2022 10:44:13 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: start
+28-06-2022 10:44:13 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: end, took 567 milliseconds
+28-06-2022 10:44:13 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: start
+28-06-2022 10:44:14 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: end, took 525 milliseconds
+28-06-2022 10:44:14 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: start
+28-06-2022 10:44:15 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: end, took 563 milliseconds
+28-06-2022 10:44:15 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: start
+28-06-2022 10:44:15 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: end, took 544 milliseconds
+28-06-2022 10:44:15 INFO [BaseTest]: # UI_tests.AkauntingTest.createCustomer # test is succeed.
+28-06-2022 10:44:15 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+28-06-2022 10:44:15 INFO [BaseTest]: I am in onFinish method 2Automation-Projects

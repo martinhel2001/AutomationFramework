@@ -1,4 +1,4 @@
-package Connectors.dataentities.mantis;
+package dataentities.mantis;
 
 public enum Project {
     AUTOMATION_BUGS("Automation Bugs",1);

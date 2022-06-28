@@ -1,4 +1,4 @@
-package Connectors.dataentities.petstore;
+package dataentities.petstore;
 
 //import org.junit.experimental.categories.Category;
 

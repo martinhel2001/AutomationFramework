@@ -1,10 +1,10 @@
 package utils.Listeners;
 
 import BaseTest.BaseTest;
-import Connectors.dataentities.mantis.Category;
-import Connectors.dataentities.mantis.Priority;
-import Connectors.dataentities.mantis.Project;
-import Connectors.dataentities.mantis.Severity;
+import dataentities.mantis.Category;
+import dataentities.mantis.Priority;
+import dataentities.mantis.Project;
+import dataentities.mantis.Severity;
 import Connectors.MantisConnector;
 import com.aventstack.extentreports.Status;
 import utils.extentReports.ExtentManager;

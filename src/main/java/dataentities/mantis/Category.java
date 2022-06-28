@@ -1,4 +1,4 @@
-package Connectors.dataentities.mantis;
+package dataentities.mantis;
 
 public enum Category {
     API,General,Stress,UI

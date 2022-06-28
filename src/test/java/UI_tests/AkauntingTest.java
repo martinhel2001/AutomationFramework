@@ -71,8 +71,6 @@ public class AkauntingTest extends BaseTest_UI {
         objNewCustomerPage.getCountry().sendKeys("Canada");
         objNewCustomerPage.getCurrency().sendKeys("Argentine Peso");
         objNewCustomerPage.getEmail().sendKeys("johnsnow_"+randomString+"@automationcampus.com.ar");
-       // if (!objNewCustomerPage.getCanLogin().isSelected()) objNewCustomerPage.getCanLogin().click();
-        //objNewCustomerPage.getEnabled().click();
         objNewCustomerPage.getTaxNumber().sendKeys(randomString);
         objNewCustomerPage.getWebsite().sendKeys("http://www.automationcampus.com.ar");
         objNewCustomerPage.getPhone().sendKeys("3424234234234");
@@ -81,9 +79,10 @@ public class AkauntingTest extends BaseTest_UI {
 
         // Step 3: Validate the adding Customer step finished and the user is placed in Customer Detail page
         CustomerDetailPage objCustomerDetailPage = new CustomerDetailPage(eventDriver);
-        wait.until(ExpectedConditions.visibilityOf(objCustomerDetailPage.getPaidCard()));
+        //wait.until(ExpectedConditions.visibilityOf(objCustomerDetailPage.getInvoicesTab()));
+        wait.until(ExpectedConditions.elementToBeClickable(objCustomerDetailPage.getInvoicesTab()));
         Assert.assertTrue(objCustomerDetailPage.getCustomerName().getText().equals("John Snow "+ randomString),"Customer name shown: "+objCustomerDetailPage.getCustomerName().getText());
-        Assert.assertTrue(objCustomerDetailPage.getPaidCard().getText().equals("PAID"),"Text obtained: "+objCustomerDetailPage.getPaidCard().getText());
+        Assert.assertTrue(objCustomerDetailPage.getPaidCard().getText().contains("PAID"),"Text obtained: "+objCustomerDetailPage.getPaidCard().getText());
         Assert.assertTrue(objCustomerDetailPage.getOpenInvoicesCard().getText().equals("OPEN INVOICES"),"Text obtained: "+objCustomerDetailPage.getOpenInvoicesCard().getText());
         Assert.assertTrue(objCustomerDetailPage.getOverdueInvoicesCard().getText().equals("OVERDUE INVOICES"),"Text obtained: "+objCustomerDetailPage.getOverdueInvoicesCard().getText());
 

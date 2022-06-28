@@ -1,6 +1,6 @@
-package Connectors.dataentities.petstore.APIs;
+package dataentities.petstore.APIs;
 
-import Connectors.dataentities.petstore.Order;
+import dataentities.petstore.Order;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
