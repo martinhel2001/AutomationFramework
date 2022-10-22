@@ -1,9 +1,9 @@
-package Connectors.mantis;
+package Connectors;
 
-import Connectors.dataentities.mantis.Category;
-import Connectors.dataentities.mantis.Priority;
-import Connectors.dataentities.mantis.Project;
-import Connectors.dataentities.mantis.Severity;
+import dataentities.mantis.Category;
+import dataentities.mantis.Priority;
+import dataentities.mantis.Project;
+import dataentities.mantis.Severity;
 import com.google.api.client.util.Base64;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -105,6 +105,7 @@ public class MantisConnector {
         fileInputStreamReader.read(bytes);
         return new String(Base64.encodeBase64(bytes), "UTF-8");
     }
+
     public String createCompleteIssueWithAttachment(String summary, String desc, String additionalInfo, Project proj, Category cat, Priority prio, Severity sev, String fileBase64, boolean isSticky){
         JSONObject jo = new JSONObject();
         JSONObject category = new JSONObject();

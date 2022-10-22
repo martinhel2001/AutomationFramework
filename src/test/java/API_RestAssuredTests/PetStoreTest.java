@@ -4,14 +4,13 @@ package API_RestAssuredTests;
 // using API examples from https://petstore.swagger.io/#/pet
 
 import BaseTest.BaseTest_API;
-import Connectors.dataentities.petstore.APIs.StoreHelperAPI;
-import Connectors.dataentities.petstore.Order;
-import Connectors.dataentities.petstore.Pet;
-import Connectors.dataentities.petstore.APIs.PetHelperAPI;
+import dataentities.petstore.APIs.StoreHelperAPI;
+import dataentities.petstore.Order;
+import dataentities.petstore.Pet;
+import dataentities.petstore.APIs.PetHelperAPI;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utils.Listeners.TestListenerUI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +56,7 @@ public class PetStoreTest extends BaseTest_API {
 
         Pet insertedPet = petAPI.postPet(newlyPet);
         System.out.println("Pet ID assigned to new Pet: "+insertedPet.getId());
-        Thread.sleep(25000);
+        //Thread.sleep(25000);
         Pet petVerification = petAPI.getPetById(insertedPet.getId());
         System.out.println("Pet ID insertado: "+insertedPet.getId());
         System.out.println("Pet name grabado: "+insertedPet.getName());

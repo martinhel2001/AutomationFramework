@@ -4,14 +4,14 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage {
+public class BasePageInteractions {
     //protected WebDriver eventDriver;
     protected WebDriverWait wait;
     protected EventFiringWebDriver eventDriver;
 
 
 
-    public BasePage(EventFiringWebDriver eventDriver) {
+    public BasePageInteractions(EventFiringWebDriver eventDriver) {
         this.eventDriver = eventDriver;
         wait = new WebDriverWait(eventDriver,20);
     }

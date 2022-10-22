@@ -1,11 +1,10 @@
 package pages.ecommerceSite;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import pages.BasePage;
+import pages.BasePageInteractions;
 
-public class ShoppingCart extends BasePage {
+public class ShoppingCart extends BasePageInteractions {
 
     public ShoppingCart(EventFiringWebDriver driver) {
         super(driver);

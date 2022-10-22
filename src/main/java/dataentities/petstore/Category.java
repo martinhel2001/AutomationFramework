@@ -1,20 +1,19 @@
-package Connectors.dataentities.petstore;
+package dataentities.petstore;
 
-public class Tag {
-
-    private String id;
+public class Category {
+    private int id;
     private String name;
 
-    public Tag(){
-        this.id="1";
-        this.name="tag1";
+    public Category(){
+        this.id=1;
+        this.name="cat1";
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -25,4 +24,5 @@ public class Tag {
     public void setName(String name) {
         this.name = name;
     }
+
 }

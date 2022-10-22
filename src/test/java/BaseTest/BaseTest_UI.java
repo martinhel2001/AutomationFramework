@@ -40,6 +40,8 @@ public class BaseTest_UI extends BaseTest{
     @BeforeMethod(alwaysRun = true)
     public void startWait(){
         wait = new WebDriverWait(eventDriver,20);
+        wait.ignoring(NoSuchElementException.class);
+        wait.ignoring(StaleElementReferenceException.class);
     }
 
     public void mouseOverOn(WebElement ele){

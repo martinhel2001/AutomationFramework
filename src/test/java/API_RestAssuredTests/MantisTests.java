@@ -1,11 +1,11 @@
 package API_RestAssuredTests;
 
 import BaseTest.BaseTest;
-import Connectors.dataentities.mantis.Category;
-import Connectors.dataentities.mantis.Priority;
-import Connectors.dataentities.mantis.Project;
-import Connectors.dataentities.mantis.Severity;
-import Connectors.mantis.MantisConnector;
+import dataentities.mantis.Category;
+import dataentities.mantis.Priority;
+import dataentities.mantis.Project;
+import dataentities.mantis.Severity;
+import Connectors.MantisConnector;
 import org.testng.annotations.Test;
 
 public class MantisTests extends BaseTest {
