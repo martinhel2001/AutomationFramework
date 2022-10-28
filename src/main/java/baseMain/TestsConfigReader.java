@@ -50,14 +50,6 @@ public class TestsConfigReader {
         return properties.getProperty("ecommerce_url");
     }
 
-    public String getDBKapsch_url() {return properties.getProperty("DB_url"); }
-    public String getDBKapsch_user() {
-        return properties.getProperty("DB_user");
-    }
-    public String getDBKapsch_pass() {
-        return properties.getProperty("DB_pass");
-    }
-
     public String getDBFree_url() {return properties.getProperty("DBfree_url"); }
     public String getDBFree_user() {
         return properties.getProperty("DBfree_user");
