@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="OBO-Kapsch" />
+        <module name="Automation-Campus" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="OBO-Kapsch" target="15" />
+      <module name="Automation-Campus" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

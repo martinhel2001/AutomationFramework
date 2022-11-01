@@ -1,214 +1,34 @@
-24-10-2022 18:27:05 INFO [BaseTest]: I am in onStart method Automation-Projects
-24-10-2022 18:27:05 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:27:05 INFO [BaseTest]: # UI_tests.AkauntingTest.loginSmokeTest # test is starting.
-24-10-2022 18:27:05 INFO [BaseTest]: Test Description: Testing login button
-24-10-2022 18:27:37 INFO [BaseTest]: beforeClickOn 'Login':: start
-24-10-2022 18:27:37 INFO [BaseTest]: beforeClickOn 'Login':: end, took 74 milliseconds
-24-10-2022 18:27:52 INFO [BaseTest]: # UI_tests.AkauntingTest.loginSmokeTest # test is succeed.
-24-10-2022 18:27:52 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:27:52 INFO [BaseTest]: # UI_tests.AkauntingTest.createCustomer # test is starting.
-24-10-2022 18:27:52 INFO [BaseTest]: Test Description: Validating regular Customer creation
-24-10-2022 18:27:52 INFO [BaseTest]: beforeClickOn 'Sales':: start
-24-10-2022 18:27:52 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 57 milliseconds
-24-10-2022 18:27:52 INFO [BaseTest]: beforeClickOn 'Customers':: start
-24-10-2022 18:27:53 INFO [BaseTest]: beforeClickOn 'Customers':: end, took 120 milliseconds
-24-10-2022 18:27:57 INFO [BaseTest]: beforeClickOn 'Add New':: start
-24-10-2022 18:27:57 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 33 milliseconds
-24-10-2022 18:27:59 INFO [BaseTest]: beforeGetText 'New Customer
-Custom Fields':: start
-24-10-2022 18:27:59 INFO [BaseTest]: beforeGetText 'New Customer
-Custom Fields':: end, took 36 milliseconds
-24-10-2022 18:28:02 INFO [BaseTest]: beforeClickOn 'Save':: start
-24-10-2022 18:28:02 INFO [BaseTest]: beforeClickOn 'Save':: end, took 39 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'John Snow HCNYL':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'John Snow HCNYL':: end, took 53 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'John Snow HCNYL':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'John Snow HCNYL':: end, took 21 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'PAID
-$0.00':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'PAID
-$0.00':: end, took 39 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'PAID
-$0.00':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'PAID
-$0.00':: end, took 25 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: end, took 25 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OPEN INVOICES':: end, took 17 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: end, took 22 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeGetText 'OVERDUE INVOICES':: end, took 22 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: # UI_tests.AkauntingTest.createCustomer # test is succeed.
-24-10-2022 18:28:05 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:05 INFO [BaseTest]: # UI_tests.AkauntingTest.createInvoice # test is starting.
-24-10-2022 18:28:05 INFO [BaseTest]: Test Description: Testing Invoice creation
-24-10-2022 18:28:05 INFO [BaseTest]: beforeClickOn 'Sales':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 33 milliseconds
-24-10-2022 18:28:05 INFO [BaseTest]: beforeClickOn 'Invoices':: start
-24-10-2022 18:28:05 INFO [BaseTest]: beforeClickOn 'Invoices':: end, took 33 milliseconds
-24-10-2022 18:28:09 INFO [BaseTest]: beforeClickOn 'Add New':: start
-24-10-2022 18:28:09 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 32 milliseconds
-24-10-2022 18:28:11 INFO [BaseTest]: beforeClickOn 'Add a Customer':: start
-24-10-2022 18:28:11 INFO [BaseTest]: beforeClickOn 'Add a Customer':: end, took 31 milliseconds
-24-10-2022 18:28:22 INFO [BaseTest]: beforeClickOn 'John Snow HCNYL':: start
-24-10-2022 18:28:22 INFO [BaseTest]: beforeClickOn 'John Snow HCNYL':: end, took 46 milliseconds
-24-10-2022 18:28:22 INFO [BaseTest]: beforeClickOn '':: start
-24-10-2022 18:28:22 INFO [BaseTest]: beforeClickOn '':: end, took 46 milliseconds
-24-10-2022 18:28:22 INFO [BaseTest]: # UI_tests.AkauntingTest.createInvoice # test is succeed.
-24-10-2022 18:28:22 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:22 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add1featuredProductToCartAndCheckout # test is starting.
-24-10-2022 18:28:22 INFO [BaseTest]: Test Description: Add 2 Featured Product to Cart
-24-10-2022 18:28:27 INFO [BaseTest]: beforeGetText 'Blouse':: start
-24-10-2022 18:28:27 INFO [BaseTest]: beforeGetText 'Blouse':: end, took 34 milliseconds
-24-10-2022 18:28:27 INFO [BaseTest]: beforeClickOn 'Blouse
-$27.00':: start
-24-10-2022 18:28:27 INFO [BaseTest]: beforeClickOn 'Blouse
-$27.00':: end, took 40 milliseconds
-24-10-2022 18:28:29 INFO [BaseTest]: beforeClickOn 'Proceed to checkout':: start
-24-10-2022 18:28:29 INFO [BaseTest]: beforeClickOn 'Proceed to checkout':: end, took 39 milliseconds
-24-10-2022 18:28:31 INFO [BaseTest]: beforeGetText 'Your shopping cart contains: 1 Product':: start
-24-10-2022 18:28:31 INFO [BaseTest]: beforeGetText 'Your shopping cart contains: 1 Product':: end, took 26 milliseconds
-24-10-2022 18:28:31 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add1featuredProductToCartAndCheckout # test is succeed.
-24-10-2022 18:28:31 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:31 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add2featuredProductsToCart # test is starting.
-24-10-2022 18:28:31 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
-24-10-2022 18:28:32 INFO [BaseTest]: beforeGetText 'Faded Short Sleeve T-shirts':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Faded Short Sleeve T-shirts':: end, took 28 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Blouse':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Blouse':: end, took 23 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Dress':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Dress':: end, took 25 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Dress':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Dress':: end, took 25 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Summer Dress':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Summer Dress':: end, took 21 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Summer Dress':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Summer Dress':: end, took 28 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Chiffon Dress':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Chiffon Dress':: end, took 30 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Summer Dress':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeGetText 'Printed Summer Dress':: end, took 15 milliseconds
-24-10-2022 18:28:33 INFO [BaseTest]: beforeClickOn 'Printed Summer Dress
-$28.98 $30.51 -5%':: start
-24-10-2022 18:28:33 INFO [BaseTest]: beforeClickOn 'Printed Summer Dress
-$28.98 $30.51 -5%':: end, took 36 milliseconds
-24-10-2022 18:28:35 INFO [BaseTest]: beforeClickOn 'Continue shopping':: start
-24-10-2022 18:28:35 INFO [BaseTest]: beforeClickOn 'Continue shopping':: end, took 36 milliseconds
-24-10-2022 18:28:35 INFO [BaseTest]: beforeGetText 'Printed Dress':: start
-24-10-2022 18:28:35 INFO [BaseTest]: beforeGetText 'Printed Dress':: end, took 22 milliseconds
-24-10-2022 18:28:35 INFO [BaseTest]: beforeClickOn 'Printed Dress
-$26.00':: start
-24-10-2022 18:28:35 INFO [BaseTest]: beforeClickOn 'Printed Dress
-$26.00':: end, took 42 milliseconds
-24-10-2022 18:28:37 INFO [BaseTest]: beforeGetText 'There are 3 items in your cart.
-Total products $81.98
-Total shipping  $2.00
-Total $83.98
-Continue shopping
-Proceed to checkout':: start
-24-10-2022 18:28:37 INFO [BaseTest]: beforeGetText 'There are 3 items in your cart.
-Total products $81.98
-Total shipping  $2.00
-Total $83.98
-Continue shopping
-Proceed to checkout':: end, took 43 milliseconds
-24-10-2022 18:28:37 INFO [BaseTest]: beforeGetText 'There are 3 items in your cart.
-Total products $81.98
-Total shipping  $2.00
-Total $83.98
-Continue shopping
-Proceed to checkout':: start
-24-10-2022 18:28:37 INFO [BaseTest]: beforeGetText 'There are 3 items in your cart.
-Total products $81.98
-Total shipping  $2.00
-Total $83.98
-Continue shopping
-Proceed to checkout':: end, took 25 milliseconds
-24-10-2022 18:28:37 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add2featuredProductsToCart # test is succeed.
-24-10-2022 18:28:37 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:37 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is starting.
-24-10-2022 18:28:37 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
-24-10-2022 18:28:39 INFO [BaseTest]: Let's validate all web elements are displayed 2
-24-10-2022 18:28:39 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
-24-10-2022 18:28:39 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 33 milliseconds
-24-10-2022 18:28:39 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
-24-10-2022 18:28:39 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 29 milliseconds
-24-10-2022 18:28:40 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
-24-10-2022 18:28:40 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 26 milliseconds
-24-10-2022 18:28:40 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
-24-10-2022 18:28:40 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 15 milliseconds
-24-10-2022 18:28:40 INFO [BaseTest]: Let's validate background at Header section
-24-10-2022 18:28:40 INFO [BaseTest]: Let's validate buttons work OK
-24-10-2022 18:28:40 INFO [BaseTest]: beforeClickOn 'BIO':: start
-24-10-2022 18:28:40 INFO [BaseTest]: beforeClickOn 'BIO':: end, took 34 milliseconds
-24-10-2022 18:28:41 INFO [BaseTest]: beforeGetText 'BIO':: start
-24-10-2022 18:28:41 INFO [BaseTest]: beforeGetText 'BIO':: end, took 40 milliseconds
-24-10-2022 18:28:41 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-24-10-2022 18:28:41 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 31 milliseconds
-24-10-2022 18:28:43 INFO [BaseTest]: beforeClickOn 'CONTACTO':: start
-24-10-2022 18:28:43 INFO [BaseTest]: beforeClickOn 'CONTACTO':: end, took 40 milliseconds
-24-10-2022 18:28:44 INFO [BaseTest]: beforeGetText 'Contacto':: start
-24-10-2022 18:28:44 INFO [BaseTest]: beforeGetText 'Contacto':: end, took 24 milliseconds
-24-10-2022 18:28:44 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-24-10-2022 18:28:45 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 29 milliseconds
-24-10-2022 18:28:46 INFO [BaseTest]: beforeClickOn '':: start
-24-10-2022 18:28:46 INFO [BaseTest]: beforeClickOn '':: end, took 38 milliseconds
-24-10-2022 18:28:47 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-24-10-2022 18:28:47 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 41 milliseconds
-24-10-2022 18:28:49 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is succeed.
-24-10-2022 18:28:49 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:49 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestsValidation_BIOpage # test is starting.
-24-10-2022 18:28:49 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar BIO page
-24-10-2022 18:28:50 INFO [BaseTest]: beforeClickOn 'BIO':: start
-24-10-2022 18:28:50 INFO [BaseTest]: beforeClickOn 'BIO':: end, took 49 milliseconds
-24-10-2022 18:28:51 INFO [BaseTest]: Let's validate text in BIO page
-24-10-2022 18:28:51 INFO [BaseTest]: beforeGetText 'Martina Seminara nació en Argentina y vive en Madrid. Estudió en la Escuela Nacional de Experimentación y Realización Cinematográfica (E.N.E.R.C) del Instituto de Cine y Artes Audiovisuales (INCAA) y en la Universidad Nacional de Artes Audiovisuales (U.N.A.) de Argentina, ambas carreras en la  especialización de montaje.
-Trabaja en postproducción desde el año 2000. Montó series diarias y semanales, de ficción y documentales. En Argentina para: Ideas del Sur, Pol-ka, Discovery, Mulata y en España para Cuerdos de Atar con Amazon y Mediaset.
-Además ha montado trailers, teaser y short promos para MediaPro, Studio Universal, Fox Latin America, Discovery Channels, entre otros.  Estuvo a cargo del lanzamiento promocional de los canales generalistas públicos Encuentro y Pakapaka de Argentina.
-Desde 2007 hasta 2018 se desempeñó como docente en la Cátedra de Montaje de la Carrera de Artes Audiovisuales del U.N.A.
-Ha escrito y dirigido dos cortometrajes de ficción seleccionados en festivales de cine y una miniserie online.':: start
-24-10-2022 18:28:51 INFO [BaseTest]: beforeGetText 'Martina Seminara nació en Argentina y vive en Madrid. Estudió en la Escuela Nacional de Experimentación y Realización Cinematográfica (E.N.E.R.C) del Instituto de Cine y Artes Audiovisuales (INCAA) y en la Universidad Nacional de Artes Audiovisuales (U.N.A.) de Argentina, ambas carreras en la  especialización de montaje.
-Trabaja en postproducción desde el año 2000. Montó series diarias y semanales, de ficción y documentales. En Argentina para: Ideas del Sur, Pol-ka, Discovery, Mulata y en España para Cuerdos de Atar con Amazon y Mediaset.
-Además ha montado trailers, teaser y short promos para MediaPro, Studio Universal, Fox Latin America, Discovery Channels, entre otros.  Estuvo a cargo del lanzamiento promocional de los canales generalistas públicos Encuentro y Pakapaka de Argentina.
-Desde 2007 hasta 2018 se desempeñó como docente en la Cátedra de Montaje de la Carrera de Artes Audiovisuales del U.N.A.
-Ha escrito y dirigido dos cortometrajes de ficción seleccionados en festivales de cine y una miniserie online.':: end, took 53 milliseconds
-24-10-2022 18:28:51 INFO [BaseTest]: beforeGetText 'Martina Seminara nació en Argentina y vive en Madrid. Estudió en la Escuela Nacional de Experimentación y Realización Cinematográfica (E.N.E.R.C) del Instituto de Cine y Artes Audiovisuales (INCAA) y en la Universidad Nacional de Artes Audiovisuales (U.N.A.) de Argentina, ambas carreras en la  especialización de montaje.
-Trabaja en postproducción desde el año 2000. Montó series diarias y semanales, de ficción y documentales. En Argentina para: Ideas del Sur, Pol-ka, Discovery, Mulata y en España para Cuerdos de Atar con Amazon y Mediaset.
-Además ha montado trailers, teaser y short promos para MediaPro, Studio Universal, Fox Latin America, Discovery Channels, entre otros.  Estuvo a cargo del lanzamiento promocional de los canales generalistas públicos Encuentro y Pakapaka de Argentina.
-Desde 2007 hasta 2018 se desempeñó como docente en la Cátedra de Montaje de la Carrera de Artes Audiovisuales del U.N.A.
-Ha escrito y dirigido dos cortometrajes de ficción seleccionados en festivales de cine y una miniserie online.':: start
-24-10-2022 18:28:51 INFO [BaseTest]: beforeGetText 'Martina Seminara nació en Argentina y vive en Madrid. Estudió en la Escuela Nacional de Experimentación y Realización Cinematográfica (E.N.E.R.C) del Instituto de Cine y Artes Audiovisuales (INCAA) y en la Universidad Nacional de Artes Audiovisuales (U.N.A.) de Argentina, ambas carreras en la  especialización de montaje.
-Trabaja en postproducción desde el año 2000. Montó series diarias y semanales, de ficción y documentales. En Argentina para: Ideas del Sur, Pol-ka, Discovery, Mulata y en España para Cuerdos de Atar con Amazon y Mediaset.
-Además ha montado trailers, teaser y short promos para MediaPro, Studio Universal, Fox Latin America, Discovery Channels, entre otros.  Estuvo a cargo del lanzamiento promocional de los canales generalistas públicos Encuentro y Pakapaka de Argentina.
-Desde 2007 hasta 2018 se desempeñó como docente en la Cátedra de Montaje de la Carrera de Artes Audiovisuales del U.N.A.
-Ha escrito y dirigido dos cortometrajes de ficción seleccionados en festivales de cine y una miniserie online.':: end, took 34 milliseconds
-24-10-2022 18:28:51 INFO [BaseTest]: beforeGetText 'BIO':: start
-24-10-2022 18:28:51 INFO [BaseTest]: beforeGetText 'BIO':: end, took 75 milliseconds
-24-10-2022 18:28:51 INFO [BaseTest]: Let's validate background photo in BIO
-24-10-2022 18:28:51 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestsValidation_BIOpage # test is succeed.
-24-10-2022 18:28:51 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:51 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestsValidation_CONTACTpage # test is starting.
-24-10-2022 18:28:51 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar CONTACT page
-24-10-2022 18:28:52 INFO [BaseTest]: beforeClickOn 'CONTACTO':: start
-24-10-2022 18:28:52 INFO [BaseTest]: beforeClickOn 'CONTACTO':: end, took 85 milliseconds
-24-10-2022 18:28:53 INFO [BaseTest]: Let's validate text in CONTACTO page
-24-10-2022 18:28:54 INFO [BaseTest]: beforeGetText '(0034) 656639128
-MARSEMINAR@GMAIL.COM':: start
-24-10-2022 18:28:54 INFO [BaseTest]: beforeGetText '(0034) 656639128
-MARSEMINAR@GMAIL.COM':: end, took 51 milliseconds
-24-10-2022 18:28:54 INFO [BaseTest]: beforeGetText '(0034) 656639128
-MARSEMINAR@GMAIL.COM':: start
-24-10-2022 18:28:54 INFO [BaseTest]: beforeGetText '(0034) 656639128
-MARSEMINAR@GMAIL.COM':: end, took 45 milliseconds
-24-10-2022 18:28:54 INFO [BaseTest]: beforeGetText 'Contacto':: start
-24-10-2022 18:28:54 INFO [BaseTest]: beforeGetText 'Contacto':: end, took 26 milliseconds
-24-10-2022 18:28:54 INFO [BaseTest]: Let's validate background photo in CONTACTO
-24-10-2022 18:28:54 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestsValidation_CONTACTpage # test is succeed.
-24-10-2022 18:28:54 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:54 INFO [BaseTest]: # UI_tests.PdfFileTest.verifyContentInPDf # test is starting.
-24-10-2022 18:28:54 INFO [BaseTest]: Test Description: Validating text in PDF
-24-10-2022 18:28:57 INFO [BaseTest]: # UI_tests.PdfFileTest.verifyContentInPDf # test is succeed.
-24-10-2022 18:28:57 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-24-10-2022 18:28:57 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
+01-11-2022 11:33:04 INFO [BaseTest]: I am in onStart method Automation-Projects
+01-11-2022 11:33:04 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+01-11-2022 11:33:04 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is starting.
+01-11-2022 11:33:04 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
+01-11-2022 11:33:08 INFO [BaseTest]: Let's validate all web elements are displayed 2
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 42 milliseconds
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 28 milliseconds
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 29 milliseconds
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
+01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 22 milliseconds
+01-11-2022 11:33:08 INFO [BaseTest]: Let's validate background at Header section
+01-11-2022 11:33:08 INFO [BaseTest]: Let's validate buttons work OK
+01-11-2022 11:33:08 INFO [BaseTest]: beforeClickOn 'BIO':: start
+01-11-2022 11:33:08 INFO [BaseTest]: beforeClickOn 'BIO':: end, took 44 milliseconds
+01-11-2022 11:33:10 INFO [BaseTest]: beforeGetText 'BIO':: start
+01-11-2022 11:33:10 INFO [BaseTest]: beforeGetText 'BIO':: end, took 41 milliseconds
+01-11-2022 11:33:10 INFO [BaseTest]: beforeClickOn 'INICIO':: start
+01-11-2022 11:33:10 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 51 milliseconds
+01-11-2022 11:33:11 INFO [BaseTest]: beforeClickOn 'CONTACTO':: start
+01-11-2022 11:33:11 INFO [BaseTest]: beforeClickOn 'CONTACTO':: end, took 47 milliseconds
+01-11-2022 11:33:16 INFO [BaseTest]: beforeGetText 'Contacto':: start
+01-11-2022 11:33:16 INFO [BaseTest]: beforeGetText 'Contacto':: end, took 27 milliseconds
+01-11-2022 11:33:16 INFO [BaseTest]: beforeClickOn 'INICIO':: start
+01-11-2022 11:33:16 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 25 milliseconds
+01-11-2022 11:33:17 INFO [BaseTest]: beforeClickOn '':: start
+01-11-2022 11:33:17 INFO [BaseTest]: beforeClickOn 'Serie documental en proceso':: end, took 37 milliseconds
+01-11-2022 11:33:18 INFO [BaseTest]: beforeClickOn 'INICIO':: start
+01-11-2022 11:33:18 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 40 milliseconds
+01-11-2022 11:33:20 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is succeed.
+01-11-2022 11:33:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+01-11-2022 11:33:20 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
