@@ -1,6 +1,7 @@
 package pages.martinaSeminara;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePageInteractions;
@@ -11,7 +12,7 @@ public class PortfolioItemPage extends BasePageInteractions {
     By videoWrapper = new By.ByClassName("wpb_video_wrapper");
     By videoDescription = new By.ByCssSelector(".wpb_text_column.wpb_content_element");
 
-    public PortfolioItemPage(EventFiringWebDriver driver) {
+    public PortfolioItemPage(WebDriver driver) {
         super(driver);
     }
 

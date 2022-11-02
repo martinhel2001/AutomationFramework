@@ -1,0 +1,117 @@
+package UI_tests;
+
+import BaseTest.BaseTest_UI_parallel;
+import baseMain.WebDriverFactoryStaticThreadLocal;
+import com.aventstack.extentreports.Status;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import pages.martinaSeminara.BioPage;
+import pages.martinaSeminara.ContactoPage;
+import pages.martinaSeminara.HomePage;
+import utils.extentReports.ExtentTestManager;
+
+import java.lang.reflect.Method;
+
+public class MartinaSeminaraTest_parallel extends BaseTest_UI_parallel {
+
+    static WebDriver driver;
+
+    @BeforeClass
+    public void setUpDriver()
+    {
+        WebDriverFactoryStaticThreadLocal.setDriverThread();
+        driver = WebDriverFactoryStaticThreadLocal.getDriverThread();
+        System.out.println("Browser setup by Thread "+Thread.currentThread().getId()+" and Driver reference is : "+driver);
+    }
+
+    @Test(description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"})
+    public void unitTestValidations_HomePage(Method m) throws InterruptedException {
+        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+
+        // Validate visualization of all web elements
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate all web elements are displayed");
+        log.info("Let's validate all web elements are displayed 2");
+
+        System.out.println(m.getName()+" Test executed in thread: "+Thread.currentThread().getId());
+
+        Assert.assertTrue(isDisplayed(msHome.getBioMenu()), "Bio option is not displayed! Display value is null");
+        Assert.assertTrue(isDisplayed(msHome.getMainTitle()), "Main Title is not displayed! Display value is null");
+        Assert.assertTrue(msHome.getMainTitle().getText().equals("Martina Seminara"), "Main Title does not read Martina Seminara, it reads : "+msHome.getMainTitle().getText());
+        Assert.assertTrue(isDisplayed(msHome.getSectionPageHeader()), "Page Header is not displayed! Display value is null");
+        Assert.assertTrue(isDisplayed(msHome.getContactoMenu()), "Contacto option is not displayed! Display value is null");
+        Assert.assertTrue(isDisplayed(msHome.getInicioMenu()), "Inicio option is not displayed! Display value is null");
+        Assert.assertTrue(isDisplayed(msHome.getPortfolioMain()), "Portfolio is not displayed! Display value is null");
+        Assert.assertTrue(isDisplayed(msHome.getSubTitle()), "Subtitle is not displayed! Display value is null");
+        Assert.assertTrue(msHome.getSubTitle().getText().equals("Montadora Audiovisual"), "Subtitle does not read Montadora Audiovisual, it reads : "+msHome.getSubTitle().getText());
+
+        // Validate Page Header background
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate background at Header section");
+        log.info("Let's validate background at Header section");
+        Assert.assertTrue(msHome.getSectionPageHeader().getCssValue("background-image").contains("url(\"http://martinaseminara.com.ar/wordpress/wp-content/uploads"), "Invalid background image in header section: "+msHome.getSectionPageHeader().getCssValue("background-image"));
+
+        // Validate buttons work
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate buttons work OK");
+        log.info("Let's validate buttons work OK");
+
+        Assert.assertTrue(msHome.goToBio().getMainTitle().getText().contains("BIO"),"BIO page title is wrong");
+        msHome.goToInicio();
+        Assert.assertTrue(msHome.goToContacto().getMainTitle().getText().contains("Contacto"), "Contacto page title is wrong");
+        msHome.goToInicio();
+        wait.until(ExpectedConditions.elementToBeClickable(msHome.getPortfolioItem()));
+        mouseOverOn(msHome.getPortfolioItem());
+        Assert.assertTrue(isDisplayed(msHome.goToAnyPortfolioItem().getPageTitle()));
+        msHome.goToInicio();
+
+    }
+
+    @Test (description = "Unit test validations from www.martinaseminara.com.ar BIO page", groups = {"seminaraCI","regression"})
+    public void unitTestsValidation_BIOpage(Method m) {
+        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+        BioPage bioPage = msHome.goToBio();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate text in BIO page");
+        log.info("Let's validate text in BIO page");
+
+        System.out.println(m.getName()+" Test executed in thread: "+Thread.currentThread().getId());
+
+        Assert.assertTrue(bioPage.getBodyText().getText().contains("Martina Seminara nació en Argentina y vive en Madrid. "), "Texto en BIO no parece ser correcto; dice: "+bioPage.getBodyText().getText());
+        Assert.assertTrue(bioPage.getMainTitle().getText().equals("BIO"));
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate background photo in BIO");
+        log.info("Let's validate background photo in BIO");
+        Assert.assertTrue(bioPage.getHeaderSection().getCssValue("background-image").contains("url(\"http://martinaseminara.com.ar/wordpress/wp-content/uploads"), "Invalid background image in header section: "+bioPage.getHeaderSection().getCssValue("background-image"));
+
+    }
+
+    @Test (description = "Unit test validations from www.martinaseminara.com.ar CONTACT page", groups = {"seminaraCI","regression"})
+    public void unitTestsValidation_CONTACTpage(Method m) {
+        HomePage msHome = new HomePage(driver, "http://www.martinaseminara.com.ar");
+        ContactoPage contactoPage = msHome.goToContacto();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate text in CONTACTO page");
+        log.info("Let's validate text in CONTACTO page");
+
+        System.out.println(m.getName()+" Test executed in thread: "+Thread.currentThread().getId());
+
+        Assert.assertTrue(contactoPage.getContactOptions().getText().contains("(0034) 656639128"),"Falta el numero de telefono en CONTACTO");
+        Assert.assertTrue(contactoPage.getContactOptions().getText().contains("MARSEMINAR@GMAIL.COM"),"Falta el mail en CONTACTO");
+        Assert.assertTrue(contactoPage.getMainTitle().getText().equals("Contacto"), "El titulo de la pàgina CONTACTO està mal");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Let's validate background photo in CONTACTO");
+        log.info("Let's validate background photo in CONTACTO");
+        Assert.assertTrue(contactoPage.getHeaderSection().getCssValue("background-image").contains("url(\"http://martinaseminara.com.ar/wordpress/wp-content/uploads"), "Invalid background image in header section: "+contactoPage.getHeaderSection().getCssValue("background-image"));
+
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDownDriverClass() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

@@ -1,34 +1,30 @@
-01-11-2022 11:33:04 INFO [BaseTest]: I am in onStart method Automation-Projects
-01-11-2022 11:33:04 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-11-2022 11:33:04 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is starting.
-01-11-2022 11:33:04 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
-01-11-2022 11:33:08 INFO [BaseTest]: Let's validate all web elements are displayed 2
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 42 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 28 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 29 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 22 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: Let's validate background at Header section
-01-11-2022 11:33:08 INFO [BaseTest]: Let's validate buttons work OK
-01-11-2022 11:33:08 INFO [BaseTest]: beforeClickOn 'BIO':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeClickOn 'BIO':: end, took 44 milliseconds
-01-11-2022 11:33:10 INFO [BaseTest]: beforeGetText 'BIO':: start
-01-11-2022 11:33:10 INFO [BaseTest]: beforeGetText 'BIO':: end, took 41 milliseconds
-01-11-2022 11:33:10 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-01-11-2022 11:33:10 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 51 milliseconds
-01-11-2022 11:33:11 INFO [BaseTest]: beforeClickOn 'CONTACTO':: start
-01-11-2022 11:33:11 INFO [BaseTest]: beforeClickOn 'CONTACTO':: end, took 47 milliseconds
-01-11-2022 11:33:16 INFO [BaseTest]: beforeGetText 'Contacto':: start
-01-11-2022 11:33:16 INFO [BaseTest]: beforeGetText 'Contacto':: end, took 27 milliseconds
-01-11-2022 11:33:16 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-01-11-2022 11:33:16 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 25 milliseconds
-01-11-2022 11:33:17 INFO [BaseTest]: beforeClickOn '':: start
-01-11-2022 11:33:17 INFO [BaseTest]: beforeClickOn 'Serie documental en proceso':: end, took 37 milliseconds
-01-11-2022 11:33:18 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-01-11-2022 11:33:18 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 40 milliseconds
-01-11-2022 11:33:20 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is succeed.
-01-11-2022 11:33:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-11-2022 11:33:20 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
+02-11-2022 11:10:21 INFO [BaseTest]: I am in onStart method Parallel tests
+02-11-2022 11:10:21 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 11:10:23 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestValidations_HomePage # test is starting.
+02-11-2022 11:10:23 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
+02-11-2022 11:10:29 INFO [BaseTest]: Let's validate all web elements are displayed 2
+02-11-2022 11:10:29 INFO [BaseTest]: Let's validate background at Header section
+02-11-2022 11:10:29 INFO [BaseTest]: Let's validate buttons work OK
+02-11-2022 11:10:42 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestValidations_HomePage # test is succeed.
+02-11-2022 11:10:42 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 11:10:42 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_BIOpage # test is starting.
+02-11-2022 11:10:42 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar BIO page
+02-11-2022 11:10:44 INFO [BaseTest]: Let's validate text in BIO page
+02-11-2022 11:10:44 INFO [BaseTest]: Let's validate background photo in BIO
+02-11-2022 11:10:44 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_BIOpage # test is succeed.
+02-11-2022 11:10:44 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 11:10:44 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_CONTACTpage # test is starting.
+02-11-2022 11:10:44 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar CONTACT page
+02-11-2022 11:10:46 INFO [BaseTest]: Let's validate text in CONTACTO page
+02-11-2022 11:10:46 INFO [BaseTest]: Let's validate background photo in CONTACTO
+02-11-2022 11:10:46 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_CONTACTpage # test is succeed.
+02-11-2022 11:10:46 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 11:10:47 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add1featuredProductToCartAndCheckout # test is starting.
+02-11-2022 11:10:47 INFO [BaseTest]: Test Description: Add 2 Featured Product to Cart
+02-11-2022 11:11:23 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add1featuredProductToCartAndCheckout # test is succeed.
+02-11-2022 11:11:23 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 11:11:23 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add2featuredProductsToCart # test is starting.
+02-11-2022 11:11:23 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
+02-11-2022 11:11:45 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add2featuredProductsToCart # test is failed.
+02-11-2022 11:11:45 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 11:11:45 INFO [BaseTest]: I am in onFinish method 2Parallel tests

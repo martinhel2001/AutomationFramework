@@ -1,13 +1,14 @@
 package pages.martinaSeminara;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePageInteractions;
 
 public class BioPage extends BasePageInteractions {
 
-    public BioPage(EventFiringWebDriver driver) {
+    public BioPage(WebDriver driver) {
         super(driver);
     }
 

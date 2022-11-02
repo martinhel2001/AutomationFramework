@@ -1,6 +1,7 @@
 package pages.martinaSeminara;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +10,11 @@ import pages.BasePageInteractions;
 public class HomePage extends BasePageInteractions {
 
     public HomePage(EventFiringWebDriver driver, String url) {
+        super(driver);
+        driver.get(url);
+    }
+
+    public HomePage(WebDriver driver, String url) {
         super(driver);
         driver.get(url);
     }

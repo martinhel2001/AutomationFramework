@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+    <suite name="All tests in our run" thread-count="1" parallel="classes" >
+        <listeners>
+            <listener class-name="utils.Listeners.TestListenerUI"/>
+        </listeners>
+        <test name="Parallel tests">
+            <classes>
+                <class name="UI_tests.MartinaSeminaraTest_parallel"/>
+                <class name="UI_tests.EcommerceSiteTest"></class>
+            </classes>
+        </test>
+    </suite>

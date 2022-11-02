@@ -7,16 +7,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePageInteractions {
     //protected WebDriver eventDriver;
     protected WebDriverWait wait;
-    protected EventFiringWebDriver eventDriver;
+    protected WebDriver eventDriver;
 
 
 
-    public BasePageInteractions(EventFiringWebDriver eventDriver) {
+    public BasePageInteractions(WebDriver eventDriver) {
         this.eventDriver = eventDriver;
         wait = new WebDriverWait(eventDriver,20);
     }
-
-
 
     public void scrollIntoMiddle (WebElement element) {
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"

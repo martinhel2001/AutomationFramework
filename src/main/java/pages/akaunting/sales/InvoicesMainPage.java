@@ -1,13 +1,14 @@
 package pages.akaunting.sales;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePageInteractions;
 
 public class InvoicesMainPage extends BasePageInteractions {
 
-    public InvoicesMainPage(EventFiringWebDriver eventDriver) {
+    public InvoicesMainPage(WebDriver eventDriver) {
         super(eventDriver);
     }
 
