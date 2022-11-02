@@ -4,6 +4,7 @@ import BaseTest.BaseTest_UI_parallel;
 import baseMain.WebDriverFactoryStaticThreadLocal;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ThreadGuard;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -16,6 +17,8 @@ import pages.martinaSeminara.HomePage;
 import utils.extentReports.ExtentTestManager;
 
 import java.lang.reflect.Method;
+
+import static baseMain.WebDriverFactoryStaticThreadLocal.closeBrowser;
 
 public class MartinaSeminaraTest_parallel extends BaseTest_UI_parallel {
 
@@ -108,10 +111,19 @@ public class MartinaSeminaraTest_parallel extends BaseTest_UI_parallel {
 
     }
 
+    /*
     @AfterClass(alwaysRun = true)
     public void tearDownDriverClass() {
         if (driver != null) {
             driver.quit();
+        }
+    }
+*/
+
+    @AfterClass
+    public void tearDownDriverClass() {
+        if (driver != null) {
+            WebDriverFactoryStaticThreadLocal.closeBrowser();
         }
     }
 }

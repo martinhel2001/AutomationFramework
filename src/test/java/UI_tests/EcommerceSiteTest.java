@@ -53,10 +53,18 @@ public class EcommerceSiteTest extends BaseTest_UI_parallel {
         Assert.assertTrue(obj_ShoppingCart.getHeadingCounter().contains("Your shopping cart contains: 1 Product"));
     }
 
+    /*
     @AfterClass(alwaysRun = true)
     public void tearDownDriverClass() {
         if (driver != null) {
             driver.quit();
+        }
+    }
+*/
+    @AfterClass
+    public void tearDownDriverClass() {
+        if (driver != null) {
+            WebDriverFactoryStaticThreadLocal.closeBrowser();
         }
     }
 }
