@@ -22,15 +22,7 @@ import static baseMain.WebDriverFactoryStaticThreadLocal.closeBrowser;
 
 public class MartinaSeminaraTest_parallel extends BaseTest_UI_parallel {
 
-    static WebDriver driver;
 
-    @BeforeClass
-    public void setUpDriver()
-    {
-        WebDriverFactoryStaticThreadLocal.setDriverThread();
-        driver = WebDriverFactoryStaticThreadLocal.getDriverThread();
-        System.out.println("Browser setup by Thread "+Thread.currentThread().getId()+" and Driver reference is : "+driver);
-    }
 
     @Test(description = "Unit test validations from www.martinaseminara.com.ar home page", groups = {"seminaraCI","regression"})
     public void unitTestValidations_HomePage(Method m) throws InterruptedException {
@@ -120,10 +112,5 @@ public class MartinaSeminaraTest_parallel extends BaseTest_UI_parallel {
     }
 */
 
-    @AfterClass
-    public void tearDownDriverClass() {
-        if (driver != null) {
-            WebDriverFactoryStaticThreadLocal.closeBrowser();
-        }
-    }
+
 }

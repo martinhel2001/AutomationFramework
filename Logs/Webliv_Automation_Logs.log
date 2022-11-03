@@ -1,14 +1,30 @@
-02-11-2022 16:14:52 INFO [BaseTest]: I am in onStart method Automation-Projects
-02-11-2022 16:14:52 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-02-11-2022 16:14:52 INFO [BaseTest]: I am in onStart method Automation-Projects
-02-11-2022 16:14:52 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-02-11-2022 16:14:52 INFO [BaseTest]: # DatabaseTests.DatabaseTests.dbFreeMySQLConnectionTest # test is starting.
-02-11-2022 16:14:52 INFO [BaseTest]: Test Description: Validate MySQL database connection with query
-02-11-2022 16:14:52 INFO [BaseTest]: # DatabaseTests.DatabaseTests.dbFreeMySQLConnectionTest # test is starting.
-02-11-2022 16:14:52 INFO [BaseTest]: Test Description: Validate MySQL database connection with query
-02-11-2022 16:14:54 INFO [BaseTest]: # DatabaseTests.DatabaseTests.dbFreeMySQLConnectionTest # test is failed.
-02-11-2022 16:14:54 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-02-11-2022 16:14:54 INFO [BaseTest]: # DatabaseTests.DatabaseTests.dbFreeMySQLConnectionTest # test is failed.
-02-11-2022 16:14:54 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-02-11-2022 16:14:54 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
-02-11-2022 16:14:54 INFO [BaseTest]: I am in onFinish method Automation-Projects
+02-11-2022 17:29:10 INFO [BaseTest]: I am in onStart method Parallel tests
+02-11-2022 17:29:10 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 17:29:13 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add1featuredProductToCartAndCheckout # test is starting.
+02-11-2022 17:29:13 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestValidations_HomePage # test is starting.
+02-11-2022 17:29:13 INFO [BaseTest]: Test Description: Add 2 Featured Product to Cart
+02-11-2022 17:29:13 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
+02-11-2022 17:29:21 INFO [BaseTest]: Let's validate all web elements are displayed 2
+02-11-2022 17:29:23 INFO [BaseTest]: Let's validate background at Header section
+02-11-2022 17:29:23 INFO [BaseTest]: Let's validate buttons work OK
+02-11-2022 17:29:41 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add1featuredProductToCartAndCheckout # test is succeed.
+02-11-2022 17:29:41 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 17:29:41 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add2featuredProductsToCart # test is starting.
+02-11-2022 17:29:41 INFO [BaseTest]: Test Description: Add 2 Featured Products into the Cart
+02-11-2022 17:29:44 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestValidations_HomePage # test is succeed.
+02-11-2022 17:29:44 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 17:29:44 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_BIOpage # test is starting.
+02-11-2022 17:29:44 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar BIO page
+02-11-2022 17:29:47 INFO [BaseTest]: Let's validate text in BIO page
+02-11-2022 17:29:47 INFO [BaseTest]: Let's validate background photo in BIO
+02-11-2022 17:29:47 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_BIOpage # test is succeed.
+02-11-2022 17:29:47 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 17:29:47 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_CONTACTpage # test is starting.
+02-11-2022 17:29:47 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar CONTACT page
+02-11-2022 17:29:53 INFO [BaseTest]: Let's validate text in CONTACTO page
+02-11-2022 17:29:53 INFO [BaseTest]: Let's validate background photo in CONTACTO
+02-11-2022 17:29:53 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest_parallel.unitTestsValidation_CONTACTpage # test is succeed.
+02-11-2022 17:29:53 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 17:30:08 INFO [BaseTest]: # UI_tests.EcommerceSiteTest.add2featuredProductsToCart # test is succeed.
+02-11-2022 17:30:08 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+02-11-2022 17:30:08 INFO [BaseTest]: I am in onFinish method 2Parallel tests

@@ -32,7 +32,15 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest_UI_parallel extends BaseTest{
     //protected static WebDriver driver;
     public static EventFiringWebDriver eventDriver;
+    public static WebDriver driver;
 
+    @BeforeClass
+    public void setUpDriver()
+    {
+        WebDriverFactoryStaticThreadLocal.setDriverThread();
+        driver = WebDriverFactoryStaticThreadLocal.getDriverThread();
+        System.out.println("Browser setup by Thread "+Thread.currentThread().getId()+" and Driver reference is : "+driver);
+    }
 
 
     @BeforeMethod(alwaysRun = true)
@@ -77,6 +85,13 @@ public class BaseTest_UI_parallel extends BaseTest{
             System.out.println(e.getMessage());
         }
         return screenshot;
+    }
+
+    @AfterClass
+    public void tearDownDriverClass() {
+        if (driver != null) {
+            WebDriverFactoryStaticThreadLocal.closeBrowser();
+        }
     }
 
 }
