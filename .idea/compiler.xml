@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Automation-Campus" target="15" />
+      <module name="Automation-Campus" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
