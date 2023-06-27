@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest_UI_parallel extends BaseTest{
     //protected static WebDriver driver;
-    public static EventFiringWebDriver eventDriver;
+    //public static EventFiringWebDriver eventDriver;
     public static WebDriver driver;
 
     @BeforeClass
