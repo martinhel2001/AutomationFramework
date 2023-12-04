@@ -21,7 +21,7 @@ public class MantisTests extends BaseTest {
     @Test
     public void createCompleteMantisIssue(){
         String statusCodeReceived = mantisAPI.createCompleteIssueWithoutAttachment("Resumen de bug completo","Descripcion de bug completo","Info Adicional",Project.AUTOMATION_BUGS,Category.API, Priority.immediate, Severity.block,false);
-        System.out.println("Status code: "+ statusCodeReceived);
+        System.out.println("Status code : "+ statusCodeReceived);
     }
 
 }
