@@ -42,10 +42,6 @@ public class TestsConfigReader {
         return properties.getProperty("browsers");
     }
 
-    public String getOBOurl() {
-        return properties.getProperty("OBO_url");
-    }
-
     public String getCommerceUrl() {
         return properties.getProperty("ecommerce_url");
     }

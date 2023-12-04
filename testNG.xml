@@ -15,4 +15,9 @@
                 <class name="UI_tests.MartinaSeminaraTest"/>
             </classes>
         </test>
+    <test name="Akaunting Suite">
+        <classes>
+            <class name="UI_tests.AkauntingTest"/>
+        </classes>
+    </test>
     </suite>
