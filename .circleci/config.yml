@@ -2,7 +2,7 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs: 
-  browser-tools: circleci/browser-tools@1.2.3
+  browser-tools: circleci/browser-tools@1.4.6
 
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
@@ -39,4 +39,4 @@ workflows:
   sanity_tests: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - one
-     #- two
+      - two
