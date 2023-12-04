@@ -39,4 +39,4 @@ workflows:
   sanity_tests: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - one
-     #- two
+     - two
