@@ -29,7 +29,7 @@ public class DatabaseTests extends BaseTest_API {
         while (rs.next()){
             String employeeName = rs.getString(1);
             String employeeLastName = rs.getString(2);
-            System. out.println("Employee name: "+employeeName+"  "+"Employee last name: "+employeeLastName);
+            System. out.println("Employee name : "+employeeName+"  "+"Employee last name: "+employeeLastName);
         }
         // closing DB Connection
         sql.closeDBconn();
