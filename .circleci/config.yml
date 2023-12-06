@@ -3,6 +3,7 @@
 version: 2.1
 orbs: 
   browser-tools: circleci/browser-tools@1.4.6
+  slack: circleci/slack@4.12.5
 
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
@@ -22,21 +23,13 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       #- browser-tools/install-browser-tools
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - run: mvn clean test -DsuiteXmlFile=testNG_MartinaSeminara.xml
-  two: # This is our second job.
-    docker: # it runs inside a docker image, the same as above.
-      - image: circleci/ruby:2.4.1
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    steps:
-      - checkout
-      - run: echo "A more familiar hi" # We run a similar echo command to above.
-      - run: sleep 15 # and then sleep for 15 seconds.
+      - run: mvn clean test -DsuiteXmlFile=testNG.xml
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 # Under the workflows: map, we can coordinate our two jobs, defined above.
 workflows:
   version: 2
   sanity_tests: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - one
-      - two
