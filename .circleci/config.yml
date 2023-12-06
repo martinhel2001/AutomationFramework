@@ -22,7 +22,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       #- browser-tools/install-browser-tools
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - run: mvn clean test -DsuiteXmlFile=testNG.xml
+      - run: mvn clean test -DsuiteXmlFile=testNG_MartinaSeminara.xml
   two: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: circleci/ruby:2.4.1
