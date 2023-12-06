@@ -23,10 +23,14 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       #- browser-tools/install-browser-tools
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - run: mvn clean test -DsuiteXmlFile=testNG.xml
+      - run: mvn clean test -DsuiteXmlFile=testNG_MartinaSeminara.xml
       - slack/notify:
           event: fail
           template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_pass_1
+          
 # Under the workflows: map, we can coordinate our two jobs, defined above.
 workflows:
   version: 2
