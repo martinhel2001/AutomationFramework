@@ -24,7 +24,8 @@
                 <configuration>
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>testNG.xml</suiteXmlFile>
+                        <suiteXmlFile>testNG_MartinaSeminara.xml</suiteXmlFile>
+                        <suiteXmlFile>testNG_Akaunting.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
