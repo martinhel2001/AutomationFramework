@@ -28,6 +28,7 @@ public class Dashboard extends BasePageInteractions {
     }
 
     public CustomersMainPage goToCustomers() {
+        scrollIntoMiddle(getSalesMenuOption());
         this.getSalesMenuOption().click();
         this.getCustomersSubMenuOption().click();
         wait.until(ExpectedConditions.visibilityOf(objInvoices.getHeaderTitle()));
