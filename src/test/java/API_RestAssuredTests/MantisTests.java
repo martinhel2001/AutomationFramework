@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class MantisTests extends BaseTest {
 
     MantisConnector mantisAPI = new MantisConnector(testsConfig.getMantis_url(),testsConfig.getMantis_host(),testsConfig.getMantis_token());
-asdfasdfasdfasd
+
     @Test
     public void createSimpleMantisIssue()  {
         String statusCodeReceived = mantisAPI.createSimpleIssue("Resumen de bug simple","Descripcion de bug simple", Project.AUTOMATION_BUGS, Category.Stress);
