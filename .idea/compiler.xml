@@ -10,8 +10,5 @@
         <module name="Automation-Campus" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Automation-Campus" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
