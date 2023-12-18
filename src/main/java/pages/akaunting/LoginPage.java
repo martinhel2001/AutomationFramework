@@ -9,7 +9,7 @@ public class LoginPage extends BasePageInteractions {
 
     private By emailFld = By.name("email");
     private By passwordFld = By.name("password");
-    private By loginBtn = By.className("btn btn-success float-right");
+    private By loginBtn = By.className("btn-success");
     private By rememberMeChk = By.id("checkbox-remember");
 
     private By iForgotMyPassLnk = By.linkText("I forgot my password");
