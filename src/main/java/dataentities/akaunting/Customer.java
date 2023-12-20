@@ -9,7 +9,7 @@ public class Customer {
     @Setter @Getter private String city="Toronto";
     @Setter @Getter private String state="TO";
     @Setter @Getter private String country="Canada";
-    @Setter @Getter private String currency = "Argentine Peso";
+    //@Setter @Getter private String currency = "Argentine Peso";
     @Setter @Getter private String Email;
     //private String
 

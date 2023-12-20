@@ -1,8 +1,7 @@
-package Login;
+package UI_tests;
 
 import BaseTest.BaseTest_UI;
 
-import helpers.HelpersAkaunting;
 import org.testng.annotations.Test;
 import pages.akaunting.AddNewCustomerPage;
 import pages.akaunting.CustomersPage;
@@ -10,7 +9,7 @@ import pages.akaunting.DashboardPage;
 import pages.akaunting.LoginPage;
 
 
-public class LoginTests extends BaseTest_UI {
+public class AkauntingTests extends BaseTest_UI {
 
     @Test
     public void doLogin(){
