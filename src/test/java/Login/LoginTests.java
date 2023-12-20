@@ -2,8 +2,11 @@ package Login;
 
 import BaseTest.BaseTest_UI;
 
+import helpers.HelpersAkaunting;
 import org.testng.annotations.Test;
+import pages.akaunting.AddNewCustomerPage;
 import pages.akaunting.CustomersPage;
+import pages.akaunting.DashboardPage;
 import pages.akaunting.LoginPage;
 
 
@@ -14,7 +17,22 @@ public class LoginTests extends BaseTest_UI {
         LoginPage loginPage = new LoginPage(eventDriver);
         loginPage.doLogin("akaunting-admin@automationcampus.com.ar", "trinity110");
         CustomersPage customersPage = new CustomersPage(eventDriver);
+        DashboardPage dashboardPage = new DashboardPage(eventDriver);
+
+        dashboardPage.goToCustomers();
         customersPage.AddNewBtnClick();
+
+        //HelpersAkaunting helpersAkaunting = new HelpersAkaunting();
+        //helpersAkaunting.addNewCustomer("Miguel Mateos", "miguel@zas.com");
+
+        AddNewCustomerPage addNewCustomerPage = new AddNewCustomerPage(eventDriver);
+
+        addNewCustomerPage.addNewCustomer("Gustavo Cerati", "cerati@soda.com.ar");
+
+
+
+
+
 
         //Assert.assertTrue();
     }
