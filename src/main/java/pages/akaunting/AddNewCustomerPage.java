@@ -11,14 +11,14 @@ public class AddNewCustomerPage extends BasePageInteractions {
     private By nameField = By.id("name");
     private By emailField = By.id("email");
     private By taxNumberField = By.id("tax_number");
-    private By currencyField = By.name("_token");
+    private By currencyField = By.cssSelector("input[placeholder='- Select Currency -']");
     private By phoneField = By.id("phone");
     private By websiteField = By.id("website");
     private By adressField = By.id("address");
     private By cityField = By.id("city");
     private By zipCodeField = By.id("zip_code");
     private By stateField = By.id("state");
-    private By countryField = By.cssSelector("- Select Currency -");
+    private By countryField = By.cssSelector("input[placeholder='- Select Country -']");
 
 
     public AddNewCustomerPage(EventFiringWebDriver session) {
