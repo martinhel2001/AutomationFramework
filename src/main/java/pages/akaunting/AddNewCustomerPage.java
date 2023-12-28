@@ -11,7 +11,7 @@ public class AddNewCustomerPage extends BasePageInteractions {
     private By nameField = By.id("name");
     private By emailField = By.id("email");
     private By taxNumberField = By.id("tax_number");
-    private By currencyField = By.id("currency_code");
+    private By currencyField = By.name("_token");
     private By phoneField = By.id("phone");
     private By websiteField = By.id("website");
     private By adressField = By.id("address");
@@ -36,16 +36,10 @@ public class AddNewCustomerPage extends BasePageInteractions {
         eventDriver.findElement(cityField).sendKeys(customer.getCity());
         eventDriver.findElement(stateField).sendKeys(customer.getState());
         eventDriver.findElement(countryField).sendKeys(customer.getCountry());
+        eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
         //eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
 
-        public void selectFromCurrency (String option){
-            findCurrencyDropdown().SelectByVisible
-        }
 
-        private Select findCurrencyDropdown(){
-            return new Select(eventDriver.findElement(currencyField));
-        }
-    private
     }
 }
 
