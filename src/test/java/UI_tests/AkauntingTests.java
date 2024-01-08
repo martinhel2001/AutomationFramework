@@ -2,11 +2,9 @@ package UI_tests;
 
 import BaseTest.BaseTest_UI;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.akaunting.AddNewCustomerPage;
-import pages.akaunting.CustomersPage;
-import pages.akaunting.DashboardPage;
-import pages.akaunting.LoginPage;
+import pages.akaunting.*;
 
 
 public class AkauntingTests extends BaseTest_UI {
@@ -26,7 +24,12 @@ public class AkauntingTests extends BaseTest_UI {
 
         AddNewCustomerPage addNewCustomerPage = new AddNewCustomerPage(eventDriver);
 
-        addNewCustomerPage.addNewCustomer("Gustavo Cerati", "cerati@soda.com.ar");
+        addNewCustomerPage.addNewCustomer("Charly Alberti", "alberti@soda.com.ar");
+
+        CustomerDetailPage customerDetailPage = new CustomerDetailPage(eventDriver);
+
+        Assert.assertEquals(customerDetailPage.getCustomerName().getText(),  );
+
 
 
 
