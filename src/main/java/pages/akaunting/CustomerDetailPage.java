@@ -10,7 +10,7 @@ import pages.BasePageInteractions;
 public class CustomerDetailPage extends BasePageInteractions {
 
 
-    private By customerName = By.cssSelector("h2[class='d-inline-flex']");
+    private By customerName = By.cssSelector("h2.d-inline-flex");
 
     public CustomerDetailPage(EventFiringWebDriver session) {
         super(session);

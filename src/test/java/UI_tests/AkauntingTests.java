@@ -2,6 +2,7 @@ package UI_tests;
 
 import BaseTest.BaseTest_UI;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.akaunting.*;
@@ -11,10 +12,14 @@ public class AkauntingTests extends BaseTest_UI {
 
     @Test
     public void doLogin(){
-        LoginPage loginPage = new LoginPage(eventDriver);
-        loginPage.doLogin("akaunting-admin@automationcampus.com.ar", "trinity110");
         CustomersPage customersPage = new CustomersPage(eventDriver);
         DashboardPage dashboardPage = new DashboardPage(eventDriver);
+        CustomerDetailPage customerDetailPage = new CustomerDetailPage(eventDriver);
+        AddNewCustomerPage addNewCustomerPage = new AddNewCustomerPage(eventDriver);
+
+
+        LoginPage loginPage = new LoginPage(eventDriver);
+        loginPage.doLogin("akaunting-admin@automationcampus.com.ar", "trinity110");
 
         dashboardPage.goToCustomers();
         customersPage.AddNewBtnClick();
@@ -22,13 +27,13 @@ public class AkauntingTests extends BaseTest_UI {
         //HelpersAkaunting helpersAkaunting = new HelpersAkaunting();
         //helpersAkaunting.addNewCustomer("Miguel Mateos", "miguel@zas.com");
 
-        AddNewCustomerPage addNewCustomerPage = new AddNewCustomerPage(eventDriver);
 
-        addNewCustomerPage.addNewCustomer("Charly Alberti", "alberti@soda.com.ar");
+        addNewCustomerPage.addNewCustomer("Tweetie Gonzalez 3", "tweetie3@soda.com.ar");
 
-        CustomerDetailPage customerDetailPage = new CustomerDetailPage(eventDriver);
 
-        Assert.assertEquals(customerDetailPage.getCustomerName().getText(),  );
+        wait.until(ExpectedConditions.invisibilityOf(eventDriver.findElement(addNewCustomerPage.getSubmitBtn()) ) );
+
+        Assert.assertEquals(customerDetailPage.getCustomerName().getText(), "Tweetie Gonzalez 3","Customer was not created." );
 
 
 
