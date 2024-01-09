@@ -45,9 +45,17 @@ public class DashboardPage extends BasePageInteractions {
         super(session);
     }
 
+
     public void goToCustomers() {
         eventDriver.findElement(SalesMenu).click();
         eventDriver.findElement(CustomersSubMenu).click();
+    }
+
+
+
+    public void goToInvoices(){
+        eventDriver.findElement(SalesMenu).click();
+        eventDriver.findElement(InvoicesSubMenu).click();
     }
 }
 

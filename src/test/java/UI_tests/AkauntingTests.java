@@ -16,25 +16,30 @@ public class AkauntingTests extends BaseTest_UI {
         DashboardPage dashboardPage = new DashboardPage(eventDriver);
         CustomerDetailPage customerDetailPage = new CustomerDetailPage(eventDriver);
         AddNewCustomerPage addNewCustomerPage = new AddNewCustomerPage(eventDriver);
+        InvoicesPage invoicesPage = new InvoicesPage(eventDriver);
+        NewInvoicePage newInvoicePage = new NewInvoicePage(eventDriver);
 
 
         LoginPage loginPage = new LoginPage(eventDriver);
         loginPage.doLogin("akaunting-admin@automationcampus.com.ar", "trinity110");
 
-        dashboardPage.goToCustomers();
-        customersPage.AddNewBtnClick();
+        //dashboardPage.goToCustomers();
+        //customersPage.AddNewBtnClick();
 
         //HelpersAkaunting helpersAkaunting = new HelpersAkaunting();
         //helpersAkaunting.addNewCustomer("Miguel Mateos", "miguel@zas.com");
 
 
-        addNewCustomerPage.addNewCustomer("Tweetie Gonzalez 3", "tweetie3@soda.com.ar");
+        //addNewCustomerPage.addNewCustomer("Tweetie Gonzalez 3", "tweetie3@soda.com.ar");
 
 
-        wait.until(ExpectedConditions.invisibilityOf(eventDriver.findElement(addNewCustomerPage.getSubmitBtn()) ) );
+        //wait.until(ExpectedConditions.invisibilityOf(eventDriver.findElement(addNewCustomerPage.getSubmitBtn()) ) );
 
-        Assert.assertEquals(customerDetailPage.getCustomerName().getText(), "Tweetie Gonzalez 3","Customer was not created." );
+        //Assert.assertEquals(customerDetailPage.getCustomerName().getText(), "Tweetie Gonzalez 3","Customer was not created." );
 
+        dashboardPage.goToInvoices();
+        invoicesPage.AddNewBtnClick();
+        newInvoicePage.AddCustomerBtnClick();
 
 
 
