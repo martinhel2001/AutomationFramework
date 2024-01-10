@@ -2,8 +2,6 @@ package UI_tests;
 
 import BaseTest.BaseTest_UI;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.akaunting.*;
 
@@ -39,7 +37,8 @@ public class AkauntingTests extends BaseTest_UI {
 
         dashboardPage.goToInvoices();
         invoicesPage.AddNewBtnClick();
-        newInvoicePage.AddCustomerBtnClick();
+        //newInvoicePage.AddCustomer();
+        newInvoicePage.AddCustomer("Asoka");
 
 
 

@@ -1,13 +1,19 @@
-09-01-2024 12:24:57 INFO [BaseTest]: I am in onStart method Automation Campus
-09-01-2024 12:24:57 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-09-01-2024 12:24:57 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is starting.
-09-01-2024 12:24:57 INFO [BaseTest]: Test Description: 
-09-01-2024 12:25:00 INFO [BaseTest]: beforeClickOn 'Login':: start
-09-01-2024 12:25:00 INFO [BaseTest]: beforeClickOn 'Login':: end, took 114 milliseconds
-09-01-2024 12:25:06 INFO [BaseTest]: beforeClickOn 'Sales':: start
-09-01-2024 12:25:06 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 61 milliseconds
-09-01-2024 12:25:06 INFO [BaseTest]: beforeClickOn 'Invoices':: start
-09-01-2024 12:25:06 INFO [BaseTest]: beforeClickOn 'Invoices':: end, took 48 milliseconds
-09-01-2024 12:25:09 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is succeed.
-09-01-2024 12:25:09 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-09-01-2024 12:25:09 INFO [BaseTest]: I am in onFinish method 2Automation Campus
+09-01-2024 17:34:30 INFO [BaseTest]: I am in onStart method Automation Campus
+09-01-2024 17:34:30 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+09-01-2024 17:34:30 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is starting.
+09-01-2024 17:34:30 INFO [BaseTest]: Test Description: 
+09-01-2024 17:34:33 INFO [BaseTest]: beforeClickOn 'Login':: start
+09-01-2024 17:34:33 INFO [BaseTest]: beforeClickOn 'Login':: end, took 81 milliseconds
+09-01-2024 17:34:38 INFO [BaseTest]: beforeClickOn 'Sales':: start
+09-01-2024 17:34:38 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 67 milliseconds
+09-01-2024 17:34:38 INFO [BaseTest]: beforeClickOn 'Invoices':: start
+09-01-2024 17:34:39 INFO [BaseTest]: beforeClickOn 'Invoices':: end, took 51 milliseconds
+09-01-2024 17:34:42 INFO [BaseTest]: beforeClickOn 'Add New':: start
+09-01-2024 17:34:42 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 45 milliseconds
+09-01-2024 17:34:45 INFO [BaseTest]: beforeClickOn 'Add a Customer':: start
+09-01-2024 17:34:45 INFO [BaseTest]: beforeClickOn 'Add a Customer':: end, took 56 milliseconds
+09-01-2024 17:34:45 INFO [BaseTest]: beforeClickOn 'Asoka':: start
+09-01-2024 17:34:45 INFO [BaseTest]: beforeClickOn 'Asoka':: end, took 82 milliseconds
+09-01-2024 17:34:46 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is succeed.
+09-01-2024 17:34:46 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+09-01-2024 17:34:46 INFO [BaseTest]: I am in onFinish method 2Automation Campus
