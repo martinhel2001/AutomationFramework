@@ -18,6 +18,12 @@ public class NewInvoicePage extends BasePageInteractions {
 
     private By AddAnItemBtn = By.className("item-add-new");
 
+    private By ItemList = By.className("aka-select-menu-options");
+
+    private By ItemQuantity = By.cssSelector("input[name='items.0.quantity']");
+
+    private By ItemPrice = By.cssSelector("input[name='price']");
+
     public void AddCustomer(String customerName){
         eventDriver.findElement(AddCustomerBtn).click();
         eventDriver.findElement(CustomerNameFld).sendKeys(customerName);
@@ -26,9 +32,12 @@ public class NewInvoicePage extends BasePageInteractions {
     }
 
 
-    public void AddAnItem(String item){
+    public void AddAnItem(String item, String quantity, String price){
         eventDriver.findElement(AddAnItemBtn).click();
-        eventDriver.findElement()
+        eventDriver.findElement(ItemNameFld).sendKeys(item);
+        eventDriver.findElement(ItemList).click();
+        eventDriver.findElement(ItemQuantity).sendKeys(quantity);
+        eventDriver.findElement(ItemPrice).sendKeys(price);
     }
 
     /*

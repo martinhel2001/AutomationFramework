@@ -39,6 +39,7 @@ public class AkauntingTests extends BaseTest_UI {
         invoicesPage.AddNewBtnClick();
         //newInvoicePage.AddCustomer();
         newInvoicePage.AddCustomer("Asoka");
+        newInvoicePage.AddAnItem("Suran", "2", "20000");
 
 
 
