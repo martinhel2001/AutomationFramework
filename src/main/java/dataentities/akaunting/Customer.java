@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class Customer {
-    @Getter private String name ="";
+    @Getter hgfh private String name ="";
     @Getter private String Address="123 Elm Street";
     @Setter @Getter private String city="Toronto";
     @Setter @Getter private String state="Misiones";
