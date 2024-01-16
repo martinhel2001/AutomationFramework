@@ -16,6 +16,8 @@ public class NewInvoicePage extends BasePageInteractions {
 
     private By CustomerList = By.className("aka-select-menu-option");
 
+    private By InvoiceNumber = By.id("document_number");
+
     private By AddAnItemBtn = By.className("item-add-new");
 
     private By ItemList = By.className("aka-select-menu-options");
@@ -24,9 +26,13 @@ public class NewInvoicePage extends BasePageInteractions {
 
     private By ItemPrice = By.cssSelector("input[name='price']");
 
-    public void AddCustomer(String customerName){
+    private By SaveBtn = By.linkText("Save");
+
+    public void AddCustomer(String customerName, String invoiceNumber){
         eventDriver.findElement(AddCustomerBtn).click();
         eventDriver.findElement(CustomerNameFld).sendKeys(customerName);
+        eventDriver.findElement(InvoiceNumber).clear();
+        eventDriver.findElement(InvoiceNumber).sendKeys(invoiceNumber);
         eventDriver.findElement(CustomerList).click();
 
     }
@@ -36,9 +42,16 @@ public class NewInvoicePage extends BasePageInteractions {
         eventDriver.findElement(AddAnItemBtn).click();
         eventDriver.findElement(ItemNameFld).sendKeys(item);
         eventDriver.findElement(ItemList).click();
+        eventDriver.findElement(ItemQuantity).clear();
         eventDriver.findElement(ItemQuantity).sendKeys(quantity);
+        eventDriver.findElement(ItemPrice).clear();
         eventDriver.findElement(ItemPrice).sendKeys(price);
+        eventDriver.findElement(SaveBtn).click();
     }
+
+    //public void SaveInvoice (){
+     //   eventDriver.findElement(SaveBtn).click();
+    //}
 
     /*
     public void selectCustomer (String customerName){
