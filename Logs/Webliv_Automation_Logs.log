@@ -1,34 +1,15 @@
-01-11-2022 11:33:04 INFO [BaseTest]: I am in onStart method Automation-Projects
-01-11-2022 11:33:04 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-11-2022 11:33:04 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is starting.
-01-11-2022 11:33:04 INFO [BaseTest]: Test Description: Unit test validations from www.martinaseminara.com.ar home page
-01-11-2022 11:33:08 INFO [BaseTest]: Let's validate all web elements are displayed 2
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 42 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Martina Seminara':: end, took 28 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 29 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeGetText 'Montadora Audiovisual':: end, took 22 milliseconds
-01-11-2022 11:33:08 INFO [BaseTest]: Let's validate background at Header section
-01-11-2022 11:33:08 INFO [BaseTest]: Let's validate buttons work OK
-01-11-2022 11:33:08 INFO [BaseTest]: beforeClickOn 'BIO':: start
-01-11-2022 11:33:08 INFO [BaseTest]: beforeClickOn 'BIO':: end, took 44 milliseconds
-01-11-2022 11:33:10 INFO [BaseTest]: beforeGetText 'BIO':: start
-01-11-2022 11:33:10 INFO [BaseTest]: beforeGetText 'BIO':: end, took 41 milliseconds
-01-11-2022 11:33:10 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-01-11-2022 11:33:10 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 51 milliseconds
-01-11-2022 11:33:11 INFO [BaseTest]: beforeClickOn 'CONTACTO':: start
-01-11-2022 11:33:11 INFO [BaseTest]: beforeClickOn 'CONTACTO':: end, took 47 milliseconds
-01-11-2022 11:33:16 INFO [BaseTest]: beforeGetText 'Contacto':: start
-01-11-2022 11:33:16 INFO [BaseTest]: beforeGetText 'Contacto':: end, took 27 milliseconds
-01-11-2022 11:33:16 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-01-11-2022 11:33:16 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 25 milliseconds
-01-11-2022 11:33:17 INFO [BaseTest]: beforeClickOn '':: start
-01-11-2022 11:33:17 INFO [BaseTest]: beforeClickOn 'Serie documental en proceso':: end, took 37 milliseconds
-01-11-2022 11:33:18 INFO [BaseTest]: beforeClickOn 'INICIO':: start
-01-11-2022 11:33:18 INFO [BaseTest]: beforeClickOn 'INICIO':: end, took 40 milliseconds
-01-11-2022 11:33:20 INFO [BaseTest]: # UI_tests.MartinaSeminaraTest.unitTestValidations_HomePage # test is succeed.
-01-11-2022 11:33:20 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-01-11-2022 11:33:20 INFO [BaseTest]: I am in onFinish method 2Automation-Projects
+08-01-2024 17:39:23 INFO [BaseTest]: I am in onStart method Automation Campus
+08-01-2024 17:39:23 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+08-01-2024 17:39:23 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is starting.
+08-01-2024 17:39:23 INFO [BaseTest]: Test Description: 
+08-01-2024 17:39:28 INFO [BaseTest]: beforeClickOn 'Login':: start
+08-01-2024 17:39:28 INFO [BaseTest]: beforeClickOn 'Login':: end, took 82 milliseconds
+08-01-2024 17:39:36 INFO [BaseTest]: beforeClickOn 'Sales':: start
+08-01-2024 17:39:36 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 80 milliseconds
+08-01-2024 17:39:37 INFO [BaseTest]: beforeClickOn 'Customers':: start
+08-01-2024 17:39:37 INFO [BaseTest]: beforeClickOn 'Customers':: end, took 65 milliseconds
+08-01-2024 17:39:40 INFO [BaseTest]: beforeClickOn 'Add New':: start
+08-01-2024 17:39:40 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 58 milliseconds
+08-01-2024 17:39:44 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is succeed.
+08-01-2024 17:39:44 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+08-01-2024 17:39:44 INFO [BaseTest]: I am in onFinish method 2Automation Campus
