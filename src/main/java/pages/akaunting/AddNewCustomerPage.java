@@ -5,6 +5,7 @@ import lombok.Getter;
 import org.apache.bcel.generic.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePageInteractions;
 
@@ -21,9 +22,9 @@ public class AddNewCustomerPage extends BasePageInteractions {
     private By zipCodeField = By.id("zip_code");
     private By stateField = By.id("state");
     private By countryField = By.cssSelector("input[placeholder='- Select Country -']");
-
+    private By canLoginChk = By.cssSelector("input[class='custom-control-input']");
+    //WebElement canLoginChk = eventDriver.findElement(By.id("create_user"));
     @Getter private By submitBtn = By.cssSelector("button[type='submit']");
-
 
     public AddNewCustomerPage(EventFiringWebDriver session) {
         super(session);
@@ -42,7 +43,10 @@ public class AddNewCustomerPage extends BasePageInteractions {
         eventDriver.findElement(countryField).sendKeys(customer.getCountry());
         eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
         //eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
-        eventDriver.findElement(submitBtn).click();
+        //Actions action = new Actions(eventDriver);
+        //action.moveToElement(canLoginChk).click().build().perform();
+        eventDriver.findElement(canLoginChk).click();
+        //eventDriver.findElement(submitBtn).click();
 
     }
 }

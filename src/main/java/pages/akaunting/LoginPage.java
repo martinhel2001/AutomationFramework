@@ -18,25 +18,15 @@ public class LoginPage extends BasePageInteractions {
         super(session);
         session.get("https://automationcampus.com.ar/akaunting/auth/login");
     }
-
     public void setEmail(String email){
         eventDriver.findElement(emailFld).sendKeys(email);
     }
-
     public void setPassword(String password){
         eventDriver.findElement(passwordFld).sendKeys(password);
     }
-
     public void doLogin(String email, String password){
         eventDriver.findElement(emailFld).sendKeys(email);
         eventDriver.findElement(passwordFld).sendKeys(password);
         eventDriver.findElement(loginBtn).click();
     }
-
-
-
-
-
-
-
 }

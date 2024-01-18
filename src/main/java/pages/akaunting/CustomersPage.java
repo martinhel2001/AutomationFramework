@@ -15,5 +15,4 @@ public void AddNewBtnClick(){
     eventDriver.findElement(AddNewBtn).click();
 }
 // public ClickAddNewCustomer ()
-
 }
