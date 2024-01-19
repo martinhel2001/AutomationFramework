@@ -24,13 +24,9 @@ public class AddNewCustomerPage extends BasePageInteractions {
     private By zipCodeField = By.id("zip_code");
     private By stateField = By.id("state");
     private By countryField = By.cssSelector("input[placeholder='- Select Country -']");
-    private By canLoginChk = By.cssSelector("input[class='custom-control-input']");
+    private By canLoginChk = By.cssSelector("label[for='create_user']");
     //WebElement canLoginChk = eventDriver.findElement(By.id("create_user"));
     @Getter private By submitBtn = By.cssSelector("button[type='submit']");
-    private Random rand = new Random();
-    private int upperbound = 9999;
-
-    private int int_random = rand.nextInt(upperbound);
 
     public AddNewCustomerPage(EventFiringWebDriver session) {
         super(session);
@@ -38,22 +34,15 @@ public class AddNewCustomerPage extends BasePageInteractions {
 
     public void addNewCustomer(String name, String email){
         Customer customer = new Customer();
-        //customer.setName(name);
-        //customer.setEmail(email);
 
-        eventDriver.findElement(nameField).sendKeys(name+int_random);
-        eventDriver.findElement(emailField).sendKeys(int_random+email);
+        eventDriver.findElement(nameField).sendKeys(name);
+        eventDriver.findElement(emailField).sendKeys(email);
         eventDriver.findElement(adressField).sendKeys(customer.getAddress());
         eventDriver.findElement(cityField).sendKeys(customer.getCity());
         eventDriver.findElement(stateField).sendKeys(customer.getState());
         eventDriver.findElement(countryField).sendKeys(customer.getCountry());
         eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
-        //eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
-        //Actions action = new Actions(eventDriver);
-        //action.moveToElement(canLoginChk).click().build().perform();
-        eventDriver.findElement(canLoginChk).click();
-        //eventDriver.findElement(submitBtn).click();
-
+        eventDriver.findElement(submitBtn).click();
     }
 }
 
