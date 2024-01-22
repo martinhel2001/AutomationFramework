@@ -8,7 +8,9 @@
     <test name="All UI tests" enabled="true" preserve-order="true" >
         <classes>
             <!--            <class name="UI_tests.KapschSmokeTest"/>-->
-            <class name="UI_tests.EcommerceSiteTest"></class>
+            <class name="UI_tests.PdfFileTest"></class>
+            <class name="UI_tests.MartinaSeminaraTest"></class>
+            <class name="UI_tests.AkauntingTests"></class>
         </classes>
     </test>
     <test name="All API tests" enabled="false" preserve-order="true" >
