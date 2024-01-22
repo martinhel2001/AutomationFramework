@@ -25,7 +25,6 @@ public class AddNewCustomerPage extends BasePageInteractions {
     private By stateField = By.id("state");
     private By countryField = By.cssSelector("input[placeholder='- Select Country -']");
     private By canLoginChk = By.cssSelector("label[for='create_user']");
-    //WebElement canLoginChk = eventDriver.findElement(By.id("create_user"));
     @Getter private By submitBtn = By.cssSelector("button[type='submit']");
 
     public AddNewCustomerPage(EventFiringWebDriver session) {

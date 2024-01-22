@@ -33,8 +33,6 @@ public class AkauntingTests extends BaseTest_UI {
         dashboardPage.goToCustomers();
         customersPage.AddNewBtnClick();
         addNewCustomerPage.addNewCustomer(CustomerName, CustomerEmail);
-        // Assert.assertEquals(NewCustomerBanner.isDisplayed(), "Succesfull customer creation banner is not displayed");
-        System.out.println("Texto de banner: "+eventDriver.findElement(NewCustomerBanner).getText());
         Assert.assertTrue(eventDriver.findElement(NewCustomerBanner).getText().contains("Customer added!"), "The customer was not added");
         Assert.assertEquals(eventDriver.findElement(NewCustomerName).getText(), CustomerName, "The customer's name is incorrect");
     }
