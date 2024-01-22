@@ -23,7 +23,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       #- browser-tools/install-browser-tools
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - run: mvn clean test -DsuiteXmlFile=testNG_MartinaSeminara.xml
+      - run: mvn clean test -DsuiteXmlFile=testNG_original.xml
       - slack/notify:
           event: always
           
