@@ -5,8 +5,11 @@ import lombok.Getter;
 import org.apache.bcel.generic.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import pages.BasePageInteractions;
+
+import java.util.Random;
 
 public class AddNewCustomerPage extends BasePageInteractions {
 
@@ -21,9 +24,8 @@ public class AddNewCustomerPage extends BasePageInteractions {
     private By zipCodeField = By.id("zip_code");
     private By stateField = By.id("state");
     private By countryField = By.cssSelector("input[placeholder='- Select Country -']");
-
+    private By canLoginChk = By.cssSelector("label[for='create_user']");
     @Getter private By submitBtn = By.cssSelector("button[type='submit']");
-
 
     public AddNewCustomerPage(EventFiringWebDriver session) {
         super(session);
@@ -31,8 +33,6 @@ public class AddNewCustomerPage extends BasePageInteractions {
 
     public void addNewCustomer(String name, String email){
         Customer customer = new Customer();
-        customer.setName(name);
-        customer.setEmail(email);
 
         eventDriver.findElement(nameField).sendKeys(name);
         eventDriver.findElement(emailField).sendKeys(email);
@@ -41,9 +41,7 @@ public class AddNewCustomerPage extends BasePageInteractions {
         eventDriver.findElement(stateField).sendKeys(customer.getState());
         eventDriver.findElement(countryField).sendKeys(customer.getCountry());
         eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
-        //eventDriver.findElement(currencyField).sendKeys(customer.getCurrency());
         eventDriver.findElement(submitBtn).click();
-
     }
 }
 

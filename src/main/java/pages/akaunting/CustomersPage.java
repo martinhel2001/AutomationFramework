@@ -14,6 +14,4 @@ private By AddNewBtn = By.linkText("Add New");
 public void AddNewBtnClick(){
     eventDriver.findElement(AddNewBtn).click();
 }
-// public ClickAddNewCustomer ()
-
 }
