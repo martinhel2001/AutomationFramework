@@ -15,4 +15,11 @@ public class CustomerDetailPage extends BasePageInteractions {
     public WebElement getCustomerName(){
         return eventDriver.findElement(customerName);
         }
+
+    private By EditCustomerBtn = By.linkText("Edit");
+
+    public void EditCustomerBtnClick(){
+        eventDriver.findElement(EditCustomerBtn).click();
+    }
+
 }

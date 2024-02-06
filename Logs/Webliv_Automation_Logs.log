@@ -1,17 +1,42 @@
-18-01-2024 16:01:01 INFO [BaseTest]: I am in onStart method Automation Campus
-18-01-2024 16:01:01 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-18-01-2024 16:01:01 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is starting.
-18-01-2024 16:01:01 INFO [BaseTest]: Test Description: 
-18-01-2024 16:01:05 INFO [BaseTest]: beforeClickOn 'Login':: start
-18-01-2024 16:01:05 INFO [BaseTest]: beforeClickOn 'Login':: end, took 105 milliseconds
-18-01-2024 16:01:11 INFO [BaseTest]: beforeClickOn 'Sales':: start
-18-01-2024 16:01:11 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 69 milliseconds
-18-01-2024 16:01:11 INFO [BaseTest]: beforeClickOn 'Customers':: start
-18-01-2024 16:01:12 INFO [BaseTest]: beforeClickOn 'Customers':: end, took 60 milliseconds
-18-01-2024 16:01:15 INFO [BaseTest]: beforeClickOn 'Add New':: start
-18-01-2024 16:01:15 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 45 milliseconds
-18-01-2024 16:01:19 INFO [BaseTest]: beforeClickOn '':: start
-18-01-2024 16:01:49 INFO [BaseTest]: # UI_tests.AkauntingTests.doLogin # test is failed.
-18-01-2024 16:01:50 INFO [BaseTest]: Screenshot taken
-18-01-2024 16:01:50 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-18-01-2024 16:01:50 INFO [BaseTest]: I am in onFinish method 2Automation Campus
+05-02-2024 15:39:41 INFO [BaseTest]: I am in onStart method Automation Campus
+05-02-2024 15:39:41 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+05-02-2024 15:39:41 INFO [BaseTest]: # UI_tests.AkauntingTests.addNewInvoiceTest # test is starting.
+05-02-2024 15:39:41 INFO [BaseTest]: Test Description: 
+05-02-2024 15:39:55 INFO [BaseTest]: beforeClickOn 'Login':: start
+05-02-2024 15:39:55 INFO [BaseTest]: beforeClickOn 'Login':: end, took 104 milliseconds
+05-02-2024 15:40:10 INFO [BaseTest]: beforeClickOn 'Sales':: start
+05-02-2024 15:40:10 INFO [BaseTest]: beforeClickOn 'Sales':: end, took 63 milliseconds
+05-02-2024 15:40:10 INFO [BaseTest]: beforeClickOn 'Invoices':: start
+05-02-2024 15:40:10 INFO [BaseTest]: beforeClickOn 'Invoices':: end, took 62 milliseconds
+05-02-2024 15:40:16 INFO [BaseTest]: beforeClickOn 'Add New':: start
+05-02-2024 15:40:16 INFO [BaseTest]: beforeClickOn 'Add New':: end, took 47 milliseconds
+05-02-2024 15:40:20 INFO [BaseTest]: beforeClickOn 'Add a Customer':: start
+05-02-2024 15:40:20 INFO [BaseTest]: beforeClickOn 'Add a Customer':: end, took 42 milliseconds
+05-02-2024 15:40:20 INFO [BaseTest]: beforeClickOn 'Asoka':: start
+05-02-2024 15:40:20 INFO [BaseTest]: beforeClickOn 'Asoka':: end, took 44 milliseconds
+05-02-2024 15:40:21 INFO [BaseTest]: beforeClickOn '':: start
+05-02-2024 15:40:21 INFO [BaseTest]: beforeClickOn '':: end, took 75 milliseconds
+05-02-2024 15:40:21 INFO [BaseTest]: beforeClickOn '  Add an Item':: start
+05-02-2024 15:40:21 INFO [BaseTest]: beforeClickOn '  Add an Item':: end, took 41 milliseconds
+05-02-2024 15:40:21 INFO [BaseTest]: beforeClickOn '  Create Item':: start
+05-02-2024 15:40:21 INFO [BaseTest]: beforeClickOn '  Create Item':: end, took 47 milliseconds
+05-02-2024 15:40:22 INFO [BaseTest]: beforeClickOn 'Footer':: start
+05-02-2024 15:40:22 INFO [BaseTest]: beforeClickOn 'Footer':: end, took 44 milliseconds
+05-02-2024 15:40:22 INFO [BaseTest]: beforeClickOn '':: start
+05-02-2024 15:40:22 INFO [BaseTest]: beforeClickOn '':: end, took 72 milliseconds
+05-02-2024 15:40:23 INFO [BaseTest]: beforeClickOn 'Save':: start
+05-02-2024 15:40:23 INFO [BaseTest]: beforeClickOn 'Save':: end, took 88 milliseconds
+05-02-2024 15:40:34 INFO [BaseTest]: beforeGetText 'Customer
+Asoka':: start
+05-02-2024 15:40:35 INFO [BaseTest]: beforeGetText 'Customer
+Asoka':: end, took 40 milliseconds
+05-02-2024 15:40:35 INFO [BaseTest]: beforeGetText 'Customer
+Asoka':: start
+05-02-2024 15:40:35 INFO [BaseTest]: beforeGetText 'Customer
+Asoka':: end, took 31 milliseconds
+05-02-2024 15:40:35 INFO [BaseTest]: beforeGetText 'This is a DRAFT invoice and will be reflected to charts after it gets sent.':: start
+05-02-2024 15:40:35 INFO [BaseTest]: beforeGetText 'This is a DRAFT invoice and will be reflected to charts after it gets sent.':: end, took 28 milliseconds
+05-02-2024 15:40:35 INFO [BaseTest]: # UI_tests.AkauntingTests.addNewInvoiceTest # test is failed.
+05-02-2024 15:40:35 INFO [BaseTest]: Screenshot taken
+05-02-2024 15:40:35 INFO [BaseTest]: # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+05-02-2024 15:40:35 INFO [BaseTest]: I am in onFinish method 2Automation Campus
